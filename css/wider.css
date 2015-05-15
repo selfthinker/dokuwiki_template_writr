@@ -1,0 +1,29 @@
+@media only screen and (min-width: 1220px) {
+
+	/* Grid */
+	#page {
+		width: 1200px;
+	}
+	#page:before {
+		width: 800px;
+	}
+
+	/* Primary */
+	.content-area {
+		width: 800px;
+	}
+
+	/* Content */
+	.entry-thumbnail {
+		width: 800px;
+	}
+
+	/* Media */
+	.entry-attachment .attachment {
+		width: 800px;
+	}
+	.video-wrapper .video-player {
+		max-width: 720px;
+	}
+
+}

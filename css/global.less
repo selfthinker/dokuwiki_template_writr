@@ -1,0 +1,425 @@
+/* =Global
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+body.custom-background-size {
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    -webkit-background-size: cover !important;
+    -moz-background-size:    cover !important;
+    background-size:         cover !important;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+    margin: 0 0 20px;
+    color: #303030;
+}
+h1 {
+    font-size: 32px;
+    line-height: 1.2;
+}
+h2 {
+    font-size: 24px;
+    line-height: 1.3;
+}
+h3 {
+    font-size: 22px;
+    line-height: 1.4;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+h6 {
+    font-size: 14px;
+}
+hr {
+    background-color: #f5f5f5;
+    border: 0;
+    height: 5px;
+    margin-bottom: 20px;
+}
+
+/* Text elements */
+p {
+    margin-bottom: 20px;
+}
+ul,
+ol {
+    margin: 0 0 20px 0;
+}
+ul {
+    list-style: disc inside;
+}
+ol {
+    list-style: decimal inside;
+}
+li > ul,
+li > ol {
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+dt {
+    font-weight: bold;
+}
+dd {
+    margin: 0 20px 20px;
+}
+b,
+strong {
+    font-weight: bold;
+}
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+cite {
+    color: #1abc9c;
+}
+blockquote {
+    padding: 0 0 0 20px;
+    border-left: 15px double #f5f5f5;
+}
+address {
+    margin: 0 0 20px;
+}
+pre {
+    overflow: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    background: #f5f5f5;
+    font: 15px/1.6 "Courier 10 Pitch", Courier, monospace;
+}
+code,
+kbd,
+tt,
+var {
+    font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr,
+acronym {
+    border-bottom: 1px dotted #656565;
+    cursor: help;
+}
+mark,
+ins {
+    padding: 0 5px;
+    background: #1abc9c;
+    color: #fff;
+    text-decoration: none;
+}
+sup,
+sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    bottom: 1ex;
+}
+sub {
+    top: .5ex;
+}
+small {
+    font-size: 75%;
+}
+big {
+    font-size: 125%;
+}
+figure {
+    margin: 0;
+}
+table {
+    margin: 0 0 20px;
+    width: 100%;
+    background: #f5f5f5;
+}
+th {
+    background: #e5e5e5;
+    font-weight: bold;
+}
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+tr:last-of-type td {
+    border-bottom: none;
+}
+img {
+    margin: auto;
+    height: auto; /* Make sure images are scaled correctly. */
+    max-width: 100%; /* Adhere to container width. */
+}
+
+/* Forms */
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* Corrects font size not being inherited in all browsers */
+    margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+    vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+    *vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+button,
+input {
+    line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+}
+select {
+    width: 100%;
+    color: #303030;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background: #1abc9c;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+    -webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+}
+.widget-area button,
+.widget-area html input[type="button"],
+.widget-area input[type="reset"],
+.widget-area input[type="submit"] {
+    background: #fff;
+    color: #1abc9c;
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+    background: #16a085;
+}
+.widget-area button:hover,
+.widget-area html input[type="button"]:hover,
+.widget-area input[type="reset"]:hover,
+.widget-area input[type="submit"]:hover,
+.widget-area button:focus,
+.widget-area html input[type="button"]:focus,
+.widget-area input[type="reset"]:focus,
+.widget-area input[type="submit"]:focus,
+.widget-area button:active,
+.widget-area html input[type="button"]:active,
+.widget-area input[type="reset"]:active,
+.widget-area input[type="submit"]:active {
+    background: #f5f5f5;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+    padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+    -webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+    -webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+    -moz-box-sizing:    content-box;
+    box-sizing:         content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+    -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+    border: 0;
+    padding: 0;
+}
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+    width: 100%;
+    height: 40px;
+    padding: 5px 10px;
+    background: transparent;
+    color: #656565;
+    border: 5px solid #f5f5f5;
+    font-size: 14px;
+    line-height: 1.43;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    box-sizing:         border-box;
+    -webkit-appearance: none;
+}
+.widget-area input[type="text"],
+.widget-area input[type="url"],
+.widget-area input[type="email"],
+.widget-area input[type="password"],
+.widget-area input[type="search"],
+.widget-area textarea {
+    color: #fff;
+    border-color: #16a085;
+}
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #e5e5e5;
+}
+.widget-area input[type="text"]:focus,
+.widget-area input[type="url"]:focus,
+.widget-area input[type="email"]:focus,
+.widget-area input[type="password"]:focus,
+.widget-area input[type="search"]:focus,
+.widget-area textarea:focus {
+    border-color: #fff;
+}
+textarea {
+    overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+    vertical-align: top; /* Improves readability and alignment in all browsers */
+    height: auto;
+}
+::-webkit-input-placeholder {
+   color: #656565;
+}
+:-moz-placeholder {
+   color: #656565;
+}
+::-moz-placeholder {
+   color: #656565;
+}
+:-ms-input-placeholder {
+   color: #656565;
+}
+.widget-area ::-webkit-input-placeholder {
+   color: #fff;
+}
+.widget-area :-moz-placeholder {
+   color: #fff;
+}
+.widget-area ::-moz-placeholder {
+   color: #fff;
+}
+.widget-area :-ms-input-placeholder {
+   color: #fff;
+}
+
+/* Links */
+a {
+    color: #1abc9c;
+}
+a:hover,
+a:focus,
+a:active {
+    color: #16a085;
+}
+
+/* Alignment */
+.alignleft {
+    display: inline;
+    float: left;
+    margin: 0 20px 20px 0;
+}
+.alignright {
+    display: inline;
+    float: right;
+    margin: 0 0 20px 20px;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar */
+}
+
+/* Clearing */
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after,
+.widget:before,
+.widget:after {
+    content: '';
+    display: table;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after,
+.widget:after {
+    clear: both;
+}
+

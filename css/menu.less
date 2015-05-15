@@ -1,0 +1,91 @@
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation {
+    display: block;
+    position: relative;
+    float: left;
+    width: 300px;
+    padding: 0 0 35px;
+    margin: 0 -40px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.main-navigation:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 40px;
+    bottom: 0;
+    width: 220px;
+    border-bottom: 15px double #16a085;
+}
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+.main-navigation li {
+    position: relative;
+}
+.main-navigation a {
+    display: block;
+    position: relative;
+    padding: 10px 40px;
+    text-decoration: none;
+    color: #fff !important;
+}
+.main-navigation a:hover {
+    background: #16a085;
+}
+.main-navigation ul ul {
+    display: none;
+    opacity: 0;
+    z-index: 9998;
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 300px;
+    background: #1abc9c;
+}
+.main-navigation ul ul li:last-child {
+    border-bottom: none;
+}
+.main-navigation .dropdown > a {
+    padding-right: 65px;
+}
+.main-navigation .dropdown > a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    margin-top: -5px;
+    border-left: 5px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+.main-navigation ul > li:hover > ul {
+    display: block;
+    opacity: 1;
+    -webkit-animation: menuFadeIn 0.25s;
+    -moz-animation:    menuFadeIn 0.25s;
+    -ms-animation:     menuFadeIn 0.25s;
+    -o-animation:      menuFadeIn 0.25s;
+    animation:         menuFadeIn 0.25s;
+}
+.main-navigation li.current_page_item > a,
+.main-navigation li.current-menu-item > a {
+    background: #303030 !important;
+}
+
+/* Small menu */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    background: #16a085;
+}
+.dropdown-icon {
+    background: #16a085;
+}

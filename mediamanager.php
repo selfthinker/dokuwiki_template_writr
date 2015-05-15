@@ -24,10 +24,11 @@ header('X-UA-Compatible: IE=edge,chrome=1');
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
 </head>
 
-<body>
-    <div id="media__manager" class="<?php echo tpl_classes(); ?>">
+<body class="<?php echo tpl_classes(); ?> media-popup">
+    <div id="media__manager">
         <?php html_msgarea() ?>
         <div id="mediamgr__aside"><div class="group">
             <h1><?php echo hsc($lang['mediaselect'])?></h1>
