@@ -1,0 +1,38 @@
+/**
+ * This file provides the most basic styles.
+ */
+
+html,
+body {
+    background-color: __background__;
+    color: __text__;
+}
+
+body {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+img {
+    border-width: 0;
+    height: auto;
+}
+
+img,
+object,
+iframe,
+video,
+audio,
+select {
+    max-width: 100%;
+}
+
+pre {
+    overflow: auto;
+    word-wrap: normal;
+    direction: ltr;
+    unicode-bidi: bidi-override;
+    text-align: left;
+}

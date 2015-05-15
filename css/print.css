@@ -1,0 +1,55 @@
+/**
+ * This file provides the styles for printing.
+ */
+
+/* hide certain sections */
+audio,
+video,
+#dokuwiki__aside,
+#dokuwiki__footer,
+.dokuwiki .breadcrumbs,
+.dokuwiki .toc,
+#dw__toc {
+    display: none;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    border-bottom: 1pt dotted;
+    color: #333;
+    background-color: inherit;
+}
+
+/* code blocks */
+pre {
+    font-family: monospace;
+}
+dl.code dt,
+dl.file dt {
+    font-weight: bold;
+}
+
+/* images */
+img {
+    border-width: 0;
+    vertical-align: middle;
+}
+
+
+/*____________ a bit of layout ____________*/
+
+#dokuwiki__header {
+    border-bottom: 2pt solid #ccc;
+}
+#dokuwiki__header h1 {
+    font-size: 1.5em;
+}
+#dokuwiki__header h1 a {
+    text-decoration: none;
+}
+.dokuwiki div.footnotes {
+    clear: both;
+    border-top: 1pt solid #000;
+    margin-top: 10pt;
+}

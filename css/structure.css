@@ -1,0 +1,58 @@
+/**
+ * This file provides styles for the general layout structure.
+ *
+ * @author Anika Henke <anika@selfthinker.org>
+ */
+
+#dokuwiki__site {
+    margin: 0 auto;
+    max-width: __site_width__;
+    padding: 1em;
+}
+
+#dokuwiki__site .wrapper {
+    position: relative;
+}
+
+#dokuwiki__aside {
+    width: __sidebar_width__;
+    float: left;
+    position: relative;
+    display: block;
+}
+[dir=rtl] #dokuwiki__aside {
+    float: right;
+}
+
+#dokuwiki__aside > div {
+    margin: 0 1.5em 0 0;
+}
+[dir=rtl] #dokuwiki__aside > div {
+    margin: 0 0 0 1.5em;
+}
+
+/* make content wider when there's no sidebar */
+.hasSidebar #dokuwiki__content {
+    float: right;
+    margin-left: -__sidebar_width__;
+    width: 100%;
+}
+[dir=rtl] .hasSidebar #dokuwiki__content {
+    float: left;
+    margin-left: 0;
+    margin-right: -__sidebar_width__;
+}
+
+.hasSidebar #dokuwiki__content > div {
+    margin-left: __sidebar_width__;
+}
+[dir=rtl] .hasSidebar #dokuwiki__content > div {
+    margin-left: 0;
+    margin-right: __sidebar_width__;
+}
+
+.dokuwiki .aside,
+.dokuwiki .page {
+    overflow: hidden;
+    word-wrap: break-word;
+}
