@@ -34,7 +34,7 @@ p.no-comments {
     z-index: 1;
     width: 20px;
     height: 20px;
-    color: #f5f5f5;
+    color: @ini_background_alt;
     font-size: 20px;
     line-height: 20px;
     font-family: Genericons;
@@ -51,7 +51,7 @@ p.no-comments {
     width: 100%;
 }
 .comment-list > .comment {
-    border-bottom: 5px solid #303030;
+    border-bottom: 5px solid @ini_text_alt;
     margin-bottom: 20px;
 }
 .comment-author {
@@ -59,15 +59,15 @@ p.no-comments {
     text-transform: uppercase;
 }
 .comment-author cite {
-    color: #303030;
+    color: @ini_text_alt;
     font-style: normal;
 }
 .comment-author a {
-    color: #303030;
+    color: @ini_text_alt;
     text-decoration: none;
 }
 .comment-author a:hover {
-    color: #656565;
+    color: @ini_text;
 }
 .comment-author .avatar {
     position: absolute;
@@ -79,7 +79,7 @@ p.no-comments {
     position: absolute;
     top: 25px;
     left: -5px;
-    border-right: 5px solid #fff;
+    border-right: 5px solid @ini_background;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
 }
@@ -94,20 +94,20 @@ p.no-comments {
 
 /* Comment metadata */
 .comment-metadata {
-    border-top: 15px double #f5f5f5;
-    color: #303030;
+    border-top: 15px double @ini_background_alt;
+    color: @ini_text_alt;
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
 }
 .comment-metadata a {
-    color: #656565;
+    color: @ini_text;
     text-decoration: none;
 }
 .comment-metadata a:hover,
 .comment-metadata a:focus,
 .comment-metadata a:active {
-    color: #1abc9c;
+    color: @ini_theme_color;
 }
 .comment-metadata ul {
     display: block;
@@ -150,14 +150,14 @@ p.no-comments {
 .bypostauthor > .comment-body {
     padding: 20px 40px;
     margin-left: -40px;
-    background: #f5f5f5;
+    background: @ini_background_alt;
 }
 .bypostauthor > .comment-body .comment-metadata {
-    border-top-color: #e5e5e5;
+    border-top-color: @ini_background_neu;
 }
 .bypostauthor > .comment-body .comment-author:after {
     top: 45px;
-    border-right-color: #f5f5f5;
+    border-right-color: @ini_background_alt;
 }
 .comment-list .children > .bypostauthor:before {
     display: none;

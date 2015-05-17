@@ -9,7 +9,7 @@ blockquote > div.no {
 }
 
 div.breadcrumbs {
-    background-color: #f5f5f5;
+    background-color: @ini_background_alt;
     margin: 0 0 20px -40px;
     padding: 15px 40px;
     position: relative;
@@ -33,13 +33,13 @@ div.breadcrumbs {
     top: 50%;
     right: 40px;
     margin-top: -5px;
-    border-left: 5px solid #fff;
+    border-left: 5px solid @ini_background;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
 }
 
 .main-navigation li .curid > a {
-    background: #303030 !important;
+    background: @ini_text_alt !important;
 }
 
 
@@ -80,9 +80,9 @@ dl.file dd {
 }
 
 .JSpopup {
-    border: 2px solid #e5e5e5;
+    border: 2px solid @ini_background_neu;
     border-radius: 20px;
-    color: #656565;
+    color: @ini_text;
     padding: 10px;
     font-size: 14px;
 }
@@ -112,14 +112,14 @@ dl.file dd {
 
 div.toolbar button,
 #media__popup_content button {
-    background-color: #e5e5e5;
+    background-color: @ini_background_neu;
     padding: 5px 10px;
 }
 div.toolbar button:hover,
 div.toolbar button:focus,
 #media__popup_content button:hover,
 #media__popup_content button:focus {
-    background-color: #f5f5f5;
+    background-color: @ini_background_alt;
 }
 #media__popup_content label {
     display: block;
@@ -131,7 +131,7 @@ div.toolbar button:focus,
     &,
     &::before,
     &::after {
-        background-color: #fff;
+        background-color: @ini_background;
     }
 
     #sidebar,
@@ -153,7 +153,7 @@ div.toolbar button:focus,
     &,
     &::before,
     &::after {
-        background-color: #fff;
+        background-color: @ini_background;
     }
 
     #mediamgr__aside > div,
@@ -173,7 +173,7 @@ div.toolbar button:focus,
 
 .detail-page {
     padding: 0;
-    color: #fff;
+    color: @ini_background;
 
     #dokuwiki__detail {
         padding: 40px;
@@ -181,7 +181,7 @@ div.toolbar button:focus,
 
     h1,
     h2 {
-        color: #e5e5e5;
+        color: @ini_background_neu;
     }
 
     p.back {
@@ -208,7 +208,7 @@ pre {
 .mode_revisions a.action.revs,
 .mode_backlink a.action.backlink,
 .mode_subscribe a.action.subscribe {
-    background-color: #202020;
+    background-color: @ini_text_neu;
 }
 
 /* undo "clever" styling from fileuploader.js */

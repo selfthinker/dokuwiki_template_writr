@@ -6,8 +6,8 @@ body {
     overflow-x: hidden;
     padding: 40px 0 0;
     width: 100%;
-    background: #303030;
-    color: #656565;
+    background: @ini_text_alt;
+    color: @ini_text;
     -ms-word-wrap: break-word;
     word-wrap:     break-word;
 }
@@ -23,19 +23,19 @@ body:before {
 body:after {
     left: 0;
     width: 300px;
-    background: #1abc9c;
+    background: @ini_theme_color;
 }
 body:before {
     left: 300px;
     width: 100px;
-    background: #303030;
+    background: @ini_text_alt;
 }
 
 /* Page */
 #page {
     z-index: 1;
     margin: 0;
-    width: 940px;
+    width: (@ini_content_width + 400px);
 }
 #page:before {
     content: '';
@@ -44,9 +44,9 @@ body:before {
     z-index: -1;
     top: 0;
     left: 400px;
-    width: 540px;
+    width: @ini_content_width;
     height: 100%;
-    background: #fff;
+    background: @ini_background;
 }
 
 /* Sidebar */
@@ -67,8 +67,8 @@ body:before {
     left: 0;
     height: 40px;
     width: 40px;
-    background: #16a085;
-    color: #fff;
+    background: @ini_theme_color_alt;
+    color: @ini_background;
     line-height: 40px;
     text-align: center;
     text-decoration: none;
@@ -78,7 +78,7 @@ body:before {
     content: '';
     display: block;
     position: absolute;
-    border-top: 40px solid #16a085;
+    border-top: 40px solid @ini_theme_color_alt;
     border-right: 40px solid transparent;
 }
 #sidebar-toggle:before {
@@ -111,8 +111,8 @@ body:before {
 /* Header */
 .site-header {
     display: none;
-    background: #1abc9c;
-    color: #fff;
+    background: @ini_theme_color;
+    color: @ini_background;
 }
 .site-logo {
     display: block;
@@ -126,7 +126,7 @@ body:before {
     position: relative;
     padding: 0;
     margin: 0 0 20px;
-    border-bottom: 15px double #16a085;
+    border-bottom: 15px double @ini_theme_color_alt;
     text-align: center;
 }
 .site-title {
@@ -138,15 +138,15 @@ body:before {
 }
 .site-title a {
     display: inline-block;
-    color: #fff;
+    color: @ini_background;
     text-decoration: none;
 }
 .site-title a:hover {
-    color: #16a085;
+    color: @ini_theme_color_alt;
 }
 .site-description {
     margin: 0 0 20px;
-    color: #fff;
+    color: @ini_background;
     font-size: 12px;
     text-transform: uppercase;
 }
@@ -154,10 +154,10 @@ body:before {
 /* Primary */
 .content-area {
     float: right;
-    width: 540px;
+    width: @ini_content_width;
     height: auto;
     padding: 0 40px;
-    background: #fff;
+    background: @ini_background;
     -webkit-box-sizing: border-box;
     -moz-box-sizing:    border-box;
     box-sizing:         border-box;
@@ -172,12 +172,12 @@ body:before {
 .widget-area h4,
 .widget-area h5,
 .widget-area h6 {
-    color: #fff;
+    color: @ini_background;
 }
 .widget-area a:hover,
 .widget-area a:focus,
 .widget-area a:active {
-    color: #e5e5e5;
+    color: @ini_background_neu;
 }
 .widget-area {
     width: 220px;
@@ -190,14 +190,14 @@ body:before {
 }
 .site-info {
     padding: 0 0 40px;
-    color: #fff;
+    color: @ini_background;
     font-size: 12px;
     text-align: center;
 }
 .site-info a {
-    color: #fff;
+    color: @ini_background;
     text-decoration: none;
 }
 .site-info a:hover {
-    color: #16a085;
+    color: @ini_theme_color_alt;
 }

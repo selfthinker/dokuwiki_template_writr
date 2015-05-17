@@ -18,7 +18,7 @@
     left: 40px;
     bottom: 0;
     width: 220px;
-    border-bottom: 15px double #16a085;
+    border-bottom: 15px double @ini_theme_color_alt;
 }
 .main-navigation ul {
     list-style: none;
@@ -33,10 +33,10 @@
     position: relative;
     padding: 10px 40px;
     text-decoration: none;
-    color: #fff !important;
+    color: @ini_background !important;
 }
 .main-navigation a:hover {
-    background: #16a085;
+    background: @ini_theme_color_alt;
 }
 .main-navigation ul ul {
     display: none;
@@ -47,7 +47,7 @@
     top: 0;
     left: 100%;
     width: 300px;
-    background: #1abc9c;
+    background: @ini_theme_color;
 }
 .main-navigation ul ul li:last-child {
     border-bottom: none;
@@ -62,7 +62,7 @@
     top: 50%;
     right: 40px;
     margin-top: -5px;
-    border-left: 5px solid #fff;
+    border-left: 5px solid @ini_background;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
 }
@@ -77,15 +77,15 @@
 }
 .main-navigation li.current_page_item > a,
 .main-navigation li.current-menu-item > a {
-    background: #303030 !important;
+    background: @ini_text_alt !important;
 }
 
 /* Small menu */
 .menu-toggle {
     display: none;
     cursor: pointer;
-    background: #16a085;
+    background: @ini_theme_color_alt;
 }
 .dropdown-icon {
-    background: #16a085;
+    background: @ini_theme_color_alt;
 }

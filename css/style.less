@@ -55,8 +55,8 @@ and Blueprint http://www.blueprintcss.org/
 	padding: 15px 40px;
 	margin: 0 0 0 -40px;
 	width: 100%;
-	background: #f5f5f5;
-	color: #303030;
+	background: @ini_background_alt;
+	color: @ini_text_alt;
 	font-size: 25px;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -68,18 +68,18 @@ and Blueprint http://www.blueprintcss.org/
 	position: absolute;
 	top: 25px;
 	left: -5px;
-	border-right: 5px solid #f5f5f5;
+	border-right: 5px solid @ini_background_alt;
 	border-top: 5px solid transparent;
 	border-bottom: 5px solid transparent;
 }
 .entry-title a {
-	color: #303030;
+	color: @ini_text_alt;
 	text-decoration: none;
 }
 .entry-title a:hover,
 .entry-title a:focus,
 .entry-title a:active {
-	color: #1abc9c;
+	color: @ini_theme_color;
 }
 
 /* Page title */
@@ -87,8 +87,8 @@ and Blueprint http://www.blueprintcss.org/
 	padding: 15px 40px;
 	margin: 0 0 40px -40px;
 	width: 100%;
-	background: #202020;
-	color: #fff;
+	background: @ini_text_neu;
+	color: @ini_background;
 	font-size: 25px;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -98,8 +98,8 @@ and Blueprint http://www.blueprintcss.org/
 .entry-thumbnail {
 	overflow: hidden;
 	margin: 0 0 0 -40px;
-	width: 540px;
-	background-color: #202020;
+	width: @ini_content_width;
+	background-color: @ini_text_neu;
 	text-align: center;
 }
 .entry-thumbnail a,
@@ -115,20 +115,20 @@ and Blueprint http://www.blueprintcss.org/
 /* Entry meta */
 .entry-meta {
 	padding: 20px 0 0;
-	border-top: 15px double #f5f5f5;
-	color: #656565;
+	border-top: 15px double @ini_background_alt;
+	color: @ini_text;
 	font-size: 12px;
 	font-weight: bold;
 	text-transform: uppercase;
 }
 .entry-meta a {
-	color: #656565;
+	color: @ini_text;
 	text-decoration: none;
 }
 .entry-meta a:hover,
 .entry-meta a:focus,
 .entry-meta a:active {
-	color: #1abc9c;
+	color: @ini_theme_color;
 }
 .entry-meta ul {
 	display: block;
@@ -150,7 +150,7 @@ and Blueprint http://www.blueprintcss.org/
 	left: 0;
 	width: 12px;
 	height: 18px;
-	color: #303030;
+	color: @ini_text_alt;
 	font-size: 12px;
 	line-height: 1.5;
 }
@@ -166,15 +166,15 @@ and Blueprint http://www.blueprintcss.org/
 	left: -120px;
 	width: 60px;
 	height: 60px;
-	background: #202020;
-	color: #fff;
+	background: @ini_text_neu;
+	color: @ini_background;
 	font-size: 30px;
 	line-height: 2;
 	text-align: center;
 }
 a.entry-format-badge:hover {
-	background: #fff;
-	color: #303030;
+	background: @ini_background;
+	color: @ini_text_alt;
 }
 
 /* More link */
@@ -183,8 +183,8 @@ a.entry-format-badge:hover {
 	position: relative;
 	padding: 10px 20px;
 	border: none;
-	background: #1abc9c;
-	color: #fff;
+	background: @ini_theme_color;
+	color: @ini_background;
 	font-size: 14px;
 	line-height: 1.5;
 	font-weight: bold;
@@ -194,8 +194,8 @@ a.entry-format-badge:hover {
 .more-link:hover,
 .more-link:focus,
 .more-link:active {
-	color: #fff;
-	background: #16a085;
+	color: @ini_background;
+	background: @ini_theme_color_alt;
 }
 .more-link-wrapper {
 	display: block;
@@ -231,7 +231,7 @@ a.entry-format-badge:hover {
 	margin-left: -40px;
 	padding: 0 40px;
 	width: 100%;
-	background-color: #202020;
+	background-color: @ini_text_neu;
 }
 .format-video .jetpack-video-wrapper embed,
 .format-video .jetpack-video-wrapper iframe,
@@ -261,7 +261,7 @@ a.entry-format-badge:hover {
 	padding: 0;
 }
 .wp-caption {
-	border-bottom: 5px solid #f5f5f5;
+	border-bottom: 5px solid @ini_background_alt;
 	margin-bottom: 20px;
 	max-width: 100%;
 }
@@ -288,7 +288,7 @@ a.entry-format-badge:hover {
 	margin-top: 0 !important;
 }
 .gallery-icon {
-	border: 10px solid #fff;
+	border: 10px solid @ini_background;
 }
 .gallery a img {
 	border: none !important;
@@ -300,8 +300,8 @@ a.entry-format-badge:hover {
 }
 .entry-attachment .attachment {
 	margin: -20px 0 20px -40px;
-	width: 540px;
-	background: #202020;
+	width: @ini_content_width;
+	background: @ini_text_neu;
 }
 .entry-attachment .attachment a,
 .entry-attachment .attachment a img {
@@ -336,11 +336,11 @@ video {
 	margin: 0 0 20px;
 }
 .wp-audio-shortcode .mejs-controls .mejs-time-rail .mejs-time-loaded {
-	background: #fff;
+	background: @ini_background;
 }
 .wp-audio-shortcode .mejs-controls .mejs-time-rail .mejs-time-current,
 .wp-audio-shortcode .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
-	background: #1abc9c;
+	background: @ini_theme_color;
 }
 
 /* Latex */
@@ -359,7 +359,7 @@ img.latex {
 	margin: 0 0 40px -40px;
 	width: 100%;
 	overflow: hidden;
-	background: #f5f5f5;
+	background: @ini_background_alt;
 	font-size: 12px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -370,7 +370,7 @@ img.latex {
 	display: inline-block;
 	position: relative;
 	text-decoration: none;
-	color: #303030;
+	color: @ini_text_alt;
 }
 #content .post-navigation a:hover,
 #content .paging-navigation a:hover,
@@ -381,7 +381,7 @@ img.latex {
 #content .post-navigation a:active,
 #content .paging-navigation a:active,
 #content .comment-navigation a:active {
-	color: #1abc9c;
+	color: @ini_theme_color;
 }
 [class*="navigation"] .nav-previous {
 	float: left;
@@ -444,11 +444,11 @@ img.latex {
 
 .widget {
 	margin: 0 0 20px;
-	border-bottom: 15px double #16a085;
+	border-bottom: 15px double @ini_theme_color_alt;
 	font-size: 14px;
 }
 .content-area .widget {
-	border-bottom-color: #e5e5e5;
+	border-bottom-color: @ini_background_neu;
 }
 .content-area .widget:last-of-type {
 	border-bottom: none;
@@ -464,7 +464,7 @@ img.latex {
 }
 .widget-area .widget-title,
 .widget-area .widget-title a {
-	color: #fff;
+	color: @ini_background;
 }
 .widget-title a {
 	text-decoration: none;
@@ -474,19 +474,19 @@ img.latex {
 }
 .widget-area .widget abbr,
 .widget-area .widget acronym {
-	border-bottom-color: #fff;
+	border-bottom-color: @ini_background;
 }
 .widget table {
 	background: none;
 }
 .widget th,
 .widget tfoot tr {
-	background: #16a085;
+	background: @ini_theme_color_alt;
 }
 .widget th,
 .widget td {
 	padding: 5px;
-	border-bottom-color: #16a085;
+	border-bottom-color: @ini_theme_color_alt;
 }
 
 /* Calendar */
@@ -501,7 +501,7 @@ img.latex {
 	text-align: center;
 }
 .widget_calendar tfoot a {
-	color: #fff;
+	color: @ini_background;
 	font-weight: bold;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -518,7 +518,7 @@ img.latex {
 	display: block;
 	padding-top: 5px;
 	padding-left: 22px;
-	color: #fff;
+	color: @ini_background;
 	font-size: 12px;
 	font-style: normal;
 }
@@ -544,25 +544,25 @@ img.latex {
 	float: left;
 	padding: 5px 10px;
 	margin: 0 5px 5px 0;
-	background: #16a085;
-	color: #fff;
+	background: @ini_theme_color_alt;
+	color: @ini_background;
 	font-size: 12px !important;
 	text-decoration: none;
 }
 .content-area .widget_tag_cloud a {
-	background: #1abc9c;
+	background: @ini_theme_color;
 }
 .widget_tag_cloud a:hover,
 .widget_tag_cloud a:focus,
 .widget_tag_cloud a:active {
-	background: #fff;
-	color: #1abc9c;
+	background: @ini_background;
+	color: @ini_theme_color;
 }
 .content-area .widget_tag_cloud a:hover,
 .content-area .widget_tag_cloud a:focus,
 .content-area .widget_tag_cloud a:active {
-	background: #16a085;
-	color: #fff;
+	background: @ini_theme_color_alt;
+	color: @ini_background;
 }
 
 /* List */
@@ -636,7 +636,7 @@ img.latex {
 .widget_recent_entries ul a,
 .widget_rss ul a,
 .widget_rss_links ul a {
-	color: #fff;
+	color: @ini_background;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -650,15 +650,15 @@ img.latex {
 .widget_recent_entries ul a:hover,
 .widget_rss ul a:hover,
 .widget_rss_links ul a:hover {
-	color: #16a085;
+	color: @ini_theme_color_alt;
 }
 .content-area .widget_categories ul a,
 .content-area .widget_recent_entries ul a {
-	color: #656565;
+	color: @ini_text;
 }
 .content-area .widget_categories ul a:hover,
 .content-area .widget_recent_entries ul a:hover {
-	color: #1abc9c;
+	color: @ini_theme_color;
 }
 
 /* Select */

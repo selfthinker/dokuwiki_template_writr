@@ -6,7 +6,7 @@ button,
 input,
 select,
 textarea {
-    color: #fff;
+    color: @ini_background;
     font-family: Montserrat, sans-serif;
     font-size: 16px;
     line-height: 1.5;
@@ -29,7 +29,7 @@ h5,
 h6 {
     clear: both;
     margin: 0 0 20px;
-    color: #303030;
+    color: @ini_text_alt;
 }
 h1 {
     font-size: 32px;
@@ -53,7 +53,7 @@ h6 {
     font-size: 14px;
 }
 hr {
-    background-color: #f5f5f5;
+    background-color: @ini_background_alt;
     border: 0;
     height: 5px;
     margin-bottom: 20px;
@@ -95,11 +95,11 @@ i {
     font-style: italic;
 }
 cite {
-    color: #1abc9c;
+    color: @ini_theme_color;
 }
 blockquote {
     padding: 0 0 0 20px;
-    border-left: 15px double #f5f5f5;
+    border-left: 15px double @ini_background_alt;
 }
 address {
     margin: 0 0 20px;
@@ -109,7 +109,7 @@ pre {
     padding: 20px;
     margin-bottom: 20px;
     max-width: 100%;
-    background: #f5f5f5;
+    background: @ini_background_alt;
     font: 15px/1.6 "Courier 10 Pitch", Courier, monospace;
 }
 code,
@@ -120,14 +120,14 @@ var {
 }
 abbr,
 acronym {
-    border-bottom: 1px dotted #656565;
+    border-bottom: 1px dotted @ini_text;
     cursor: help;
 }
 mark,
 ins {
     padding: 0 5px;
-    background: #1abc9c;
-    color: #fff;
+    background: @ini_theme_color;
+    color: @ini_background;
     text-decoration: none;
 }
 sup,
@@ -156,16 +156,16 @@ figure {
 table {
     margin: 0 0 20px;
     width: 100%;
-    background: #f5f5f5;
+    background: @ini_background_alt;
 }
 th {
-    background: #e5e5e5;
+    background: @ini_background_neu;
     font-weight: bold;
 }
 th,
 td {
     padding: 10px;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid @ini_background_neu;
 }
 tr:last-of-type td {
     border-bottom: none;
@@ -192,7 +192,7 @@ input {
 }
 select {
     width: 100%;
-    color: #303030;
+    color: @ini_text_alt;
 }
 button,
 html input[type="button"],
@@ -200,8 +200,8 @@ input[type="reset"],
 input[type="submit"] {
     padding: 10px 20px;
     border: none;
-    background: #1abc9c;
-    color: #fff;
+    background: @ini_theme_color;
+    color: @ini_background;
     font-size: 14px;
     line-height: 1.5;
     font-weight: bold;
@@ -216,8 +216,8 @@ input[type="submit"] {
 .widget-area html input[type="button"],
 .widget-area input[type="reset"],
 .widget-area input[type="submit"] {
-    background: #fff;
-    color: #1abc9c;
+    background: @ini_background;
+    color: @ini_theme_color;
 }
 button:hover,
 html input[type="button"]:hover,
@@ -231,7 +231,7 @@ button:active,
 html input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-    background: #16a085;
+    background: @ini_theme_color_alt;
 }
 .widget-area button:hover,
 .widget-area html input[type="button"]:hover,
@@ -245,7 +245,7 @@ input[type="submit"]:active {
 .widget-area html input[type="button"]:active,
 .widget-area input[type="reset"]:active,
 .widget-area input[type="submit"]:active {
-    background: #f5f5f5;
+    background: @ini_background_alt;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -276,8 +276,8 @@ textarea {
     height: 40px;
     padding: 5px 10px;
     background: transparent;
-    color: #656565;
-    border: 5px solid #f5f5f5;
+    color: @ini_text;
+    border: 5px solid @ini_background_alt;
     font-size: 14px;
     line-height: 1.43;
     -webkit-box-sizing: border-box;
@@ -291,8 +291,8 @@ textarea {
 .widget-area input[type="password"],
 .widget-area input[type="search"],
 .widget-area textarea {
-    color: #fff;
-    border-color: #16a085;
+    color: @ini_background;
+    border-color: @ini_theme_color_alt;
 }
 input[type="text"]:focus,
 input[type="url"]:focus,
@@ -301,7 +301,7 @@ input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
     outline: none;
-    border-color: #e5e5e5;
+    border-color: @ini_background_neu;
 }
 .widget-area input[type="text"]:focus,
 .widget-area input[type="url"]:focus,
@@ -309,7 +309,7 @@ textarea:focus {
 .widget-area input[type="password"]:focus,
 .widget-area input[type="search"]:focus,
 .widget-area textarea:focus {
-    border-color: #fff;
+    border-color: @ini_background;
 }
 textarea {
     overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
@@ -317,38 +317,38 @@ textarea {
     height: auto;
 }
 ::-webkit-input-placeholder {
-   color: #656565;
+   color: @ini_text;
 }
 :-moz-placeholder {
-   color: #656565;
+   color: @ini_text;
 }
 ::-moz-placeholder {
-   color: #656565;
+   color: @ini_text;
 }
 :-ms-input-placeholder {
-   color: #656565;
+   color: @ini_text;
 }
 .widget-area ::-webkit-input-placeholder {
-   color: #fff;
+   color: @ini_background;
 }
 .widget-area :-moz-placeholder {
-   color: #fff;
+   color: @ini_background;
 }
 .widget-area ::-moz-placeholder {
-   color: #fff;
+   color: @ini_background;
 }
 .widget-area :-ms-input-placeholder {
-   color: #fff;
+   color: @ini_background;
 }
 
 /* Links */
 a {
-    color: #1abc9c;
+    color: @ini_theme_color;
 }
 a:hover,
 a:focus,
 a:active {
-    color: #16a085;
+    color: @ini_theme_color_alt;
 }
 
 /* Alignment */
