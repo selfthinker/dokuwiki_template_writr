@@ -78,43 +78,55 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 </div>
 
                 <div class="tools widget_links widget">
-                    <h3><?php echo $lang['tools'] ?></h3>
-                    <ul>
-                        <!-- SITE TOOLS -->
-                        <?php _tpl_toolsevent('sitetools', array(
-                            'recent'    => tpl_action('recent', 1, 'li', 1),
-                            'media'     => tpl_action('media', 1, 'li', 1),
-                            'index'     => tpl_action('index', 1, 'li', 1),
-                        )); ?>
-
-                        <!-- PAGE TOOLS -->
-                        <?php _tpl_toolsevent('pagetools', array(
-                            'edit'      => tpl_action('edit', 1, 'li', 1),
-                            'revisions' => tpl_action('revisions', 1, 'li', 1),
-                            'backlink'  => tpl_action('backlink', 1, 'li', 1),
-                            'subscribe' => tpl_action('subscribe', 1, 'li', 1),
-                            'revert'    => tpl_action('revert', 1, 'li', 1),
-                            'top'       => tpl_action('top', 1, 'li', 1),
-                        )); ?>
-
-                        <!-- USER TOOLS -->
-                        <?php if ($conf['useacl']): ?>
-                            <?php _tpl_toolsevent('usertools', array(
-                                'admin'     => tpl_action('admin', 1, 'li', 1),
-                                'profile'   => tpl_action('profile', 1, 'li', 1),
-                                'register'  => tpl_action('register', 1, 'li', 1),
-                                'login'     => tpl_action('login', 1, 'li', 1),
+                    <!-- SITE TOOLS -->
+                    <div class="site-tools">
+                        <h3><?php echo $lang['site_tools'] ?></h3>
+                        <ul>
+                            <?php _tpl_toolsevent('sitetools', array(
+                                'recent'    => tpl_action('recent', 1, 'li', 1),
+                                'media'     => tpl_action('media', 1, 'li', 1),
+                                'index'     => tpl_action('index', 1, 'li', 1),
                             )); ?>
-                        <?php endif ?>
-                    </ul>
+                        </ul>
+                    </div>
 
-                    <?php
-                        if (!empty($_SERVER['REMOTE_USER'])) {
-                            echo '<p class="user">';
-                            tpl_userinfo();
-                            echo '</p>';
-                        }
-                    ?>
+                    <!-- PAGE TOOLS -->
+                    <div class="page-tools">
+                        <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
+                        <ul>
+                            <?php _tpl_toolsevent('pagetools', array(
+                                'edit'      => tpl_action('edit', 1, 'li', 1, '<span></span> <span class="a11y">', '</span>'),
+                                'revisions' => tpl_action('revisions', 1, 'li', 1, '<span></span> <span class="a11y">', '</span>'),
+                                'backlink'  => tpl_action('backlink', 1, 'li', 1, '<span></span> <span class="a11y">', '</span>'),
+                                'subscribe' => tpl_action('subscribe', 1, 'li', 1, '<span></span> <span class="a11y">', '</span>'),
+                                'revert'    => tpl_action('revert', 1, 'li', 1, '<span></span> <span class="a11y">', '</span>'),
+                                'top'       => tpl_action('top', 1, 'li', 1, '<span></span> <span class="a11y">', '</span>'),
+                            )); ?>
+                        </ul>
+                    </div>
+
+                    <?php if ($conf['useacl']): ?>
+                        <!-- USER TOOLS -->
+                        <div class="user-tools">
+                            <h3><?php echo $lang['user_tools'] ?></h3>
+                            <ul>
+                                <?php _tpl_toolsevent('usertools', array(
+                                    'admin'     => tpl_action('admin', 1, 'li', 1),
+                                    'profile'   => tpl_action('profile', 1, 'li', 1),
+                                    'register'  => tpl_action('register', 1, 'li', 1),
+                                    'login'     => tpl_action('login', 1, 'li', 1),
+                                )); ?>
+                            </ul>
+                        </div>
+
+                        <?php
+                            if (!empty($_SERVER['REMOTE_USER'])) {
+                                echo '<p class="user">';
+                                tpl_userinfo();
+                                echo '</p>';
+                            }
+                        ?>
+                    <?php endif ?>
                 </div>
 
                 <footer id="colophon" class="site-footer" role="contentinfo">
