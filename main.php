@@ -29,46 +29,46 @@ $showSidebar = page_findnearest($conf['sidebar']);
     <div id="page" class="hfeed <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
         <?php tpl_includeFile('header.html') ?>
 
-        <!-- ********** HEADER ********** -->
-        <header id="masthead" class="site-header" role="banner">
-            <?php
-                $logoSize = array();
-                $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
-            ?>
-
-            <a class="site-logo"  href="<?php echo wl(); ?>" title="<?php echo $conf['title']; ?>" rel="home" accesskey="h" title="[H]">
-                <img src="<?php echo $logo; ?>" <?php echo $logoSize[3]; ?> alt="" class="no-grav header-image" />
-            </a>
-
-            <div class="site-branding">
-                <h1 class="site-title"><a href="<?php echo wl(); ?>" rel="home" accesskey="h" title="[H]"><?php echo $conf['title']; ?></a></h1>
-                <?php if ($conf['tagline']): ?>
-                    <h2 class="site-description"><?php echo $conf['tagline'] ?></h2>
-                <?php endif ?>
-            </div>
-
-            <div class="search-form widget">
-                <?php tpl_searchform() ?>
-            </div>
-
-            <?php if (page_findnearest('topnav')): ?>
-                <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <h1 class="menu-toggle genericon genericon-menu">
-                        <span class="screen-reader-text"><?php /* TODO: _e( 'Menu', 'writr' );*/ ?>Menu</span>
-                    </h1>
-                    <div class="screen-reader-text skip-link">
-                        <a href="#content"><?php echo $lang['skip_to_content'] ?></a>
-                    </div>
-                    <?php tpl_include_page('topnav', 1, 1) ?>
-                </nav><!-- #site-navigation -->
-            <?php endif; ?>
-        </header><!-- #masthead -->
-
-        <div class="sidebar-area" id="sidebar">
-            <a id="sidebar-toggle" href="#">
+        <div class="sidebar-area group" id="sidebar">
+            <a id="sidebar-toggle" href="#secondary" title="<?php echo $lang['sidebar'] ?>">
                 <span class="genericon genericon-close"></span>
                 <span class="screen-reader-text"><?php echo $lang['sidebar'] ?></span>
             </a>
+
+            <!-- ********** HEADER ********** -->
+            <header id="masthead" class="site-header" role="banner">
+                <?php
+                    $logoSize = array();
+                    $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
+                ?>
+
+                <a class="site-logo"  href="<?php echo wl(); ?>" title="<?php echo $conf['title']; ?>" rel="home" accesskey="h" title="[H]">
+                    <img src="<?php echo $logo; ?>" <?php echo $logoSize[3]; ?> alt="" class="no-grav header-image" />
+                </a>
+
+                <div class="site-branding">
+                    <h1 class="site-title"><a href="<?php echo wl(); ?>" rel="home" accesskey="h" title="[H]"><?php echo $conf['title']; ?></a></h1>
+                    <?php if ($conf['tagline']): ?>
+                        <h2 class="site-description"><?php echo $conf['tagline'] ?></h2>
+                    <?php endif ?>
+                </div>
+
+                <div class="search-form widget">
+                    <?php tpl_searchform() ?>
+                </div>
+
+                <?php if (page_findnearest('topnav')): ?>
+                    <nav id="site-navigation" class="main-navigation" role="navigation">
+                        <h1 class="menu-toggle genericon genericon-menu">
+                            <span class="screen-reader-text"><?php /* TODO: _e( 'Menu', 'writr' );*/ ?>Menu</span>
+                        </h1>
+                        <div class="screen-reader-text skip-link">
+                            <a href="#content"><?php echo $lang['skip_to_content'] ?></a>
+                        </div>
+                        <?php tpl_include_page('topnav', 1, 1) ?>
+                    </nav><!-- #site-navigation -->
+                <?php endif; ?>
+            </header><!-- #masthead -->
 
             <div id="secondary" class="widget-area" role="complementary">
                 <div class="widget">
@@ -116,9 +116,16 @@ $showSidebar = page_findnearest($conf['sidebar']);
                         }
                     ?>
                 </div>
+
+                <footer id="colophon" class="site-footer" role="contentinfo">
+                    <div class="site-info">
+                        <p><?php tpl_pageinfo() ?></p>
+                        <?php tpl_license('button') ?>
+                        <?php tpl_includeFile('footer.html') ?>
+                    </div><!-- .site-info -->
+                </footer><!-- #colophon -->
+
             </div>
-
-
         </div>
 
         <div id="content" class="site-content">
@@ -147,13 +154,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
             </div><!-- #primary -->
         </div><!-- #content -->
 
-        <footer id="colophon" class="site-footer" role="contentinfo">
-            <div class="site-info">
-                <p><?php tpl_pageinfo() ?></p>
-                <?php tpl_license('button') ?>
-                <?php tpl_includeFile('footer.html') ?>
-            </div><!-- .site-info -->
-        </footer><!-- #colophon -->
     </div><!-- #page -->
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>

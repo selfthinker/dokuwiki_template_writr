@@ -1,6 +1,18 @@
 /* =Responsive
 ----------------------------------------------- */
 
+@media only screen and (max-width: 1219px) {
+    #page {
+        width: 940px;
+    }
+    #page:before {
+        width: 540px;
+    }
+    .content-area {
+        width: 540px;
+    }
+}
+
 /* 960px > x */
 @media only screen and (max-width: 959px) {
 
@@ -16,7 +28,7 @@
     }
     .sidebar-closed #page:before {
         left: 140px;
-        width: @ini_content_width;
+        width: 540px;
     }
     #sidebar-toggle {
         display: block;
@@ -31,20 +43,54 @@
         width: 100%;
         height: 200%;
         background: rgba(0, 0, 0, 0.5);
+    }
+    .sidebar-area {
+        float: none;
+        width: 100%;
+        padding: 0;
 
+        .search-form,
+        .widget-area {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        .search-form {
+            border-bottom-width: 0;
+            padding-bottom: 0;
+        }
+    }
+    .widget-area {
+        background-color: @ini_theme_color;
+        position: relative;
+        float: left;
+        width: 300px;
+        padding: 0 40px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing:    border-box;
+        box-sizing:         border-box;
+    }
+    .no-js .widget-area {
+        float: right;
+        width: 540px;
     }
     .site-header {
         float: right;
         padding-top: 40px;
         margin-top: -40px;
-        width: @ini_content_width;
+        width: 540px;
     }
-    .widget-area,
-    .site-footer {
+
+    .js .widget-area {
+        position: absolute;
+    }
+    .js .sidebar-closed .widget-area {
         display: none;
+        position: static;
     }
-    .block {
-        display: block;
+    .no-js .widget-area {
+        clear: both;
+        padding-top: 20px;
     }
 
     /* Header */
@@ -53,8 +99,8 @@
     }
 
     /* Menu */
-    .menu-toggle,
-    .main-navigation.toggled .nav-menu {
+    .js .menu-toggle,
+    .js .main-navigation.toggled .nav-menu {
         display: block;
     }
     .menu-toggle {
@@ -71,7 +117,7 @@
     .main-navigation {
         padding: 0;
         margin: 0;
-        width: @ini_content_width;
+        width: 100%;
     }
     .main-navigation:after {
         display: none;
@@ -79,7 +125,10 @@
     .main-navigation.toggled {
         border-bottom: 5px solid @ini_text_alt;
     }
-    .main-navigation ul {
+    .no-js .main-navigation .skip-link {
+        position: static !important;
+    }
+    .js .main-navigation ul {
         display: none;
     }
     .main-navigation a:hover,
@@ -87,18 +136,21 @@
     .main-navigation li.current-menu-item > a {
         background: none !important;
     }
-    .main-navigation ul li:hover ul {
+    .js .main-navigation ul li:hover ul {
         display: none;
     }
     .main-navigation ul ul {
-        display: none;
+        display: block;
         opacity: 1;
         z-index: 1;
         float: none;
         position: relative;
         top: auto;
         left: auto;
-        width: @ini_content_width;
+        width: 100%;
+    }
+    .js .main-navigation ul ul {
+        display: none;
     }
     .main-navigation ul ul a {
         padding-left: 60px;
@@ -106,11 +158,11 @@
     .main-navigation ul ul ul a {
         padding-left: 80px;
     }
-    .main-navigation .dropdown > a {
+    .main-navigation .dropdown > div > a {
         position: relative;
         padding-right: 84px;
     }
-    .main-navigation .dropdown > a:after {
+    .main-navigation .dropdown > div > a:after {
         display: none;
     }
     .main-navigation ul li:hover > ul {
@@ -120,13 +172,13 @@
         -o-animation:      none;
         animation:         none;
     }
-    .main-navigation .dropdown-menu {
+    .main-navigation .dropdown > ul {
         padding: 2.5px 0;
         margin: 2.5px 0;
         border-top: 5px solid @ini_text_alt;
         border-bottom: 5px solid @ini_text_alt;
     }
-    .main-navigation li:last-child .dropdown-menu {
+    .main-navigation li.dropdown:last-child > ul {
         padding-bottom: 0;
         margin-bottom: 0;
         border-bottom: 0;
@@ -156,6 +208,9 @@
         border-bottom: 5px solid @ini_background;
     }
 
+    .main-navigation .node {
+        .main-navigation .dropdown;
+    }
 }
 
 /* 768px > x */
@@ -182,6 +237,15 @@
     .sidebar-closed #page {
         width: 100%;
     }
+
+    .sidebar-area {
+        background-color: @ini_theme_color;
+    }
+    .no-js .widget-area,
+    .no-js .site-footer {
+        width: auto;
+    }
+
     .sidebar-closed .content-area {
         width: 100%;
         height: auto;
