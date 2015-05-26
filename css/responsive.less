@@ -132,8 +132,7 @@
         display: none;
     }
     .main-navigation a:hover,
-    .main-navigation li.current_page_item > a,
-    .main-navigation li.current-menu-item > a {
+    .main-navigation li .curid > a {
         background: none !important;
     }
     .js .main-navigation ul li:hover ul {
@@ -158,11 +157,11 @@
     .main-navigation ul ul ul a {
         padding-left: 80px;
     }
-    .main-navigation .dropdown > div > a {
+    .main-navigation .node > div > a {
         position: relative;
         padding-right: 84px;
     }
-    .main-navigation .dropdown > div > a:after {
+    .main-navigation .node > div > a:after {
         display: none;
     }
     .main-navigation ul li:hover > ul {
@@ -172,13 +171,13 @@
         -o-animation:      none;
         animation:         none;
     }
-    .main-navigation .dropdown > ul {
+    .main-navigation .node > ul {
         padding: 2.5px 0;
         margin: 2.5px 0;
         border-top: 5px solid @ini_text_alt;
         border-bottom: 5px solid @ini_text_alt;
     }
-    .main-navigation li.dropdown:last-child > ul {
+    .main-navigation li.node:last-child > ul {
         padding-bottom: 0;
         margin-bottom: 0;
         border-bottom: 0;
@@ -208,8 +207,25 @@
         border-bottom: 5px solid @ini_background;
     }
 
-    .main-navigation .node {
-        .main-navigation .dropdown;
+    .content-area {
+        padding-top: 20px;
+    }
+
+    div.breadcrumbs {
+        display: none;
+    }
+
+    #dw__toc {
+        float: none;
+        width: 100%;
+        margin: -20px -40px 20px;
+        padding: 0 40px;
+
+        h3,
+        & > div {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 
@@ -249,7 +265,7 @@
     .sidebar-closed .content-area {
         width: 100%;
         height: auto;
-        padding: 0 40px;
+        padding-left: 40px;
         -webkit-box-sizing: border-box;
         -moz-box-sizing:    border-box;
         box-sizing:         border-box;
@@ -267,24 +283,4 @@
     .main-navigation ul ul {
         width: 100%;
     }
-
-    /* Content */
-    .entry-title:after {
-        display: none;
-    }
-    .entry-format-badge {
-        display: none;
-    }
-
-    /* Comments */
-    .comment-author .avatar,
-    .comment-author:after {
-        display: none;
-    }
-
-    /* Media */
-    .jetpack-video-wrapper .video-player {
-        max-width: 100%;
-    }
-
 }

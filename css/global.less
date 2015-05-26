@@ -120,7 +120,7 @@ var {
 }
 abbr,
 acronym {
-    border-bottom: 1px dotted @ini_text;
+    border-bottom: 1px dotted;
     cursor: help;
 }
 mark,
@@ -176,6 +176,16 @@ img {
     max-width: 100%; /* Adhere to container width. */
 }
 
+/* Video */
+embed,
+iframe,
+object,
+video {
+    display: block;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
 /* Forms */
 button,
 input,
@@ -212,13 +222,6 @@ input[type="submit"] {
     -moz-box-sizing:    border-box;
     box-sizing:         border-box;
 }
-.widget-area button,
-.widget-area html input[type="button"],
-.widget-area input[type="reset"],
-.widget-area input[type="submit"] {
-    background: @ini_background;
-    color: @ini_theme_color;
-}
 button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -232,20 +235,6 @@ html input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
     background: @ini_theme_color_alt;
-}
-.widget-area button:hover,
-.widget-area html input[type="button"]:hover,
-.widget-area input[type="reset"]:hover,
-.widget-area input[type="submit"]:hover,
-.widget-area button:focus,
-.widget-area html input[type="button"]:focus,
-.widget-area input[type="reset"]:focus,
-.widget-area input[type="submit"]:focus,
-.widget-area button:active,
-.widget-area html input[type="button"]:active,
-.widget-area input[type="reset"]:active,
-.widget-area input[type="submit"]:active {
-    background: @ini_background_alt;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -285,15 +274,6 @@ textarea {
     box-sizing:         border-box;
     -webkit-appearance: none;
 }
-.widget-area input[type="text"],
-.widget-area input[type="url"],
-.widget-area input[type="email"],
-.widget-area input[type="password"],
-.widget-area input[type="search"],
-.widget-area textarea {
-    color: @ini_background;
-    border-color: @ini_theme_color_alt;
-}
 input[type="text"]:focus,
 input[type="url"]:focus,
 input[type="email"]:focus,
@@ -302,14 +282,6 @@ input[type="search"]:focus,
 textarea:focus {
     outline: none;
     border-color: @ini_background_neu;
-}
-.widget-area input[type="text"]:focus,
-.widget-area input[type="url"]:focus,
-.widget-area input[type="email"]:focus,
-.widget-area input[type="password"]:focus,
-.widget-area input[type="search"]:focus,
-.widget-area textarea:focus {
-    border-color: @ini_background;
 }
 textarea {
     overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
@@ -328,17 +300,20 @@ textarea {
 :-ms-input-placeholder {
    color: @ini_text;
 }
-.widget-area ::-webkit-input-placeholder {
-   color: @ini_background;
-}
-.widget-area :-moz-placeholder {
-   color: @ini_background;
-}
-.widget-area ::-moz-placeholder {
-   color: @ini_background;
-}
-.widget-area :-ms-input-placeholder {
-   color: @ini_background;
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+    -webkit-border-radius: 20px;
+    -moz-border-radius:    20px;
+    border-radius:         20px;
 }
 
 /* Links */
@@ -351,56 +326,39 @@ a:active {
     color: @ini_theme_color_alt;
 }
 
+/* Transition */
+a:not(#sidebar-toggle),
+input,
+.site-title a,
+.site-info a,
+.main-navigation a {
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition:    all 0.25s ease-in-out;
+    -ms-transition:     all 0.25s ease-in-out;
+    -o-transition:      all 0.25s ease-in-out;
+    transition:         all 0.25s ease-in-out;
+}
+
 /* Alignment */
-.alignleft {
+.medialeft {
     display: inline;
     float: left;
     margin: 0 20px 20px 0;
 }
-.alignright {
+.mediaright {
     display: inline;
     float: right;
     margin: 0 0 20px 20px;
 }
-.aligncenter {
+.mediacenter {
     clear: both;
     display: block;
     margin: 0 auto 20px auto;
 }
 
-/* Text meant only for screen readers */
-.screen-reader-text {
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
-}
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    clip: auto !important;
-    color: #21759b;
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000; /* Above WP toolbar */
-}
-
 /* Clearing */
 .clear:before,
 .clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
 .site-header:before,
 .site-header:after,
 .site-content:before,
@@ -414,12 +372,9 @@ a:active {
 }
 
 .clear:after,
-.entry-content:after,
-.comment-content:after,
 .site-header:after,
 .site-content:after,
 .site-footer:after,
 .widget:after {
     clear: both;
 }
-

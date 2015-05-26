@@ -3,5 +3,5 @@ author   Anika Henke
 email    anika@selfthinker.org
 date     2014-05-19
 name     Writr Template
-desc     Bold and modern
+desc     Bold, minimalist and modern
 url      https://www.dokuwiki.org/template:writr

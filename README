@@ -1,2 +1,17 @@
-See template.info.txt for main info
-See COPYING for license info
+Writr Template [https://www.dokuwiki.org/template:writr]
+for DokuWiki [https://www.dokuwiki.org]
+by Anika Henke <anika@selfthinker.org>
+
+based on Writr Theme (version 1.2.3) for WordPress [https://wordpress.com/themes/writr/]
+by Automattic [http://automattic.com/]
+
+which is based on Underscores [http://underscores.me/]
+by Automattic
+
+Resetting and rebuilding styles have been helped along thanks to the work of
+Eric Meyer [http://meyerweb.com/eric/tools/css/reset/index.html]
+along with Nicolas Gallagher and Jonathan Neal [http://necolas.github.com/normalize.css/]
+and Blueprint [http://www.blueprintcss.org/]
+
+Version: see template.info.txt
+License: GPL2, see COPYING

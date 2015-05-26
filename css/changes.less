@@ -21,35 +21,6 @@ div.breadcrumbs {
     display: block;
 }
 
-/* TODO: .main-navigation .dropdown; */
-
-.main-navigation .node > div > a {
-    padding-right: 65px;
-}
-.main-navigation .node > div > a:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 40px;
-    margin-top: -5px;
-    border-left: 5px solid @ini_background;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-}
-
-.main-navigation li .curid > a {
-    background: @ini_text_alt !important;
-}
-
-
-/* TODO: doesn't work: */
-.medialeft { .alignleft; }
-.mediaright { .alignright; }
-.mediacenter { .aligncenter; }
-
-.a11y { .screen-reader-text; }
-
 h1, h2, h3, h4, h5, h6 {
     clear: left;
 }
@@ -79,6 +50,15 @@ dl.file dd {
     margin-left: 0;
 }
 
+.secedit input.button {
+    padding: 5px 10px;
+}
+.dokuwiki div.section_highlight {
+    margin: 0 -40px;
+    padding: 0 20px;
+    border-width: 0 20px;
+}
+
 .JSpopup {
     border: 2px solid @ini_background_neu;
     border-radius: 20px;
@@ -91,6 +71,14 @@ dl.file dd {
     left: auto;
     right: -13.5em;
     top: -10px;
+}
+
+.page-footer {
+    font-size: 14px;
+    padding: 20px 40px;
+    margin: 40px -40px 0;
+    width: 100%;
+    background-color: @ini_background_alt;
 }
 
 .dokuwiki fieldset {

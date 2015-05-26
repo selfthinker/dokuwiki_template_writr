@@ -89,157 +89,16 @@ body:before {
 	left: auto;
 	right: 100%;
 }
-.main-navigation .dropdown > a {
+.main-navigation .node > div > a {
 	padding-right: 40px;
 	padding-left: 65px;
 }
-.main-navigation .dropdown > a:after {
+.main-navigation .node > div > a:after {
 	right: auto;
 	left: 40px;
 	border-left: none;
 	border-right: 5px solid @ini_background;
 }
-
-
-/* =Content
------------------------------------------------ */
-
-/* Entry title */
-.entry-title {
-	margin-left: 0;
-	margin-right: -40px;
-}
-.entry-title:after {
-	left: auto;
-	right: -5px;
-	border-right: none;
-	border-left: 5px solid @ini_background_alt;
-}
-
-/* Page title */
-.page-title {
-	margin-left: 0;
-	margin-right: -40px;
-}
-
-/* Entry thumbnail */
-.entry-thumbnail {
-	margin-left: 0;
-	margin-right: -40px;
-}
-
-/* Entry meta */
-.entry-meta li {
-	padding-left: 0;
-	padding-right: 22px;
-}
-.entry-meta .genericon {
-	left: auto;
-	right: 0;
-}
-
-/* Entry format */
-.entry-format-badge {
-	left: auto;
-	right: -120px;
-}
-
-
-/* =Navigation
------------------------------------------------ */
-
-#content [class*="navigation"] {
-	margin-left: 0;
-	margin-right: -40px;
-}
-[class*="navigation"] .nav-previous {
-	float: right;
-	text-align: right;
-}
-[class*="navigation"] .nav-next {
-	float: left;
-	text-align: left;
-}
-
-/* Genericon */
-[class*="navigation"] .nav-previous a {
-	padding-left: 0;
-	padding-right: 22px;
-}
-[class*="navigation"] .nav-previous .genericon {
-	left: auto;
-	right: 0;
-}
-[class*="navigation"] .nav-next a {
-	padding-right: 0;
-	padding-left: 22px;
-}
-[class*="navigation"] .nav-next .genericon {
-	right: auto;
-	left: 0;
-}
-
-
-/* =Comments
------------------------------------------------ */
-
-/* Comment list */
-.comment-list .children {
-	padding-left: 0;
-	padding-right: 40px;
-}
-.comment-list .children .comment:before {
-	left: auto;
-	right: 0;
-}
-.reply .genericon-reply,
-.comment-list .children .comment:before {
-	-webkit-transform: scaleX(-1);
-	-moz-transform:    scaleX(-1);
-	-o-transform:      scaleX(-1);
-	transform:         scaleX(-1);
-	-ms-filter: "FlipH";
-	filter: FlipH;
-}
-.comment-list .comment {
-	margin-left: 0;
-	margin-right: -40px;
-}
-.comment-author .avatar {
-	left: auto;
-	right: -80px;
-}
-.comment-author:after {
-	left: auto;
-	right: -5px;
-	border-right: none;
-	border-left: 5px solid @ini_background;
-}
-
-/* Comment metadata */
-.comment-metadata li {
-	padding-left: 0;
-	padding-right: 22px;
-}
-.comment-metadata .genericon {
-	left: auto;
-	right: 0;
-}
-
-/* By post author */
-.bypostauthor > .comment-body {
-	margin-left: 0;
-	margin-right: -40px;
-}
-.comment-list .children > .bypostauthor {
-	padding-left: 0;
-	padding-right: 40px;
-}
-.bypostauthor > .comment-body .comment-author:after {
-	border-right: none;
-	border-left-color: @ini_background_alt;
-}
-
 
 /* =Search form
 ----------------------------------------------- */
@@ -296,11 +155,11 @@ body:before {
 		padding-left: 40px;
 		padding-right: 80px;
 	}
-	.main-navigation .dropdown > a {
+	.main-navigation .node > div > a {
 		padding-right: 40px;
 		padding-left: 84px;
 	}
-	.main-navigation ul ul .dropdown > a {
+	.main-navigation ul ul .node > div > a {
 		padding-right: 60px;
 	}
 	.dropdown-icon {

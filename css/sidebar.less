@@ -1,0 +1,141 @@
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+    margin: 0 0 20px;
+    border-bottom: 15px double @ini_theme_color_alt;
+    font-size: 14px;
+}
+.content-area .widget {
+    border-bottom-color: @ini_background_neu;
+    &:last-of-type {
+        border-bottom: none;
+    }
+    ul a {
+        color: @ini_text;
+    }
+    ul a:hover {
+        color: @ini_theme_color;
+    }
+}
+.widget-area .tools h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.widget table {
+    background: none;
+}
+.widget th,
+.widget tfoot tr {
+    background: @ini_theme_color_alt;
+}
+.widget th,
+.widget td {
+    padding: 5px;
+    border-bottom-color: @ini_theme_color_alt;
+}
+
+/* List */
+.widget_links {
+    ul {
+        list-style: none;
+        text-transform: uppercase;
+    }
+    li {
+        padding: 5px 0;
+    }
+    li:first-child {
+        padding-top: 0;
+    }
+    li:last-child {
+        padding-bottom: 0;
+    }
+    ul a {
+        color: @ini_background;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    ul a:hover {
+        color: @ini_theme_color_alt;
+    }
+}
+
+/* Select */
+.widget select {
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+/* Forms */
+.widget-area,
+.search-form {
+    button,
+    html input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        background: @ini_background;
+        color: @ini_theme_color;
+    }
+    button:hover,
+    html input[type="button"]:hover,
+    input[type="reset"]:hover,
+    input[type="submit"]:hover,
+    button:focus,
+    html input[type="button"]:focus,
+    input[type="reset"]:focus,
+    input[type="submit"]:focus,
+    button:active,
+    html input[type="button"]:active,
+    input[type="reset"]:active,
+    input[type="submit"]:active {
+        background: @ini_background_alt;
+    }
+    input[type="text"],
+    input[type="url"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    textarea {
+        color: @ini_background;
+        border-color: @ini_theme_color_alt;
+    }
+    input[type="text"]:focus,
+    input[type="url"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="search"]:focus,
+    textarea:focus {
+        border-color: @ini_background;
+    }
+    ::-webkit-input-placeholder {
+       color: @ini_background;
+    }
+    :-moz-placeholder {
+       color: @ini_background;
+    }
+    ::-moz-placeholder {
+       color: @ini_background;
+    }
+    :-ms-input-placeholder {
+       color: @ini_background;
+    }
+}
+
+/* =Search form
+----------------------------------------------- */
+
+.search-form {
+    position: relative;
+    padding-bottom: 20px;
+}
+.search-form input[type="submit"] {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    font-family: Genericons;
+    line-height: 1;
+}

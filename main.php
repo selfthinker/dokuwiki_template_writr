@@ -32,7 +32,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
         <div class="sidebar-area group" id="sidebar">
             <a id="sidebar-toggle" href="#secondary" title="<?php echo $lang['sidebar'] ?>">
                 <span class="genericon genericon-close"></span>
-                <span class="screen-reader-text"><?php echo $lang['sidebar'] ?></span>
+                <span class="a11y"><?php echo $lang['sidebar'] ?></span>
             </a>
 
             <!-- ********** HEADER ********** -->
@@ -60,9 +60,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <?php if (page_findnearest('topnav')): ?>
                     <nav id="site-navigation" class="main-navigation" role="navigation">
                         <h1 class="menu-toggle genericon genericon-menu">
-                            <span class="screen-reader-text"><?php /* TODO: _e( 'Menu', 'writr' );*/ ?>Menu</span>
+                            <span class="a11y"><?php /* TODO: _e( 'Menu', 'writr' );*/ ?>Menu</span>
                         </h1>
-                        <div class="screen-reader-text skip-link">
+                        <div class="a11y skip-link">
                             <a href="#content"><?php echo $lang['skip_to_content'] ?></a>
                         </div>
                         <?php tpl_include_page('topnav', 1, 1) ?>
@@ -131,7 +131,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
                 <footer id="colophon" class="site-footer" role="contentinfo">
                     <div class="site-info">
-                        <p><?php tpl_pageinfo() ?></p>
                         <?php tpl_license('button') ?>
                         <?php tpl_includeFile('footer.html') ?>
                     </div><!-- .site-info -->
@@ -142,15 +141,16 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
-                <main id="main" class="site-main" role="main">
 
-                    <!-- BREADCRUMBS -->
-                    <?php if($conf['breadcrumbs']){ ?>
-                        <div class="breadcrumbs"><?php tpl_breadcrumbs() ?></div>
-                    <?php } ?>
-                    <?php if($conf['youarehere']){ ?>
-                        <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
-                    <?php } ?>
+                <!-- BREADCRUMBS -->
+                <?php if($conf['breadcrumbs']){ ?>
+                    <div class="breadcrumbs"><?php tpl_breadcrumbs() ?></div>
+                <?php } ?>
+                <?php if($conf['youarehere']){ ?>
+                    <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
+                <?php } ?>
+
+                <main id="main" class="site-main" role="main">
 
                     <?php tpl_flush() ?>
                     <?php tpl_includeFile('pageheader.html') ?>
@@ -163,9 +163,10 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php tpl_flush() ?>
                     <?php tpl_includeFile('pagefooter.html') ?>
                 </main><!-- #main -->
+
+                <p class="page-footer"><?php tpl_pageinfo() ?></p>
             </div><!-- #primary -->
         </div><!-- #content -->
-
     </div><!-- #page -->
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>

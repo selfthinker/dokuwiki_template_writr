@@ -52,10 +52,10 @@
 .main-navigation ul ul li:last-child {
     border-bottom: none;
 }
-.main-navigation .dropdown > a {
+.main-navigation .node > div > a {
     padding-right: 65px;
 }
-.main-navigation .dropdown > a:after {
+.main-navigation .node > div > a:after {
     content: '';
     display: block;
     position: absolute;
@@ -75,8 +75,7 @@
     -o-animation:      menuFadeIn 0.25s;
     animation:         menuFadeIn 0.25s;
 }
-.main-navigation li.current_page_item > a,
-.main-navigation li.current-menu-item > a {
+.main-navigation li .curid > a {
     background: @ini_text_alt !important;
 }
 
@@ -89,4 +88,88 @@
 .dropdown-icon {
     display: none;
     background: @ini_theme_color_alt;
+}
+
+/* =Transition
+----------------------------------------------- */
+
+@-webkit-keyframes menuFadeIn {
+
+    0% {
+        display:none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+
+}
+@-moz-keyframes menuFadeIn {
+
+    0% {
+        display:none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+
+}
+@-ms-keyframes menuFadeIn {
+
+    0% {
+        display:none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+
+}
+@-o-keyframes menuFadeIn {
+
+    0% {
+        display:none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+
+}
+@keyframes menuFadeIn {
+
+    0% {
+        display:none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+
 }
