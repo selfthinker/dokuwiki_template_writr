@@ -78,6 +78,13 @@ body:before {
 	float: left;
 }
 
+div.breadcrumbs {
+    margin-left: 0;
+    margin-right: -40px;
+}
+#dw__toc {
+    margin: -20px -40px 20px;
+}
 
 /* =Menu
 ----------------------------------------------- */
@@ -88,6 +95,7 @@ body:before {
 .main-navigation ul ul {
 	left: auto;
 	right: 100%;
+    margin-right: 0;
 }
 .main-navigation .node > div > a {
 	padding-right: 40px;
@@ -98,6 +106,14 @@ body:before {
 	left: 40px;
 	border-left: none;
 	border-right: 5px solid @ini_background;
+}
+
+/* =Tools
+----------------------------------------------- */
+
+.page-tools {
+    right: 320px;
+    left: auto;
 }
 
 /* =Search form
@@ -167,15 +183,5 @@ body:before {
 		left: 5px;
 	}
 } /* /rtl */
-
-}
-
-/* 768px > x */
-@media only screen and (max-width: 767px) {
-
-	/* Theme */
-	[dir=rtl] .content-area {
-		padding-right: 0;
-	}
 
 }
