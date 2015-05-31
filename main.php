@@ -26,17 +26,17 @@ $showSidebar = page_findnearest($conf['sidebar']);
 </head>
 
 <body id="dokuwiki__top" class="sidebar-closed <?php echo tpl_classes(); ?>">
-    <div id="page" class="hfeed <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
+    <div id="writr__page" class="hfeed <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
         <?php tpl_includeFile('header.html') ?>
 
-        <div class="sidebar-area group" id="sidebar">
-            <a id="sidebar-toggle" href="#secondary" title="<?php echo $lang['sidebar'] ?>">
+        <div class="sidebar-area group" id="writr__sidebar">
+            <a id="writr__sidebar-toggle" href="#writr__secondary" title="<?php echo $lang['sidebar'] ?>">
                 <span class="genericon genericon-close"></span>
                 <span class="a11y"><?php echo $lang['sidebar'] ?></span>
             </a>
 
             <!-- ********** HEADER ********** -->
-            <header id="masthead" class="site-header" role="banner">
+            <header id="writr__masthead" class="site-header" role="banner">
                 <?php
                     $logoSize = array();
                     $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
@@ -58,19 +58,19 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 </div>
 
                 <?php if (page_findnearest('topnav')): ?>
-                    <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <nav id="writr__site-navigation" class="main-navigation" role="navigation">
                         <h1 class="menu-toggle genericon genericon-menu">
                             <span class="a11y"><?php /* TODO: _e( 'Menu', 'writr' );*/ ?>Menu</span>
                         </h1>
                         <div class="a11y skip-link">
-                            <a href="#content"><?php echo $lang['skip_to_content'] ?></a>
+                            <a href="#writr__content"><?php echo $lang['skip_to_content'] ?></a>
                         </div>
                         <?php tpl_include_page('topnav', 1, 1) ?>
-                    </nav><!-- #site-navigation -->
+                    </nav><!-- #writr__site-navigation -->
                 <?php endif; ?>
-            </header><!-- #masthead -->
+            </header><!-- #writr__masthead -->
 
-            <div id="secondary" class="widget-area" role="complementary">
+            <div id="writr__secondary" class="widget-area" role="complementary">
                 <div class="widget">
                     <?php tpl_includeFile('sidebarheader.html') ?>
                     <?php tpl_include_page($conf['sidebar'], 1, 1) ?>
@@ -129,18 +129,18 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php endif ?>
                 </div>
 
-                <footer id="colophon" class="site-footer" role="contentinfo">
+                <footer id="writr__colophon" class="site-footer" role="contentinfo">
                     <div class="site-info">
                         <?php tpl_license('button') ?>
                         <?php tpl_includeFile('footer.html') ?>
                     </div><!-- .site-info -->
-                </footer><!-- #colophon -->
+                </footer><!-- #writr__colophon -->
 
             </div>
         </div>
 
-        <div id="content" class="site-content">
-            <div id="primary" class="content-area">
+        <div id="writr__content" class="site-content">
+            <div id="writr__primary" class="content-area">
 
                 <!-- BREADCRUMBS -->
                 <?php if($conf['breadcrumbs']){ ?>
@@ -150,7 +150,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
                 <?php } ?>
 
-                <main id="main" class="site-main" role="main">
+                <main id="writr__main" class="site-main" role="main">
 
                     <?php tpl_flush() ?>
                     <?php tpl_includeFile('pageheader.html') ?>
@@ -162,12 +162,12 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
                     <?php tpl_flush() ?>
                     <?php tpl_includeFile('pagefooter.html') ?>
-                </main><!-- #main -->
+                </main><!-- #writr__main -->
 
                 <p class="page-footer"><?php tpl_pageinfo() ?></p>
-            </div><!-- #primary -->
-        </div><!-- #content -->
-    </div><!-- #page -->
+            </div><!-- #writr__primary -->
+        </div><!-- #writr__content -->
+    </div><!-- #writr__page -->
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
 </body>

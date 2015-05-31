@@ -32,12 +32,12 @@ body:before {
 }
 
 /* Page */
-#page {
+#writr__page {
     z-index: 1;
     margin: 0;
     width: (@ini_content_width + 400px);
 }
-#page:before {
+#writr__page:before {
     content: '';
     display: block;
     position: fixed;
@@ -59,7 +59,7 @@ body:before {
     -moz-box-sizing:    border-box;
     box-sizing:         border-box;
 }
-#sidebar-toggle {
+#writr__sidebar-toggle {
     display: none;
     position: absolute;
     z-index: 3;
@@ -73,22 +73,22 @@ body:before {
     text-align: center;
     text-decoration: none;
 }
-#sidebar-toggle:before,
-#sidebar-toggle:after {
+#writr__sidebar-toggle:before,
+#writr__sidebar-toggle:after {
     content: '';
     display: block;
     position: absolute;
     border-top: 40px solid @ini_theme_color_alt;
     border-right: 40px solid transparent;
 }
-#sidebar-toggle:before {
+#writr__sidebar-toggle:before {
     top: 40px;
 }
-#sidebar-toggle:after {
+#writr__sidebar-toggle:after {
     top: 0;
     left: 40px;
 }
-#sidebar-toggle .genericon {
+#writr__sidebar-toggle .genericon {
     margin-top: 5px;
     height: 40px;
     width: 40px;
@@ -100,7 +100,7 @@ body:before {
     -o-transform:      rotate(45deg);
     transform:         rotate(45deg);
 }
-#sidebar-toggle.open .genericon {
+#writr__sidebar-toggle.open .genericon {
     -webkit-transform: rotate(0deg);
     -moz-transform:    rotate(0deg);
     -ms-transform:     rotate(0deg);

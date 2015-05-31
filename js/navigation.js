@@ -6,7 +6,7 @@
 jQuery(function(){
 	var container, button, menu;
 
-	container = document.getElementById( 'site-navigation' );
+	container = document.getElementById( 'writr__site-navigation' );
 	if ( ! container )
 		return;
 
