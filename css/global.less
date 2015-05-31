@@ -27,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-    clear: both;
+    clear: left;
     margin: 0 0 20px;
     color: @ini_text_alt;
 }
@@ -78,11 +78,18 @@ li > ol {
     margin-bottom: 0;
     margin-left: 20px;
 }
+li .li {
+    display: inline;
+}
 dt {
     font-weight: bold;
 }
 dd {
     margin: 0 20px 20px;
+}
+dl.code dd,
+dl.file dd {
+    margin-left: 0;
 }
 b,
 strong {
@@ -101,6 +108,10 @@ blockquote {
     padding: 0 0 0 20px;
     border-left: 15px double @ini_background_alt;
 }
+blockquote > div.no {
+    display: block;
+    margin-bottom: 20px;
+}
 address {
     margin: 0 0 20px;
 }
@@ -111,6 +122,9 @@ pre {
     max-width: 100%;
     background: @ini_background_alt;
     font: 15px/1.6 "Courier 10 Pitch", Courier, monospace;
+    direction: ltr;
+    unicode-bidi: bidi-override;
+    text-align: left;
 }
 code,
 kbd,

@@ -198,3 +198,136 @@ body:before {
 .site-info a:hover {
     color: @ini_theme_color_alt;
 }
+.page-footer {
+    font-size: 14px;
+    padding: 20px 40px;
+    margin: 40px -40px 0;
+    width: 100%;
+    background-color: @ini_background_alt;
+}
+
+/* =DokuWiki-specific
+----------------------------------------------- */
+
+/* Breadcrumbs */
+div.breadcrumbs {
+    background-color: @ini_background_alt;
+    margin: 0 0 20px -40px;
+    padding: 15px 40px;
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+/* TOC */
+#dw__toc {
+    h3 {
+        font-size: 14px;
+        margin-bottom: 0;
+        padding: 10px;
+    }
+    > div {
+        padding: 0 10px 10px;
+    }
+    li {
+        font-size: 14px;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+/* Section editing */
+.secedit input.button {
+    padding: 5px 10px;
+}
+.dokuwiki div.section_highlight {
+    margin: 0 -40px;
+    padding: 0 20px;
+    border-width: 0 20px;
+}
+
+/* Modal windows */
+.dokuwiki form.search div.ajax_qsearch {
+    left: auto;
+    right: -13.5em;
+    top: -10px;
+}
+.JSpopup {
+    border: 2px solid @ini_background_neu;
+    border-radius: 20px;
+    color: @ini_text;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Fullscreen media manager */
+.mode_media {
+    padding: 0;
+
+    &,
+    &::before,
+    &::after {
+        background-color: @ini_background;
+    }
+
+    #writr__sidebar,
+    .breadcrumbs {
+        display: none;
+    }
+    #writr__page,
+    .content-area {
+        width: auto;
+    }
+    .content-area {
+        padding: 40px;
+    }
+}
+
+/* Popup media manager */
+.media-popup {
+    padding: 0;
+
+    &,
+    &::before,
+    &::after {
+        background-color: @ini_background;
+    }
+
+    #mediamgr__aside > div,
+    #mediamgr__content > div {
+        padding: 5px;
+    }
+
+    #media__tree {
+        li > ul {
+            margin-left: 0;
+        }
+        ul li li {
+            margin-left: 1em;
+        }
+    }
+}
+
+/* Image detail page */
+.detail-page {
+    padding: 0;
+    color: @ini_background;
+
+    #dokuwiki__detail {
+        padding: 40px;
+    }
+
+    h1,
+    h2 {
+        color: @ini_background_neu;
+    }
+
+    p.back {
+        float: right;
+    }
+}

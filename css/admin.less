@@ -1,0 +1,48 @@
+/* =Admin (Backend)
+----------------------------------------------- */
+
+.dokuwiki fieldset {
+    width: auto;
+}
+
+#config__manager {
+    fieldset {
+        margin: 0 0 20px;
+    }
+    fieldset td.value,
+    .selectiondefault {
+        width: auto;
+    }
+    .selectiondefault input {
+        margin: 0 3px;
+    }
+}
+
+div.toolbar button,
+#media__popup_content button {
+    background-color: @ini_background_neu;
+    padding: 5px 10px;
+}
+div.toolbar button:hover,
+div.toolbar button:focus,
+#media__popup_content button:hover,
+#media__popup_content button:focus {
+    background-color: @ini_background_alt;
+}
+#media__popup_content label {
+    display: block;
+}
+
+/* undo "clever" styling from fileuploader.js */
+.qq-upload-button {
+    cursor: inherit !important;
+    direction: inherit !important;
+}
+.qq-upload-button input {
+    font-family: inherit !important;
+    font-size: 1em !important;
+    margin: inherit !important;
+    opacity: 1 !important;
+    padding: inherit !important;
+    position: static !important;
+}
