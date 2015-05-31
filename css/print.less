@@ -1,31 +1,46 @@
-/**
- * This file provides the styles for printing.
- */
+/* =Print
+----------------------------------------------- */
 
 body {
     padding: 0;
+    background: #fff;
+    color: #000;
+    font-family: Montserrat, sans-serif;
 }
 body:after,
 body:before,
 page:before,
 #writr__sidebar-toggle,
 #writr__sidebar-toggle:before,
-#writr__sidebar-toggle:after {
-    display: none;
-}
-
-
-/**************** left from starter *******************/
-
-/* hide certain sections */
-audio,
-video,
+#writr__sidebar-toggle:after,
+.search-form,
+.main-navigation,
+.widget-area,
 .dokuwiki .breadcrumbs,
-#dw__toc {
+#dw__toc,
+.page-footer {
     display: none;
 }
 
-/* code blocks */
+.site-logo {
+    float: left;
+    margin-right: 20px;
+}
+.site-title {
+    margin: 0;
+    padding: 0;
+    a {
+        text-decoration: none;
+        color: @ini_theme_color;
+    }
+}
+
+div.footnotes {
+    clear: both;
+    border-top: 1pt solid #000;
+    margin-top: 10pt;
+}
+
 pre {
     font-family: monospace;
 }
@@ -34,14 +49,7 @@ dl.file dt {
     font-weight: bold;
 }
 
-/* images */
 img {
     border-width: 0;
     vertical-align: middle;
-}
-
-.dokuwiki div.footnotes {
-    clear: both;
-    border-top: 1pt solid #000;
-    margin-top: 10pt;
 }
