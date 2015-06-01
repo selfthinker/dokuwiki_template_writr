@@ -6,8 +6,8 @@ Theme Name: Writr
 [dir=rtl] {
 
 body {
-	direction: rtl;
-	unicode-bidi: embed;
+    direction: rtl;
+    unicode-bidi: embed;
 }
 
 
@@ -15,7 +15,7 @@ body {
 ----------------------------------------------- */
 
 caption, th, td {
-	text-align: right;
+    text-align: right;
 }
 
 
@@ -25,14 +25,14 @@ caption, th, td {
 /* Text elements */
 li > ul,
 li > ol {
-	margin-left: 0;
-	margin-right: 20px;
+    margin-left: 0;
+    margin-right: 20px;
 }
 blockquote {
-	padding-left: 0;
-	padding-right: 20px;
-	border-left: none;
-	border-right: 15px double @ini_background_alt;
+    padding-left: 0;
+    padding-right: 20px;
+    border-left: none;
+    border-right: 15px double @ini_background_alt;
 }
 
 
@@ -41,41 +41,41 @@ blockquote {
 
 /* Body */
 body:after {
-	left: auto;
-	right: 0;
+    left: auto;
+    right: 0;
 }
 body:before {
-	left: auto;
-	right: 300px;
+    left: auto;
+    right: 300px;
 }
 
 /* Page */
 #writr__page:before {
-	left: auto;
-	right: 400px;
+    left: auto;
+    right: 400px;
 }
 
 /* Sidebar */
 .sidebar-area {
-	float: right;
+    float: right;
 }
 #writr__sidebar-toggle {
-	left: auto;
-	right: 0;
+    left: auto;
+    right: 0;
 }
 #writr__sidebar-toggle:before,
 #writr__sidebar-toggle:after {
-	border-right: none;
-	border-left: 40px solid transparent;
+    border-right: none;
+    border-left: 40px solid transparent;
 }
 #writr__sidebar-toggle:after {
-	left: auto;
-	right: 40px;
+    left: auto;
+    right: 40px;
 }
 
 /* Primary */
 .content-area {
-	float: left;
+    float: left;
 }
 
 div.breadcrumbs {
@@ -90,22 +90,22 @@ div.breadcrumbs {
 ----------------------------------------------- */
 
 .main-navigation ul {
-	padding-right: 0;
+    padding-right: 0;
 }
 .main-navigation ul ul {
-	left: auto;
-	right: 100%;
+    left: auto;
+    right: 100%;
     margin-right: 0;
 }
 .main-navigation .node > div > a {
-	padding-right: 40px;
-	padding-left: 65px;
+    padding-right: 40px;
+    padding-left: 65px;
 }
 .main-navigation .node > div > a:after {
-	right: auto;
-	left: 40px;
-	border-left: none;
-	border-right: 5px solid @ini_background;
+    right: auto;
+    left: 40px;
+    border-left: none;
+    border-right: 5px solid @ini_background;
 }
 
 /* =Tools
@@ -120,12 +120,12 @@ div.breadcrumbs {
 ----------------------------------------------- */
 
 .search-form {
-	position: relative;
-	padding-bottom: 20px;
+    position: relative;
+    padding-bottom: 20px;
 }
 .search-form input[type="submit"] {
-	right: auto;
-	left: 5px;
+    right: auto;
+    left: 5px;
 }
 
 
@@ -141,47 +141,47 @@ div.breadcrumbs {
 
 [dir=rtl] {
 
-	/* Grid */
-	body.sidebar-closed:before {
-		left: auto;
-		right: 40px;
-	}
-	.sidebar-closed #writr__page:before {
-		left: auto;
-		right: 140px;
-	}
-	body:not(.sidebar-closed) .sidebar-area:after {
-		left: auto;
-		right: 300px;
+    /* Grid */
+    body.sidebar-closed:before {
+        left: auto;
+        right: 40px;
+    }
+    .sidebar-closed #writr__page:before {
+        left: auto;
+        right: 140px;
+    }
+    body:not(.sidebar-closed) .sidebar-area:after {
+        left: auto;
+        right: 300px;
 
-	}
-	.site-header {
-		float: left;
-	}
+    }
+    .site-header {
+        float: left;
+    }
 
-	/* Menu */
-	.main-navigation ul ul {
-		right: auto;
-	}
-	.main-navigation ul ul a {
-		padding-left: 40px;
-		padding-right: 60px;
-	}
-	.main-navigation ul ul ul a {
-		padding-left: 40px;
-		padding-right: 80px;
-	}
-	.main-navigation .node > div > a {
-		padding-right: 40px;
-		padding-left: 84px;
-	}
-	.main-navigation ul ul .node > div > a {
-		padding-right: 60px;
-	}
-	.dropdown-icon {
-		right: auto;
-		left: 5px;
-	}
+    /* Menu */
+    .main-navigation ul ul {
+        right: auto;
+    }
+    .main-navigation ul ul a {
+        padding-left: 40px;
+        padding-right: 60px;
+    }
+    .main-navigation ul ul ul a {
+        padding-left: 40px;
+        padding-right: 80px;
+    }
+    .main-navigation .node > div > a {
+        padding-right: 40px;
+        padding-left: 84px;
+    }
+    .main-navigation ul ul .node > div > a {
+        padding-right: 60px;
+    }
+    .dropdown-icon {
+        right: auto;
+        left: 5px;
+    }
 } /* /rtl */
 
 }
