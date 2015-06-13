@@ -52,7 +52,7 @@ header('X-UA-Compatible: IE=edge,chrome=1');
 
             <p class="back">
                 <?php tpl_action('mediaManager', 1) ?><br />
-                &larr; <?php tpl_action('img_backto', 1) ?>
+                <?php tpl_action('img_backto', 1, 0, 0, '<span class="genericon genericon-leftarrow"></span>') ?>
             </p>
 
         <?php endif; ?>

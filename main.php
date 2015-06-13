@@ -59,9 +59,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
                 <?php if (page_findnearest('topnav')): ?>
                     <nav id="writr__site-navigation" class="main-navigation" role="navigation">
-                        <h1 class="menu-toggle genericon genericon-menu">
-                            <span class="a11y"><?php /* TODO: _e( 'Menu', 'writr' );*/ ?>Menu</span>
-                        </h1>
+                        <h3 class="menu-toggle genericon genericon-menu" title="<?php echo tpl_getLang('menu') ?>">
+                            <span class="a11y"><?php echo tpl_getLang('menu') ?></span>
+                        </h3>
                         <div class="a11y skip-link">
                             <a href="#writr__content"><?php echo $lang['skip_to_content'] ?></a>
                         </div>
@@ -71,11 +71,13 @@ $showSidebar = page_findnearest($conf['sidebar']);
             </header><!-- #writr__masthead -->
 
             <div id="writr__secondary" class="widget-area" role="complementary">
-                <div class="widget">
-                    <?php tpl_includeFile('sidebarheader.html') ?>
-                    <?php tpl_include_page($conf['sidebar'], 1, 1) ?>
-                    <?php tpl_includeFile('sidebarfooter.html') ?>
-                </div>
+                <?php if ($conf['sidebar']): ?>
+                    <div class="widget">
+                        <?php tpl_includeFile('sidebarheader.html') ?>
+                        <?php tpl_include_page($conf['sidebar'], 1, 1) ?>
+                        <?php tpl_includeFile('sidebarfooter.html') ?>
+                    </div>
+                <?php endif ?>
 
                 <div class="tools widget_links widget">
                     <!-- SITE TOOLS -->

@@ -10,7 +10,7 @@ jQuery(function(){
     if ( ! container )
         return;
 
-    button = container.getElementsByTagName( 'h1' )[0];
+    button = container.getElementsByTagName( 'h3' )[0];
     if ( 'undefined' === typeof button )
         return;
 

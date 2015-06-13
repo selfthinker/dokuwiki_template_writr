@@ -30,5 +30,17 @@ $(function(){
     }
     $( window ).load( submenu );
 
+    /*
+     * Change search submit input to submit button to make it easier to style
+     */
+    function changeSearchInput() {
+        var $searchForm = $('.search-form > form > div');
+        var $searchButton = $('input[type="submit"]', $searchForm).detach();
+        var title = $searchButton.attr('title');
+        var value = $searchButton.val();
+        $searchForm.append('<button type="submit" title="'+title+'">'+value+'</button>');
+    }
+    changeSearchInput();
+
 });
 } )( jQuery );

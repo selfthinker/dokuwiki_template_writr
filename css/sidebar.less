@@ -132,13 +132,24 @@
 .search-form form {
     display: block;
 }
-.search-form input[type="submit"] {
+.search-form input[type="submit"],
+.search-form button[type="submit"] {
     position: absolute;
-    top: 5px;
+    top: -5px;
     right: 5px;
+    height: 30px;
     padding: 0;
+    line-height: 1;
+}
+.search-form button[type="submit"] {
+    width: 30px;
+    overflow: hidden;
+    line-height: 1.5;
+}
+.search-form button[type="submit"]::before {
     height: 30px;
     width: 30px;
     font-family: Genericons;
-    line-height: 1;
+    font-size: 22px;
+    content: '\f400';
 }
