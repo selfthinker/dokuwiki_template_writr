@@ -85,9 +85,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
                         <h3><?php echo $lang['site_tools'] ?></h3>
                         <ul>
                             <?php _tpl_toolsevent('sitetools', array(
-                                'recent'    => tpl_action('recent', 1, 'li', 1),
-                                'media'     => tpl_action('media', 1, 'li', 1),
-                                'index'     => tpl_action('index', 1, 'li', 1),
+                                'recent'    => tpl_action('recent', 1, 'li', 1, '<span></span> '),
+                                'media'     => tpl_action('media', 1, 'li', 1, '<span></span> '),
+                                'index'     => tpl_action('index', 1, 'li', 1, '<span></span> '),
                             )); ?>
                         </ul>
                     </div>
@@ -113,10 +113,10 @@ $showSidebar = page_findnearest($conf['sidebar']);
                             <h3><?php echo $lang['user_tools'] ?></h3>
                             <ul>
                                 <?php _tpl_toolsevent('usertools', array(
-                                    'admin'     => tpl_action('admin', 1, 'li', 1),
-                                    'profile'   => tpl_action('profile', 1, 'li', 1),
-                                    'register'  => tpl_action('register', 1, 'li', 1),
-                                    'login'     => tpl_action('login', 1, 'li', 1),
+                                    'admin'     => tpl_action('admin', 1, 'li', 1, '<span></span> '),
+                                    'profile'   => tpl_action('profile', 1, 'li', 1, '<span></span> '),
+                                    'register'  => tpl_action('register', 1, 'li', 1, '<span></span> '),
+                                    'login'     => tpl_action('login', 1, 'li', 1, '<span></span> '),
                                 )); ?>
                             </ul>
                         </div>
