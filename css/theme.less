@@ -290,7 +290,11 @@ body:not(.mode_show) div.breadcrumbs {
 .mode_media {
     .mock-layout;
 
-    #writr__sidebar,
+    #writr__sidebar-toggle,
+    #writr__masthead .site-branding,
+    #writr__masthead .search-form,
+    #writr__site-navigation,
+    #writr__secondary,
     .breadcrumbs,
     .page-footer {
         display: none;
@@ -301,6 +305,27 @@ body:not(.mode_show) div.breadcrumbs {
     }
     .content-area {
         padding: 0;
+    }
+
+    /* show only logo in sidebar */
+    #writr__sidebar {
+        float: none;
+        padding: 0;
+        width: auto;
+        position: static;
+        .site-header {
+            background-color: transparent;
+            position: absolute;
+            top: 15px;
+            left: 5px;
+        }
+        .site-logo {
+            display: inline-block;
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
     }
 }
 
