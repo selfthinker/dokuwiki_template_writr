@@ -18,7 +18,7 @@
 }
 
 .page-tools {
-    a span:first-child {
+    a span.icon {
         display: inline-block;
         width: 20px;
         height: 20px;
@@ -32,18 +32,18 @@
         vertical-align: top;
     }
 
-    a           span:first-child:before { content: '\f101'; }
+    a           span.icon:before { content: '\f101'; }
 
-    a.edit      span:first-child:before { content: '\f411'; }
-    a.create    span:first-child:before { content: '\f510'; }
-    a.show      span:first-child:before { content: '\f403'; }
-    a.source    span:first-child:before { content: '\f462'; }
-    a.draft     span:first-child:before { content: '\f416'; }
-    a.revs      span:first-child:before { content: '\f303'; }
-    a.backlink  span:first-child:before { content: '\f107'; }
-    a.top       span:first-child:before { content: '\f435'; }
-    a.revert    span:first-child:before { content: '\f467'; }
-    a.subscribe span:first-child:before { content: '\f410'; }
+    a.edit      span.icon:before { content: '\f411'; }
+    a.create    span.icon:before { content: '\f510'; }
+    a.show      span.icon:before { content: '\f403'; }
+    a.source    span.icon:before { content: '\f462'; }
+    a.draft     span.icon:before { content: '\f416'; }
+    a.revs      span.icon:before { content: '\f303'; }
+    a.backlink  span.icon:before { content: '\f107'; }
+    a.top       span.icon:before { content: '\f435'; }
+    a.revert    span.icon:before { content: '\f467'; }
+    a.subscribe span.icon:before { content: '\f410'; }
 }
 
 .site-tools,
@@ -84,15 +84,18 @@
     top: 40px;
     left: 320px;
 
-    a span:first-child {
+    a span {
+        width: 60px;
         display: block;
+        text-align: center;
+    }
+    a span.icon {
         width: 60px;
         height: 60px;
         background: @ini_text_neu;
         color: @ini_background;
         font-size: 30px;
         line-height: 2;
-        text-align: center;
 
         -webkit-border-radius: 50%;
         -moz-border-radius:    50%;
@@ -104,16 +107,16 @@
         transition:         all 0.25s ease-in-out;
     }
 
-    a:hover span:first-child {
+    a:hover span.icon {
         background: @ini_background;
         color: @ini_text_alt;
     }
 }
 
-.mode_revisions .page-tools a.revs span:first-child,
-.mode_backlink .page-tools a.backlink span:first-child,
-.mode_revert .page-tools a.revert span:first-child,
-.mode_subscribe .page-tools a.subscribe span:first-child {
+.mode_revisions .page-tools a.revs span.icon,
+.mode_backlink .page-tools a.backlink span.icon,
+.mode_revert .page-tools a.revert span.icon,
+.mode_subscribe .page-tools a.subscribe span.icon {
     background: @ini_background;
     color: @ini_text_alt;
     position: relative;
