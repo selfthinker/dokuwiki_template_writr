@@ -1,0 +1,3 @@
+If you'd like to change the logo, simply use the Media Manager to upload a ''logo.png'' into the ''wiki'' or the root namespace and it will automatically be used. You can also upload a ''favicon.ico'' there. If you use a closed wiki it is recommended to make the ''wiki'' (or root) namespace world readable in the ACL settings or your favicon will not be shown to logged-out users.
+
+To add a navigation to the sidebar, you can add a page called ''topnav'' and add a list of links to it. (No other content is supported.)
