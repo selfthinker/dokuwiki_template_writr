@@ -84,7 +84,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <div class="site-tools">
                         <h3><?php echo $lang['site_tools'] ?></h3>
                         <ul>
-                            <?php _tpl_toolsevent('sitetools', array(
+                            <?php tpl_toolsevent('sitetools', array(
                                 'recent'    => tpl_action('recent', 1, 'li', 1, '<span></span> '),
                                 'media'     => tpl_action('media', 1, 'li', 1, '<span></span> '),
                                 'index'     => tpl_action('index', 1, 'li', 1, '<span></span> '),
@@ -96,7 +96,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <div class="page-tools">
                         <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
                         <ul>
-                            <?php _tpl_toolsevent('pagetools', array(
+                            <?php tpl_toolsevent('pagetools', array(
                                 'edit'      => tpl_action('edit', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
                                 'revisions' => tpl_action('revisions', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
                                 'backlink'  => tpl_action('backlink', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
@@ -112,7 +112,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                         <div class="user-tools">
                             <h3><?php echo $lang['user_tools'] ?></h3>
                             <ul>
-                                <?php _tpl_toolsevent('usertools', array(
+                                <?php tpl_toolsevent('usertools', array(
                                     'admin'     => tpl_action('admin', 1, 'li', 1, '<span></span> '),
                                     'profile'   => tpl_action('profile', 1, 'li', 1, '<span></span> '),
                                     'register'  => tpl_action('register', 1, 'li', 1, '<span></span> '),
