@@ -60,6 +60,7 @@
 
     /*
      * Change search submit input to submit button to make it easier to style
+     * @deprecated since Detritus
      */
     function changeSearchInput() {
         var $searchForm = $('.search-form > form > div');
