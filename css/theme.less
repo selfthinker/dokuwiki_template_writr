@@ -228,7 +228,7 @@ body:not(.mode_show) div.breadcrumbs {
 
 /* TOC */
 #dw__toc {
-    width: 15em;
+    width: 240px;
 
     h3 {
         font-size: 14px;
@@ -238,15 +238,19 @@ body:not(.mode_show) div.breadcrumbs {
     > div {
         padding: 0 10px 10px;
     }
-    li {
+    ul li {
         font-size: 14px;
-    }
-    ul.toc li {
-        list-style: inside square none;
         line-height: inherit;
     }
-    ul.toc li.level1 {
-        list-style: outside none none;
+    ul ul {
+        padding-left: 20px;
+    }
+    ul ul ul {
+        padding-left: 15px;
+    }
+    li li {
+        list-style: square;
+        color: lighten(@ini_text, 40%);
     }
     a {
         text-decoration: none;
