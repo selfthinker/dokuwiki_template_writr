@@ -1,14 +1,15 @@
 /* =Discussion & Avatar Plugin
 ----------------------------------------------- */
 
-.vcard img.photo {
+.dokuwiki .vcard img.photo {
     border-radius: 50%;
 }
 
-div.comment_wrapper {
+.dokuwiki div.comment_wrapper {
     margin: 0 -40px;
     padding: 20px 40px;
     border-top: 5px solid @ini_text_alt;
+    background-color: @ini_background;
 
     h2 a {
         color: @ini_text_alt;
@@ -27,16 +28,29 @@ div.comment_wrapper {
             text-align: right;
         }
         input.button {
-            font-size: 75%;
+            font-size: 12px;
             padding: 5px 10px;
+        }
+
+        /* dead code for now due to bug in discussion plugin */
+        div.comment_head span.author {
+            background-position: -2px 3px;
+        }
+        div.comment_head abbr.published {
+            background-position: -1px 4px;
+        }
+        div.comment_body {
+            border-bottom-width: 0;
         }
     }
 
-    div.comment_form {
-        padding-top: 20px;
+    div.comment_form div.toolbar {
+        padding-top: 10px;
+    }
 
-        div.toolbar {
-            padding-top: 10px;
-        }
+    div.comment_preview {
+        padding: 0;
+        border-width: 0;
+        background: @ini_background_alt;
     }
 }
