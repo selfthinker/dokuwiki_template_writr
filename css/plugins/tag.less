@@ -1,0 +1,62 @@
+/* =Tag & Tagcloud Plugin
+----------------------------------------------- */
+
+.dokuwiki div.tags,
+.dokuwiki div.tagstop,
+.dokuwiki div.cloud {
+    margin-bottom: 15px;
+
+    a {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0 5px 5px 0;
+        background: @ini_theme_color;
+        color: @ini_background;
+        font-size: 12px;
+        text-decoration: none;
+    }
+    a:hover,
+    a:focus,
+    a:active {
+        background: @ini_theme_color_alt;
+        color: @ini_background;
+    }
+}
+
+.dokuwiki div.tags,
+.dokuwiki div.tagstop {
+    text-align: right;
+}
+
+.dokuwiki div.widget-area div.cloud {
+    a {
+        background: @ini_theme_color_alt;
+    }
+    a:hover,
+    a:focus,
+    a:active {
+        background: @ini_background;
+        color: @ini_theme_color;
+    }
+}
+
+/* repeating and being more specific because tagcloud styles are very specific */
+body.tpl_writr.dokuwiki div.cloud a {
+    color: @ini_background;
+}
+
+.dokuwiki div.tags {
+    border-top: 15px double @ini_background_alt;
+    padding-top: 20px;
+}
+
+.dokuwiki div.tagstop {
+    border-bottom: 15px double @ini_background_alt;
+    padding-bottom: 20px;
+}
+
+/* dead code for now due to bug in tag plugin */
+.dokuwiki div.tags span,
+.dokuwiki div.tagstop span {
+    background-position: -2px 6px;
+}
