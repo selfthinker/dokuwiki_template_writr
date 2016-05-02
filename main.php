@@ -152,7 +152,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <div class="breadcrumbs"><?php tpl_youarehere() ?></div>
                 <?php } ?>
 
-                <main id="writr__main" class="site-main" role="main">
+                <main id="writr__main" class="site-main group" role="main">
 
                     <?php tpl_flush() ?>
                     <?php tpl_includeFile('pageheader.html') ?>
