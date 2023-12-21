@@ -94,10 +94,24 @@
 
     a.export_pdf {
         span {
-            background: @ini_background;
+            width: 60px;
+            height: 60px;
+            background: @ini_text_neu;
+            color: @ini_background;
+            font-size: 30px;
+            line-height: 2;
+    
+            -webkit-border-radius: 50%;
+            -moz-border-radius:    50%;
+            border-radius:         50%;
+            -webkit-transition: all 0.25s ease-in-out;
+            -moz-transition:    all 0.25s ease-in-out;
+            -ms-transition:     all 0.25s ease-in-out;
+            -o-transition:      all 0.25s ease-in-out;
+            transition:         all 0.25s ease-in-out;
         }
         span::before {
-            content: '<span class="icon"></span>';
+            // content: '<span class="icon"></span>';
         }
     }
 
