@@ -109,7 +109,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                             )); ?>
                             <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
                             foreach($items as $item) {
-                                var_dump($item);
+                                var_dump($item->getType());
                                 echo '<li>'
                                     .'<a href="'.$item->getLink().'" class="action" title="'.$item->getTitle().'">'
                                     .'<span class="icon">'.inlineSVG($item->getSvg()).'</span>'
