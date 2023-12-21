@@ -10,16 +10,21 @@
     a.wikilink1 {
         color: #fff;
         font-size: 0;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+    }
+    a.wikilink1:hover {
+        background: #fff;
+        color: #303030;
     }
     a.wikilink1::before {
         content: "\f101";
         font-size: 30px;
         background: #303030;
         padding: 8px;
-    }
-    a.wikilink1::before:hover{
-        background: #fff;
-        color: #303030;
     }
     .plugin_bloglinks__prev {
         a.wikilink1::before {
