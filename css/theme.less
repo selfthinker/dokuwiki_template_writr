@@ -3,8 +3,8 @@
 
 /* Properties */
 :root {
-	--primary: #35627C; /* Default: #3498db | @ini_theme_color */
-	--secondary: #1D4563; /* Default: #2980b9 | @ini_theme_color_alt */
+	--primary: @ini_theme_color; /* Default: #3498db */
+	--secondary: @ini_theme_color_alt; /* Default: #2980b9 */
 }
 
 /* Body */
@@ -211,6 +211,10 @@ body:before {
     margin: 40px -40px 0;
     width: 100%;
     background-color: @ini_background_alt;
+
+    bdi:first-child {
+        display: none;
+    }
 }
 
 /* =DokuWiki-specific
@@ -273,6 +277,15 @@ body:not(.mode_show) div.breadcrumbs {
     margin: 0 -40px;
     padding: 0 20px;
     border-width: 0 20px;
+}
+.dokuwiki a[rel="tag"] {
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 0 5px 5px 0;
+	background: @ini_theme_color;
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
 }
 
 /* Modal windows */
