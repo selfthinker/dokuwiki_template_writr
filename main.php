@@ -103,7 +103,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                             foreach($items as $item) {
                                 echo '<li>'
                                     .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" title="'.$item->getTitle().'">'
-                                    .'<span class="icon">'.inlineSVG($item->getSvg()).'</span>'
+                                    .'<span class="icon"></span>'
                                     . '<span class="a11y">'.$item->getLabel().'</span>'
                                     . '</a></li>';
                             } ?>
