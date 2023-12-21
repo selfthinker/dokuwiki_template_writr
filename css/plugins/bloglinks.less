@@ -12,19 +12,23 @@
         font-size: 0;
     }
     a.wikilink1::before {
-        content: '\f101';
+        content: "\f101";
         font-size: 30px;
         background: #303030;
         padding: 8px;
     }
+    a.wikilink1::before:hover{
+        background: #fff;
+        color: #303030;
+    }
     .plugin_bloglinks__prev {
         a.wikilink1::before {
-            content: '\f430';
+            content: "\f430";
         }
     }
     .plugin_bloglinks__next {
         a.wikilink1::before {
-            content: '\f429';
+            content: "\f429";
         }
     }
 }
