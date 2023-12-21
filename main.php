@@ -105,7 +105,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
                                 'backlink'      => tpl_action('backlink', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
                                 'subscribe'     => tpl_action('subscribe', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
                                 'revert'        => tpl_action('revert', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'dw2pdf'    => tpl_action('export_pdf', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
                                 'top'           => tpl_action('top', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
                             )); ?>
                         </ul>
