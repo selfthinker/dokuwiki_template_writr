@@ -1,6 +1,12 @@
 /* =Theme
 ----------------------------------------------- */
 
+/* Properties */
+:root {
+	--primary: #35627C; /* Default: #3498db | @ini_theme_color */
+	--secondary: #1D4563; /* Default: #2980b9 | @ini_theme_color_alt */
+}
+
 /* Body */
 body {
     overflow-x: hidden;
@@ -125,7 +131,7 @@ body:before {
     position: relative;
     padding: 0;
     margin: 0 0 20px;
-    border-bottom: 15px double @ini_theme_color_alt;
+    border-bottom: 0px solid @ini_theme_color_alt;
     text-align: center;
 }
 .site-title {
@@ -152,6 +158,7 @@ body:before {
 
 /* Primary */
 .content-area {
+    text-align: left;
     float: right;
     width: @ini_content_width;
     height: auto;
