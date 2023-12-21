@@ -99,10 +99,19 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <div class="page-tools">
                         <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
                         <ul>
+                            <?php tpl_toolsevent('pagetools', array(
+                                // 'edit'          => tpl_action('edit', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
+                                // 'revisions'     => tpl_action('revisions', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
+                                // 'backlink'      => tpl_action('backlink', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
+                                // 'subscribe'     => tpl_action('subscribe', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
+                                // 'revert'        => tpl_action('revert', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
+                                // 'top'           => tpl_action('top', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
+                            )); ?>
                             <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
                             foreach($items as $item) {
+                                var_dump($item);
                                 echo '<li>'
-                                    .'<a href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+                                    .'<a href="'.$item->getLink().'" class="action" title="'.$item->getTitle().'">'
                                     .'<span class="icon">'.inlineSVG($item->getSvg()).'</span>'
                                     . '<span class="a11y">'.$item->getLabel().'</span>'
                                     . '</a></li>';
