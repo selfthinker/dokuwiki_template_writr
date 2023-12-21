@@ -18,6 +18,10 @@
         -ms-transition: all 0.25s ease-in-out;
         -o-transition: all 0.25s ease-in-out;
         transition: all 0.25s ease-in-out;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
     a.wikilink1:hover {
         background: #fff;
@@ -30,11 +34,19 @@
         padding: 8px;
     }
     .plugin_bloglinks__prev {
+        a.wikilink1 {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
         a.wikilink1::before {
-            content: "\f503";
+            content: "\f430";
         }
     }
     .plugin_bloglinks__next {
+        a.wikilink1 {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
         a.wikilink1::before {
             content: "\f429";
         }
