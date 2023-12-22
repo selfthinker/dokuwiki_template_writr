@@ -26,6 +26,11 @@ $showSidebar = page_findnearest($conf['sidebar']);
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+    <style>
+        body {
+            font-family: <?= $conf['font'] ?>;
+        }
+    </style>
 </head>
 
 <body id="dokuwiki__top" class="sidebar-closed <?php echo tpl_classes(); ?>">
@@ -42,7 +47,13 @@ $showSidebar = page_findnearest($conf['sidebar']);
             <header id="writr__masthead" class="site-header" role="banner">
                 <?php
                     $logoSize = array();
-                    $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
+                    $logoImages = array();
+                    if($conf['doLogoChangesByNamespace']){
+                        $logoImages[] = getNS($ID).':logo.png';
+                    }
+                    $logoImages[] = ':logo.png';
+                    $logoImages[] = 'images/logo.png';
+                    $logo = tpl_getMediaFile($logoImages, false, $logoSize);
                 ?>
 
                 <a class="site-logo"  href="<?php echo wl(); ?>" title="<?php echo $conf['title']; ?>" rel="home" accesskey="h" title="[H]">
@@ -83,21 +94,27 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <?php endif ?>
 
                 <div class="tools widget_links widget">
-                    <!-- SITE TOOLS -->
-                    <div class="site-tools">
-                        <h3><?php echo $lang['site_tools'] ?></h3>
-                        <ul>
-                            <?php tpl_toolsevent('sitetools', array(
-                                'recent'    => tpl_action('recent', 1, 'li', 1, '<span></span> '),
-                                'media'     => tpl_action('media', 1, 'li', 1, '<span></span> '),
-                                'index'     => tpl_action('index', 1, 'li', 1, '<span></span> '),
-                            )); ?>
-                        </ul>
-                    </div>
+                    <?php if(!$conf['doSiteToolsRequireLogin'] || ($conf['doSiteToolsRequireLogin'] && $conf['useacl'])){ ?>
+                        <!-- SITE TOOLS -->
+                        <div class="site-tools">
+                            <?php if($conf['showSiteToolsTitle']){ ?>
+                                <h3><?php echo $lang['site_tools'] ?></h3>
+                            <?php } ?>
+                            <ul>
+                                <?php tpl_toolsevent('sitetools', array(
+                                    'recent'    => tpl_action('recent', 1, 'li', 1, '<span></span> '),
+                                    'media'     => tpl_action('media', 1, 'li', 1, '<span></span> '),
+                                    'index'     => tpl_action('index', 1, 'li', 1, '<span></span> '),
+                                )); ?>
+                            </ul>
+                        </div>
+                    <?php } ?>
 
                     <!-- PAGE TOOLS -->
                     <div class="page-tools">
-                        <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
+                        <?php if($conf['showPageToolsTitle']){ ?>
+                            <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
+                        <?php } ?>
                         <ul>
                             <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
                             foreach($items as $item) {
@@ -113,7 +130,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php if ($conf['useacl']): ?>
                         <!-- USER TOOLS -->
                         <div class="user-tools">
-                            <h3><?php echo $lang['user_tools'] ?></h3>
+                            <?php if($conf['showUserToolsTitle']){ ?>
+                                <h3><?php echo $lang['user_tools'] ?></h3>
+                            <?php } ?>
                             <ul>
                                 <?php tpl_toolsevent('usertools', array(
                                     'admin'     => tpl_action('admin', 1, 'li', 1, '<span></span> '),
