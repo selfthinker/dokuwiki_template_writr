@@ -31,7 +31,7 @@ header('X-UA-Compatible: IE=edge,chrome=1');
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
     <style>
         body {
-            font-family: <?= $conf['font'] ?>;
+            font-family: <?= tpl_getConf('font') ?>;
         }
     </style>
 </head>

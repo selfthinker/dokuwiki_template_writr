@@ -28,7 +28,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
     <style>
         body {
-            font-family: <?= $conf['font'] ?>;
+            font-family: <?= tpl_getConf('font') ?>;
         }
     </style>
 </head>
@@ -48,7 +48,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <?php
                     $logoSize = array();
                     $logoImages = array();
-                    if($conf['doLogoChangesByNamespace']){
+                    if(tpl_getConf('doLogoChangesByNamespace')){
                         $logoImages[] = getNS($ID).':logo.png';
                     }
                     $logoImages[] = ':logo.png';
@@ -94,10 +94,10 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <?php endif ?>
 
                 <div class="tools widget_links widget">
-                    <?php if(!$conf['doSiteToolsRequireLogin'] || ($conf['doSiteToolsRequireLogin'] && $conf['useacl'])){ ?>
+                    <?php if(!tpl_getConf('doSiteToolsRequireLogin') || (tpl_getConf('doSiteToolsRequireLogin') && $conf['useacl'])){ ?>
                         <!-- SITE TOOLS -->
                         <div class="site-tools">
-                            <?php if($conf['showSiteToolsTitle']){ ?>
+                            <?php if(tpl_getConf('showSiteToolsTitle')){ ?>
                                 <h3><?php echo $lang['site_tools'] ?></h3>
                             <?php } ?>
                             <ul>
@@ -112,7 +112,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
                     <!-- PAGE TOOLS -->
                     <div class="page-tools">
-                        <?php if($conf['showPageToolsTitle']){ ?>
+                        <?php if(tpl_getConf('showPageToolsTitle')){ ?>
                             <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
                         <?php } ?>
                         <ul>
@@ -130,7 +130,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php if ($conf['useacl']): ?>
                         <!-- USER TOOLS -->
                         <div class="user-tools">
-                            <?php if($conf['showUserToolsTitle']){ ?>
+                            <?php if(tpl_getConf('showUserToolsTitle')){ ?>
                                 <h3><?php echo $lang['user_tools'] ?></h3>
                             <?php } ?>
                             <ul>
