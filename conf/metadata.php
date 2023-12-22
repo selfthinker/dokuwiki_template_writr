@@ -13,6 +13,6 @@ $meta['showSiteToolsTitle']   = array('onoff');
 $meta['showUserToolsTitle']   = array('onoff');
 
 $meta['doSiteToolsRequireLogin']   = array('onoff');
-$conf['doLogoChangesByNamespace'] = array('onoff');
+$meta['doLogoChangesByNamespace'] = array('onoff');
 
 $meta['font']     = array('multichoice', '_choices' => array('Montserrat, sans-serif'));
