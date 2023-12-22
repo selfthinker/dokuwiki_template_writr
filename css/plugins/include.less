@@ -4,12 +4,43 @@
 .plugin_include_content {
     padding-top: 0px;
     padding-bottom: 0px;
+
+    .published{
+        font-weight:bold;
+        border: none;
+        border-image-width: 0;
+    }
+    .published::before{
+        font-family: 'bootstrap-icons';
+        content: "\f214";
+        font-weight: normal;
+        font-size: 14px;
+        padding-right: 6px;
+    }
+    .author::before{
+        font-family: 'bootstrap-icons';
+        content: "\f4e1";
+        font-size: 14px;
+        padding-right: 6px;
+    }
+    .comment::before{
+        font-family: 'bootstrap-icons';
+        content: "\f268";
+        font-size: 14px;
+        padding-right: 6px;
+    }
+    .linkback::before{
+        font-family: 'bootstrap-icons';
+        content: "\f470";
+        font-size: 14px;
+        padding-right: 6px;
+    }
 }
 
 p.include_readmore {
-margin-bottom: 8px;
+    margin-bottom: 8px;
 }
 
 .plugin_include_content .comment a.wikilink1 {
-text-decoration: none;
+    text-decoration: none;
 }
