@@ -215,7 +215,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php tpl_includeFile('pagefooter.html') ?>
                 </main><!-- #writr__main -->
 
-                <p class="page-footer"><?php tpl_pageinfo() ?></p>
+		<div class="page-footer">
+			<?php tpl_pageinfo(); ?>
+		</div>
             </div><!-- #writr__primary -->
         </div><!-- #writr__content -->
     </div><!-- #writr__page -->
