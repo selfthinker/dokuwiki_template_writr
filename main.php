@@ -11,7 +11,8 @@ if (!defined('DOKU_INC')) die();
 @require_once(dirname(__FILE__).'/tpl_functions.php');
 header('X-UA-Compatible: IE=edge,chrome=1');
 $showSidebar = page_findnearest($conf['sidebar']);
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang'] ?>"
   lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
 <head>
@@ -82,30 +83,62 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <?php endif ?>
 
                 <div class="tools widget_links widget">
-                    <!-- SITE TOOLS -->
-                    <div class="site-tools">
-                        <h3><?php echo $lang['site_tools'] ?></h3>
-                        <ul>
-                            <?php tpl_toolsevent('sitetools', array(
-                                'recent'    => tpl_action('recent', 1, 'li', 1, '<span></span> '),
-                                'media'     => tpl_action('media', 1, 'li', 1, '<span></span> '),
-                                'index'     => tpl_action('index', 1, 'li', 1, '<span></span> '),
-                            )); ?>
-                        </ul>
-                    </div>
+                    <?php if(!tpl_getConf('doSiteToolsRequireLogin') || (tpl_getConf('doSiteToolsRequireLogin') && $conf['useacl'])){ ?>
+                        <!-- SITE TOOLS -->
+                        <div class="site-tools">
+                            <?php if(tpl_getConf('showSiteToolsTitle')){ ?>
+                                <h3><?php echo $lang['site_tools'] ?></h3>
+                            <?php } ?>
+                            <ul>
+                                <?php $items = (new \dokuwiki\Menu\SiteMenu())->getItems();
+                                foreach($items as $item) {
+                                    echo '<li>'
+                                        .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" rel="nofollow" title="'.$item->getTitle().'">'
+                                        .'<span></span> '
+                                        .$item->getLabel()
+                                        .'</a></li>';
+                                } ?>
+                            </ul>
+                        </div>
+                    <?php } ?>
 
                     <!-- PAGE TOOLS -->
                     <div class="page-tools">
                         <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
                         <ul>
-                            <?php tpl_toolsevent('pagetools', array(
-                                'edit'      => tpl_action('edit', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'revisions' => tpl_action('revisions', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'backlink'  => tpl_action('backlink', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'subscribe' => tpl_action('subscribe', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'revert'    => tpl_action('revert', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'top'       => tpl_action('top', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                            )); ?>
+                            <?php if (!$conf['useacl'] || ($conf['useacl'] && $INFO['perm'] >= 4)): ?>
+                                <?php $instructions = p_get_instructions('{{'.tpl_getConf('defaultAddNewPage').'}}');
+                                if(count($instructions) <= 3) {
+                                    $render = p_render('xhtml',$instructions,$info);
+                                    echo '<li>'
+                                        .'<a href="#" class="action AddNewPage" title="'.tpl_getLang('AddNewPage').'">'
+                                        .'<span class="icon"></span>'
+                                        .'<span class="a11y">'.tpl_getLang('AddNewPage').'</span>'
+                                        .'</a>'
+                                        .$render
+                                        .'</li>';
+                                } ?>
+                                <!-- <li class="plugin_move_page" style="display: list-item;"><a href=""><span>Rename Page</span></a></li> -->
+                            <?php endif ?>
+                            <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
+                            foreach($items as $item) {
+                                echo '<li>'
+                                    .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" title="'.$item->getTitle().'">'
+                                    .'<span class="icon"></span>'
+                                    .'<span class="a11y">'.$item->getLabel().'</span>'
+                                    .'</a></li>';
+                            } ?>
+                            <?php $translation = plugin_load('helper','translation');
+                            if ($translation){
+                                $render = $translation->showTranslations();
+                                echo '<li>'
+                                    .'<a href="#" class="action Translation" title="'.tpl_getLang('Language').'">'
+                                    .'<span class="icon"></span>'
+                                    .'<span class="a11y">'.tpl_getLang('Language').'</span>'
+                                    .'</a>'
+                                    .$render
+                                    .'</li>';
+                            } ?>
                         </ul>
                     </div>
 
@@ -114,12 +147,14 @@ $showSidebar = page_findnearest($conf['sidebar']);
                         <div class="user-tools">
                             <h3><?php echo $lang['user_tools'] ?></h3>
                             <ul>
-                                <?php tpl_toolsevent('usertools', array(
-                                    'admin'     => tpl_action('admin', 1, 'li', 1, '<span></span> '),
-                                    'profile'   => tpl_action('profile', 1, 'li', 1, '<span></span> '),
-                                    'register'  => tpl_action('register', 1, 'li', 1, '<span></span> '),
-                                    'login'     => tpl_action('login', 1, 'li', 1, '<span></span> '),
-                                )); ?>
+                                <?php $items = (new \dokuwiki\Menu\UserMenu())->getItems();
+                                foreach($items as $item) {
+                                    echo '<li>'
+                                        .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" rel="nofollow" title="'.$item->getTitle().'">'
+                                        .'<span></span> '
+                                        .$item->getLabel()
+                                        .'</a></li>';
+                                } ?>
                             </ul>
                         </div>
 
