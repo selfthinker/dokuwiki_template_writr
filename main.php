@@ -143,7 +143,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                             } ?>
                             <?php $translation = plugin_load('helper','translation');
                             if ($translation){
-                                $render = $translation->showTranslations();
+                                $render = $translation->showTranslations(false);
                                 echo '<li>'
                                     .'<a href="#" class="action Translation" title="'.tpl_getLang('Language').'">'
                                     .'<span class="icon"></span>'
@@ -192,6 +192,11 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
         <div id="writr__content" class="site-content">
             <div id="writr__primary" class="content-area">
+
+                <!-- Translation Notication -->
+                <div class="translation-notification">
+                    <?php $translation->checkage(); ?>
+                </div>
 
                 <!-- BREADCRUMBS -->
                 <?php if($conf['breadcrumbs']){ ?>
