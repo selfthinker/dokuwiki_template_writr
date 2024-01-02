@@ -115,7 +115,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
                     <!-- PAGE TOOLS -->
                     <div class="page-tools">
-                        <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
+                        <?php if(tpl_getConf('showPageToolsTitle')){ ?>
+                            <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
+                        <?php } ?>
                         <ul>
                             <?php if (!$conf['useacl'] || ($conf['useacl'] && $INFO['perm'] >= 4)): ?>
                                 <?php $instructions = p_get_instructions('{{'.tpl_getConf('defaultAddNewPage').'}}');
@@ -156,7 +158,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php if ($conf['useacl']): ?>
                         <!-- USER TOOLS -->
                         <div class="user-tools">
-                            <h3><?php echo $lang['user_tools'] ?></h3>
+                            <?php if(tpl_getConf('showUserToolsTitle')){ ?>
+                                <h3><?php echo $lang['user_tools'] ?></h3>
+                            <?php } ?>
                             <ul>
                                 <?php $items = (new \dokuwiki\Menu\UserMenu())->getItems();
                                 foreach($items as $item) {
