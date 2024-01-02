@@ -52,8 +52,7 @@
     a.subscribe span.icon:before { content: '\f410'; }
 }
 
-.site-tools,
-.user-tools {
+.site-tools {
     a span {
         display: inline-block;
         width: 20px;
@@ -69,15 +68,41 @@
     }
 
     a           span:before { content: '\f101'; }
+    a.recent    span:before { content: '\f307'; }
+    a.index     span:before { content: '\f507'; }
+    a.media     span:before { content: '\f473'; }
+}
 
+.user-tools {
+    a span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        -webkit-font-smoothing: antialiased;
+        font-size: 20px;
+        line-height: 20px;
+        vertical-align: middle;
+        font-family: 'Genericons';
+        text-decoration: inherit;
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    a           span:before { content: '\f101'; }
     a.admin     span:before { content: '\f445'; }
     a.login     span:before { content: '\f427'; }
     a.logout    span:before { content: '\f470'; }
     a.register  span:before { content: '\f425'; }
     a.profile   span:before { content: '\f304'; }
-    a.recent    span:before { content: '\f307'; }
-    a.index     span:before { content: '\f507'; }
-    a.media     span:before { content: '\f473'; }
+
+    p.user:before {
+        font-family: 'bootstrap-icons';
+        content: "\f4e1";
+        font-size: 20px;
+        padding-right: 4px;
+        line-height: 20px;
+        vertical-align: middle;
+    }
 }
 
 } /* /@media */
