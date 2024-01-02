@@ -85,6 +85,23 @@
             }
         });
     }
+
+    /*
+     * Enable translation dropdown
+     */
+    function enableTranslation() {
+        $('.action.Translation').click(function(event) {
+            event.preventDefault();
+            $('.plugin_translation').toggle();
+        });
+        
+        $(document).click(function(event) {
+            if (!$(event.target).closest('.action.Translation, .plugin_translation').length) {
+                $('.plugin_translation').hide();
+            }
+        });
+    }
+
     $(function(){
         toggleSidebar();
         toggleNavigation();
@@ -92,5 +109,6 @@
         closeToc();
         changeSearchInput();
         enableAddNewPage();
+        enableTranslation();
     });
 } )( jQuery );
