@@ -1,0 +1,53 @@
+2023-12-28 16:06 - v1.0.23 - Customized the Username
+2023-12-28 16:07 - v1.0.24 - Customized the Username
+2023-12-28 16:12 - v1.0.25 - Add Diagnostic Data
+2023-12-28 16:40 - v1.0.26 - Removing old code
+2023-12-28 16:44 - v1.0.27 - Customized the Username
+2023-12-28 16:48 - v1.0.28 - Customized the User Tools
+2023-12-28 16:49 - v1.0.29 - Customized the User Tools
+2023-12-28 16:50 - v1.0.30 - Customized the User Tools
+2023-12-28 16:51 - v1.0.31 - Fixed Vertical align
+2023-12-28 19:31 - v1.0.32 - Adding page name to bloglinks
+2023-12-28 19:36 - v1.0.33 - Fixed bloglinks next page icon to ::after
+2023-12-28 19:43 - v1.0.34 - Fixed margin, padding and width of bloglinks buttons
+2023-12-28 19:49 - v1.0.35 - Added a class hideBlogLinksTitle to hide bloglinks title page
+2023-12-28 20:03 - v1.0.36 - Trying a position absolute on the bloglinks icons
+2023-12-28 20:12 - v1.0.37 - Trying with flexbox
+2023-12-28 20:13 - v1.0.38 - Modifying selector
+2023-12-28 20:15 - v1.0.39 - Modifying selector
+2023-12-28 20:17 - v1.0.40 - Modifying selector
+2023-12-28 20:18 - v1.0.41 - Reverting Selector
+2023-12-28 20:21 - v1.0.42 - Testing New Selector and flex to realign the icons
+2023-12-28 20:22 - v1.0.43 - Reverting 
+2023-12-28 20:29 - v1.0.44 - reverting from flexbox
+2023-12-28 20:37 - v1.0.45 - Attempting with prev_template and next_template
+2023-12-28 20:46 - v1.0.46 - Testing with flexbox
+2023-12-28 20:50 - v1.0.47 - Icons are not showing up, testing with ::before
+2023-12-28 21:05 - v1.0.48 - Testing a float right on include publish dates
+2023-12-28 21:07 - v1.0.49 - Testing author on the right as well
+2023-12-28 21:10 - v1.0.50 - Added a small margin
+2023-12-28 21:11 - v1.0.51 - Increased the margin
+2023-12-28 21:22 - v1.0.52 - Added a placeholder for the new page name
+2023-12-28 21:28 - v1.0.53 - Updated icon for addnewpage to avoid confusion with create this page button
+2023-12-28 21:33 - v1.0.54 - Updated icon for addnewpage to avoid confusion with create this page button
+2023-12-28 21:54 - v1.0.55 - Adding a few screenshots
+2023-12-28 22:01 - v1.0.56 - Adding a few screenshots
+2023-12-28 22:19 - v1.0.57 - removed placeholder
+2023-12-28 22:22 - v1.0.58 - Adding ACL to addnewpage
+2023-12-28 22:23 - v1.0.59 - Adding diagnostic data
+2023-12-28 22:26 - v1.0.60 - Modifying diagnostic data
+2023-12-28 22:29 - v1.0.61 - Removed diagnostic data and fixed ACL for addnewpage
+2023-12-28 22:31 - v1.0.62 - limiting addnewpage to current namespace
+2023-12-28 22:37 - v1.0.63 - Added a configuration defaultAddNewPage to set a namespace for the AddNewPage plugin
+2023-12-29 08:39 - v1.0.64 - Adding some screenshot to diagnose an issue with the move plugin.
+2023-12-29 12:02 - v1.0.65 - rename and resized some screenshots
+2023-12-29 21:09 - v1.0.66 - Updated Discussion Comments border to match the rest of the theme.
+2023-12-29 21:49 - v1.0.67 - moving translation plugin to page tools
+2023-12-29 21:51 - v1.0.68 - Update the event on the translation button. Forgot to add it in last commit.
+2023-12-29 22:05 - v1.0.69 - Fixing positioning and triggers
+2023-12-29 22:07 - v1.0.70 - Forgot the position absolute
+2023-12-29 22:21 - v1.0.71 - Adding style to translation buttons
+2023-12-29 22:25 - v1.0.72 - Enforcing some styles
+2023-12-29 22:26 - v1.0.73 - Fixing hover style
+2023-12-29 22:28 - v1.0.74 - Enforcing hover effect
+2024-01-01 11:48 - v1.0.75 - Modified the border radius of the galery photos.
