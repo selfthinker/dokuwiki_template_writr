@@ -1,0 +1,68 @@
+/* =Include Plugin
+----------------------------------------------- */
+
+.plugin_include_content {
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    .published{
+        font-weight:normal;
+        border: none;
+        border-image-width: 0;
+        opacity: 60%;
+        float: right;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+    }
+    .published:hover{
+        opacity: 100%;
+    }
+    .published::before{
+        font-family: 'bootstrap-icons';
+        content: "\f214";
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 20px;
+        padding-right: 6px;
+        vertical-align: text-top;
+    }
+    .author{
+        float: right;
+        margin-right: 8px;
+    }
+    .author::before{
+        font-family: 'bootstrap-icons';
+        content: "\f4e1";
+        font-size: 20px;
+        margin-right: 4px;
+        line-height: 20px;
+        vertical-align: text-top;
+    }
+    .comment::before{
+        font-family: 'bootstrap-icons';
+        content: "\f268";
+        font-size: 20px;
+        padding-right: 6px;
+        line-height: 20px;
+        vertical-align: text-top;
+    }
+    .linkback::before{
+        font-family: 'bootstrap-icons';
+        content: "\f470";
+        font-size: 20px;
+        padding-right: 4px;
+        line-height: 20px;
+        vertical-align: text-top;
+    }
+}
+
+p.include_readmore {
+    margin-bottom: 8px;
+}
+
+.plugin_include_content .comment a.wikilink1 {
+    text-decoration: none;
+}
