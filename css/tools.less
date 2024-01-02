@@ -14,7 +14,13 @@
 .mode_revisions a.action.revs,
 .mode_backlink a.action.backlink,
 .mode_subscribe a.action.subscribe {
-    background-color: @ini_text_neu;
+    background-color: transparent;
+}
+
+.loggedIn{
+    .site-tools ul li:has(> a.action.media), .user-tools ul li:has(> a.action.admin), .page-tools ul li:has(> a.action.revs) {
+        display: block;
+    }
 }
 
 .page-tools {
@@ -110,6 +116,15 @@
     a:hover span.icon {
         background: @ini_background;
         color: @ini_text_alt;
+    }
+
+    a:focus {
+        outline: none;
+
+        span.icon {
+            background-color: @ini_theme_color;
+            color: #fff;
+        }
     }
 }
 
