@@ -70,11 +70,27 @@
         $searchForm.append('<button type="submit" title="'+title+'">'+value+'</button>');
     }
 
+    /*
+     * Enable add new page dropdown
+     */
+    function enableAddNewPage() {
+        $('.action.AddNewPage').click(function(event) {
+            event.preventDefault();
+            $('.addnewpage').toggle();
+        });
+        
+        $(document).click(function(event) {
+            if (!$(event.target).closest('.action.AddNewPage, .addnewpage').length) {
+                $('.addnewpage').hide();
+            }
+        });
+    }
     $(function(){
         toggleSidebar();
         toggleNavigation();
         toggleSubmenu();
         closeToc();
         changeSearchInput();
+        enableAddNewPage();
     });
 } )( jQuery );
