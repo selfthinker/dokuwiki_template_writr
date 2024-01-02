@@ -1,0 +1,88 @@
+/* =BlogLinks Plugin
+----------------------------------------------- */
+
+.site-main.hideBlogLinksTitle a.wikilink1{
+    font-size: 0;
+}
+
+#plugin_bloglinks__links{
+    width: 800px;
+    margin-left: -40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > div {
+        width: 50%;
+        display: flex;
+        align-items: center;
+
+        a.wikilink1 {
+            background: #303030;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            -webkit-transition: all 0.25s ease-in-out;
+            -moz-transition: all 0.25s ease-in-out;
+            -ms-transition: all 0.25s ease-in-out;
+            -o-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            max-width: 80%;
+            line-height: 16px;
+            padding: 20px;
+
+            span.title {
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 90%;
+            }
+            span.icon {
+                display: inline-block;
+                font-family: 'bootstrap-icons';
+                font-size: 30px;
+                vertical-align: middle;
+            }
+        }
+        a.wikilink1:hover {
+            background: #fff;
+            color: #303030;
+        }
+    }
+    .plugin_bloglinks__prev {
+
+        a.wikilink1 {
+            padding-left: 10px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+
+            span.icon{
+                margin-right: 8px;
+            }
+            span.icon::before{
+                content: "\f284";
+            }
+        }
+    }
+    .plugin_bloglinks__next {
+
+        a.wikilink1 {
+            padding-right: 10px;
+            margin-left: auto;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+
+            span.icon{
+                margin-left: 8px;
+            }
+            span.icon::before{
+                content: "\f285";
+            }
+        }
+    }
+}
