@@ -1,0 +1,60 @@
+/* =Translation Plugin
+----------------------------------------------- */
+
+.page-tools {
+    div.plugin_translation{
+        display: none;
+        position: absolute;
+        background-color: @ini_text_alt;
+        color: white;
+        border-radius: 0 20px 20px 0;
+        padding: 10px;
+        padding-right: 20px;
+        left: 80px;
+        bottom: 0px;
+
+        li,a,span {
+            width: 100%;
+        }
+
+        a,span {
+            border-radius: 20px;
+            border-style: none;
+            font-size: 14px;
+            -webkit-transition: all 0.25s ease-in-out;
+            -moz-transition:    all 0.25s ease-in-out;
+            -ms-transition:     all 0.25s ease-in-out;
+            -o-transition:      all 0.25s ease-in-out;
+            transition:         all 0.25s ease-in-out;
+            line-height: 1.5;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+            text-align: center !important;
+        }
+
+        span {
+            color: #fff !important;
+            background-color: @ini_theme_color !important;
+        }
+
+        a {
+            color: @ini_theme_color !important;
+            background: #fff !important;
+        }
+
+        a:hover {
+            background-color: @ini_theme_color !important;
+            color:#fff !important;
+        }
+    }
+
+    a.Translation {
+
+        span.icon::before {
+            font-family: 'bootstrap-icons';
+            content: "\f882";
+        }
+    }
+}
