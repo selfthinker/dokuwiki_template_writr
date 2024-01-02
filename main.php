@@ -171,15 +171,12 @@ $showSidebar = page_findnearest($conf['sidebar']);
                                         .'</a></li>';
                                 } ?>
                             </ul>
+                            <?php
+                                if (!empty($_SERVER['REMOTE_USER'])) {
+                                    echo '<p class="user">'.$INFO['userinfo']['name'].'</p>';
+                                }
+                            ?>
                         </div>
-
-                        <?php
-                            if (!empty($_SERVER['REMOTE_USER'])) {
-                                echo '<p class="user">';
-                                tpl_userinfo();
-                                echo '</p>';
-                            }
-                        ?>
                     <?php endif ?>
                 </div>
 
