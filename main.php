@@ -47,7 +47,13 @@ $showSidebar = page_findnearest($conf['sidebar']);
             <header id="writr__masthead" class="site-header" role="banner">
                 <?php
                     $logoSize = array();
-                    $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
+                    $logoImages = array();
+                    if(tpl_getConf('doLogoChangesByNamespace')){
+                        $logoImages[] = getNS($ID).':logo.png';
+                    }
+                    $logoImages[] = ':logo.png';
+                    $logoImages[] = 'images/logo.png';
+                    $logo = tpl_getMediaFile($logoImages, false, $logoSize);
                 ?>
 
                 <a class="site-logo"  href="<?php echo wl(); ?>" title="<?php echo $conf['title']; ?>" rel="home" accesskey="h" title="[H]">
