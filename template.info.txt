@@ -1,7 +1,7 @@
 base     writr
-author   Anika Henke
-email    anika@selfthinker.org
-date     2016-05-02
+author   Louis Ouellet
+email    louis_ouellet@hotmail.com
+date     2023-12-21
 name     Writr Template
 desc     Bold, minimalist and modern
 url      https://www.dokuwiki.org/template:writr
