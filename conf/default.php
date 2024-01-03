@@ -8,13 +8,17 @@
 
 if (!defined('DOKU_INC')) die();
 
-$conf['showPageToolsTitle'] = 0;
-$conf['showSiteToolsTitle'] = 0;
-$conf['showUserToolsTitle'] = 0;
+$conf['_tools']                         = '';
+$conf['showPageToolsTitle']             = 0;
+$conf['showSiteToolsTitle']             = 0;
+$conf['showUserToolsTitle']             = 0;
+$conf['doSiteToolsRequireLogin']        = 0;
 
-$conf['doSiteToolsRequireLogin'] = 0;
-$conf['doLogoChangesByNamespace'] = 0;
+$conf['_extra']                         = '';
+$conf['doLogoChangesByNamespace']       = 0;
 
-$conf['defaultAddNewPage'] = 'NEWPAGE>.';
+$conf['_plugins']                       = '';
+$conf['defaultAddNewPage']              = 'NEWPAGE>.';
 
-$conf['font'] = 'Montserrat, sans-serif';
+$conf['_customizations']                = '';
+$conf['font']                           = 'Montserrat, sans-serif';
