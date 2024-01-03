@@ -195,7 +195,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
                 <div class="writr-message-area">
                     <!-- Translation Notication -->
-                    <?php $translation->checkage(); ?>
+                    <?php if($translation) { $translation->checkage(); } ?>
                     <!-- Message Area -->
                     <?php html_msgarea() ?>
                 </div>
