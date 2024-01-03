@@ -193,9 +193,11 @@ $showSidebar = page_findnearest($conf['sidebar']);
         <div id="writr__content" class="site-content">
             <div id="writr__primary" class="content-area">
 
-                <!-- Translation Notication -->
-                <div class="translation-notification">
+                <div class="writr-message-area">
+                    <!-- Translation Notication -->
                     <?php $translation->checkage(); ?>
+                    <!-- Message Area -->
+                    <?php html_msgarea() ?>
                 </div>
 
                 <!-- BREADCRUMBS -->
@@ -210,8 +212,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
                     <?php tpl_flush() ?>
                     <?php tpl_includeFile('pageheader.html') ?>
-
-                    <?php html_msgarea() ?>
+                    
                     <!-- wikipage start -->
                     <?php tpl_content() ?>
                     <!-- wikipage stop -->
