@@ -1,6 +1,6 @@
 /* DOKUWIKI:include js/skip-link-focus-fix.js */
 
-( function( $ ) {
+$(document).ready(function() {
     /*
      * Click to toggle sidebar.
      */
@@ -52,7 +52,7 @@
      * Close TOC by default
      */
     function closeToc() {
-        var $toc = jQuery('#dw__toc .toggle');
+        var $toc = $('#dw__toc .toggle');
         if($toc.length) {
             $toc[0].setState(-1);
         }
@@ -111,4 +111,4 @@
         enableAddNewPage();
         enableTranslation();
     });
-} )( jQuery );
+});
