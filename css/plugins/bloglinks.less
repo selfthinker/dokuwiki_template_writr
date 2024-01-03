@@ -35,18 +35,25 @@
             line-height: 16px;
             padding: 20px;
 
-            span.title {
-                display: inline-block;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 90%;
-            }
-            span.icon {
-                display: inline-block;
-                font-family: 'bootstrap-icons';
-                font-size: 30px;
-                vertical-align: middle;
+            span {
+                .title {
+                    display: block;
+                    max-width: 90%;
+
+                    .truncate {
+                        display: inline-block;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                .icon {
+                    display: inline-block;
+                    font-family: 'bootstrap-icons';
+                    font-size: 30px;
+                    vertical-align: middle;
+                }
             }
         }
         a.wikilink1:hover {
