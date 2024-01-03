@@ -2,7 +2,7 @@
 
 ## Author
 
-  * Louis Ouellet ([Louis Ouellet](https://github.com/LouisOuellet)) <louis_ouellet@hotmail.com>
+  * Louis Ouellet ([LouisOuellet](https://github.com/LouisOuellet)) <louis_ouellet@hotmail.com>
 
 ## Contributors
 
@@ -30,6 +30,26 @@
         </a>
         <br />
         <a href="https://github.com/LouisOuellet/dokuwiki_template_writr/commits?author=selfthinker" title="Code">💻</a>
+        <a href="#english" title="Translation">🌍</a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/mightymt">
+            <img src="https://github.com/mightymt.png" width="100px;" alt=""/>
+            <br />
+            <sub><b>Thomas</b></sub>
+        </a>
+        <br />
+        <a href="https://github.com/LouisOuellet/dokuwiki_template_writr/commits?author=mightymt" title="Code">💻</a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/araname">
+            <img src="https://github.com/araname.png" width="100px;" alt=""/>
+            <br />
+            <sub><b>Myeongjin</b></sub>
+        </a>
+        <br />
+        <a href="https://github.com/LouisOuellet/dokuwiki_template_writr/commits?author=araname" title="Code">💻</a>
+        <a href="#korean" title="Translation">🌍</a>
     </td>
     <td align="center">
         <a href="https://github.com/[USERNAME]">
@@ -55,7 +75,11 @@
 ## 🌍 Translators
 
 #### English
-  * Louis Ouellet ([Louis Ouellet](https://github.com/LouisOuellet)) <louis_ouellet@hotmail.com>
+  * Anika Henke [selfthinker](https://github.com/selfthinker)
+  * Louis Ouellet ([LouisOuellet](https://github.com/LouisOuellet)) <louis_ouellet@hotmail.com>
 
 #### French
-  * Louis Ouellet ([Louis Ouellet](https://github.com/LouisOuellet)) <louis_ouellet@hotmail.com>
+  * Louis Ouellet ([LouisOuellet](https://github.com/LouisOuellet)) <louis_ouellet@hotmail.com>
+
+#### Korean
+  * Myeongjin [Myeongjin](https://github.com/araname)
