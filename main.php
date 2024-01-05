@@ -11,18 +11,26 @@ if (!defined('DOKU_INC')) die();
 @require_once(dirname(__FILE__).'/tpl_functions.php');
 header('X-UA-Compatible: IE=edge,chrome=1');
 $showSidebar = page_findnearest($conf['sidebar']);
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang'] ?>"
   lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
 <head>
     <meta charset="UTF-8" />
     <title><?php tpl_pagetitle() ?> [<?php echo strip_tags($conf['title']) ?>]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
     <?php tpl_metaheaders() ?>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+    <style>
+        body {
+            font-family: <?= tpl_getConf('font') ?>;
+        }
+    </style>
 </head>
 
 <body id="dokuwiki__top" class="sidebar-closed <?php echo tpl_classes(); ?>">
@@ -39,7 +47,13 @@ $showSidebar = page_findnearest($conf['sidebar']);
             <header id="writr__masthead" class="site-header" role="banner">
                 <?php
                     $logoSize = array();
-                    $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
+                    $logoImages = array();
+                    if(tpl_getConf('doLogoChangesByNamespace')){
+                        $logoImages[] = getNS($ID).':logo.png';
+                    }
+                    $logoImages[] = ':logo.png';
+                    $logoImages[] = 'images/logo.png';
+                    $logo = tpl_getMediaFile($logoImages, false, $logoSize);
                 ?>
 
                 <a class="site-logo"  href="<?php echo wl(); ?>" title="<?php echo $conf['title']; ?>" rel="home" accesskey="h" title="[H]">
@@ -80,37 +94,45 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <?php endif ?>
 
                 <div class="tools widget_links widget">
-                    <!-- SITE TOOLS -->
-                    <div class="site-tools">
-                        <h3><?php echo $lang['site_tools'] ?></h3>
-                        <ul>
-                            <?php tpl_toolsevent('sitetools', array(
-                                'recent'    => tpl_action('recent', 1, 'li', 1, '<span></span> '),
-                                'media'     => tpl_action('media', 1, 'li', 1, '<span></span> '),
-                                'index'     => tpl_action('index', 1, 'li', 1, '<span></span> '),
-                            )); ?>
-                        </ul>
-                    </div>
+                    <?php if(!tpl_getConf('doSiteToolsRequireLogin') || (tpl_getConf('doSiteToolsRequireLogin') && $conf['useacl'])){ ?>
+                        <!-- SITE TOOLS -->
+                        <div class="site-tools">
+                            <?php if(tpl_getConf('showSiteToolsTitle')){ ?>
+                                <h3><?php echo $lang['site_tools'] ?></h3>
+                            <?php } ?>
+                            <ul>
+                                <?php tpl_toolsevent('sitetools', array(
+                                    'recent'    => tpl_action('recent', 1, 'li', 1, '<span></span> '),
+                                    'media'     => tpl_action('media', 1, 'li', 1, '<span></span> '),
+                                    'index'     => tpl_action('index', 1, 'li', 1, '<span></span> '),
+                                )); ?>
+                            </ul>
+                        </div>
+                    <?php } ?>
 
                     <!-- PAGE TOOLS -->
                     <div class="page-tools">
-                        <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
+                        <?php if(tpl_getConf('showPageToolsTitle')){ ?>
+                            <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
+                        <?php } ?>
                         <ul>
-                            <?php tpl_toolsevent('pagetools', array(
-                                'edit'      => tpl_action('edit', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'revisions' => tpl_action('revisions', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'backlink'  => tpl_action('backlink', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'subscribe' => tpl_action('subscribe', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'revert'    => tpl_action('revert', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'top'       => tpl_action('top', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                            )); ?>
+                            <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
+                            foreach($items as $item) {
+                                echo '<li>'
+                                    .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" title="'.$item->getTitle().'">'
+                                    .'<span class="icon"></span>'
+                                    . '<span class="a11y">'.$item->getLabel().'</span>'
+                                    . '</a></li>';
+                            } ?>
                         </ul>
                     </div>
 
                     <?php if ($conf['useacl']): ?>
                         <!-- USER TOOLS -->
                         <div class="user-tools">
-                            <h3><?php echo $lang['user_tools'] ?></h3>
+                            <?php if(tpl_getConf('showUserToolsTitle')){ ?>
+                                <h3><?php echo $lang['user_tools'] ?></h3>
+                            <?php } ?>
                             <ul>
                                 <?php tpl_toolsevent('usertools', array(
                                     'admin'     => tpl_action('admin', 1, 'li', 1, '<span></span> '),
@@ -166,11 +188,22 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php tpl_includeFile('pagefooter.html') ?>
                 </main><!-- #writr__main -->
 
-                <p class="page-footer"><?php tpl_pageinfo() ?></p>
+		<div class="page-footer">
+			<?php
+				tpl_pageinfo();
+				$translation = plugin_load('helper','translation');
+				if ($translation) echo $translation->showTranslations();
+			?>
+		</div>
             </div><!-- #writr__primary -->
         </div><!-- #writr__content -->
     </div><!-- #writr__page -->
 
     <div class="no"><?php tpl_indexerWebBug() /* provide DokuWiki housekeeping, required in all templates */ ?></div>
+
+    <!-- JavaScript Libraries and Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha256-BRqBN7dYgABqtY9Hd4ynE+1slnEw+roEPFzQ7TRRfcg=" crossorigin="anonymous"></script>
 </body>
 </html>

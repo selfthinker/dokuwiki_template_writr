@@ -125,7 +125,7 @@ body:before {
     position: relative;
     padding: 0;
     margin: 0 0 20px;
-    border-bottom: 15px double @ini_theme_color_alt;
+    border-bottom: 0px solid @ini_theme_color_alt;
     text-align: center;
 }
 .site-title {
@@ -152,6 +152,7 @@ body:before {
 
 /* Primary */
 .content-area {
+    text-align: left;
     float: right;
     width: @ini_content_width;
     height: auto;
@@ -202,8 +203,12 @@ body:before {
     font-size: 14px;
     padding: 20px 40px;
     margin: 40px -40px 0;
-    width: 100%;
+    width: 800px;
     background-color: @ini_background_alt;
+
+    bdi:first-child {
+        display: none;
+    }
 }
 
 /* =DokuWiki-specific
@@ -215,7 +220,7 @@ div.breadcrumbs {
     margin: 0 0 20px -40px;
     padding: 15px 40px;
     position: relative;
-    width: 100%;
+    width: 800px;
     font-size: 14px;
 
     a {
@@ -266,6 +271,15 @@ body:not(.mode_show) div.breadcrumbs {
     margin: 0 -40px;
     padding: 0 20px;
     border-width: 0 20px;
+}
+.dokuwiki a[rel="tag"] {
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 0 5px 5px 0;
+	background: @ini_theme_color;
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
 }
 
 /* Modal windows */

@@ -1,0 +1,56 @@
+/* =BlogLinks Plugin
+----------------------------------------------- */
+
+#plugin_bloglinks__links{
+    width: 800px;
+    margin-left: -40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a.wikilink1 {
+        background: #303030;
+        color: #fff;
+        font-size: 0;
+        display: block;
+        vertical-align: middle;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    a.wikilink1:hover {
+        background: #fff;
+        color: #303030;
+    }
+    a.wikilink1::before {
+        font-family: 'Genericons';
+        content: "\f101";
+        font-size: 30px;
+        padding: 8px;
+    }
+    .plugin_bloglinks__prev {
+        a.wikilink1 {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        a.wikilink1::before {
+            content: "\f430";
+            padding-right: 12px;
+        }
+    }
+    .plugin_bloglinks__next {
+        a.wikilink1 {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        a.wikilink1::before {
+            content: "\f429";
+            padding-left: 12px;
+        }
+    }
+}

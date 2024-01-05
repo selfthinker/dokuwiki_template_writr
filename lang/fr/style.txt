@@ -1,0 +1,7 @@
+Si vous souhaitez changer le logo, utilisez simplement le Gestionnaire de Médias pour télécharger un fichier ''logo.png'' dans l'espace de noms racine et il sera automatiquement utilisé.
+
+Vous pouvez également y télécharger un fichier ''favicon.ico''.
+
+Si vous utilisez un wiki fermé, il est recommandé de rendre l'espace de noms racine lisible par tout le monde dans les paramètres ACL, sinon votre favicon ne sera pas visible pour les utilisateurs déconnectés.
+
+Pour ajouter une navigation dans la barre latérale, vous pouvez ajouter une page appelée ''topnav'' et y ajouter une liste de liens. (Aucun autre contenu n'est pris en charge.)
