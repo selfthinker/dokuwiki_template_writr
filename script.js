@@ -1,16 +1,16 @@
 /* DOKUWIKI:include js/skip-link-focus-fix.js */
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
     /*
      * Click to toggle sidebar.
      */
     function toggleSidebar() {
-        $( '#writr__sidebar' ).on( 'click', '#writr__sidebar-toggle', function( e ) {
+        jQuery( '#writr__sidebar' ).on( 'click', '#writr__sidebar-toggle', function( e ) {
             e.preventDefault();
-            $( 'html, body' ).scrollTop( 0 );
-            $( this ).toggleClass( 'open' );
-            $( 'body' ).toggleClass( 'sidebar-closed' );
-            $( '#writr__secondary' ).resize();
+            jQuery( 'html, body' ).scrollTop( 0 );
+            jQuery( this ).toggleClass( 'open' );
+            jQuery( 'body' ).toggleClass( 'sidebar-closed' );
+            jQuery( '#writr__secondary' ).resize();
         } );
     }
 
@@ -18,11 +18,11 @@ $(document).ready(function() {
      * Handles toggling the navigation menu for small screens.
      */
     function toggleNavigation() {
-        var $container = $('#writr__site-navigation');
+        var $container = jQuery('#writr__site-navigation');
         if (!$container.length) return;
-        var $button = $('.menu-toggle', $container);
+        var $button = jQuery('.menu-toggle', $container);
         if (!$button.length) return;
-        var $menu = $('ul', $container);
+        var $menu = jQuery('ul', $container);
         if (!$menu.length) {
             $menu.hide();
             return;
@@ -36,14 +36,14 @@ $(document).ready(function() {
      * A function to enable/disable a dropdown submenu.
      */
     function toggleSubmenu() {
-        $( '.main-navigation .node > div > a' ).append( '<span class="dropdown-icon" />' );
-        $( '#writr__site-navigation' ).on( 'click', '.dropdown-icon', function( e ) {
+        jQuery( '.main-navigation .node > div > a' ).append( '<span class="dropdown-icon" />' );
+        jQuery( '#writr__site-navigation' ).on( 'click', '.dropdown-icon', function( e ) {
             e.preventDefault();
-            $( this ).toggleClass( 'open' );
-            if ( $( this ).hasClass( 'open' ) ) {
-                $( this ).parent().parent().next( 'ul' ).show();
+            jQuery( this ).toggleClass( 'open' );
+            if ( jQuery( this ).hasClass( 'open' ) ) {
+                jQuery( this ).parent().parent().next( 'ul' ).show();
             } else {
-                $( this ).parent().parent().next( 'ul' ).hide();
+                jQuery( this ).parent().parent().next( 'ul' ).hide();
             }
         } );
     }
@@ -52,7 +52,7 @@ $(document).ready(function() {
      * Close TOC by default
      */
     function closeToc() {
-        var $toc = $('#dw__toc .toggle');
+        var $toc = jQuery('#dw__toc .toggle');
         if($toc.length) {
             $toc[0].setState(-1);
         }
@@ -63,8 +63,8 @@ $(document).ready(function() {
      * @deprecated since Detritus
      */
     function changeSearchInput() {
-        var $searchForm = $('.search-form > form > div');
-        var $searchButton = $('input[type="submit"]', $searchForm).detach();
+        var $searchForm = jQuery('.search-form > form > div');
+        var $searchButton = jQuery('input[type="submit"]', $searchForm).detach();
         var title = $searchButton.attr('title');
         var value = $searchButton.val();
         $searchForm.append('<button type="submit" title="'+title+'">'+value+'</button>');
@@ -74,14 +74,17 @@ $(document).ready(function() {
      * Enable add new page dropdown
      */
     function enableAddNewPage() {
-        $('.action.AddNewPage').click(function(event) {
+        jQuery('.action.AddNewPage').click(function(event) {
             event.preventDefault();
-            $('.addnewpage').toggle();
+            jQuery('.addnewpage').toggle(0,function(){
+                // set aria-expanded attribute based on visibility
+                jQuery(this).attr('aria-expanded', jQuery(this).is(':visible'));
+            });
         });
-        
-        $(document).click(function(event) {
-            if (!$(event.target).closest('.action.AddNewPage, .addnewpage').length) {
-                $('.addnewpage').hide();
+
+        jQuery(document).click(function(event) {
+            if (!jQuery(event.target).closest('.action.AddNewPage, .addnewpage').length) {
+                jQuery('.addnewpage').hide();
             }
         });
     }
@@ -90,19 +93,22 @@ $(document).ready(function() {
      * Enable translation dropdown
      */
     function enableTranslation() {
-        $('.action.Translation').click(function(event) {
+        jQuery('.action.Translation').click(function(event) {
             event.preventDefault();
-            $('.plugin_translation').toggle();
+            jQuery('.plugin_translation').toggle(0,function(){
+                // set aria-expanded attribute based on visibility
+                jQuery(this).attr('aria-expanded', jQuery(this).is(':visible'));
+            });
         });
-        
-        $(document).click(function(event) {
-            if (!$(event.target).closest('.action.Translation, .plugin_translation').length) {
-                $('.plugin_translation').hide();
+
+        jQuery(document).click(function(event) {
+            if (!jQuery(event.target).closest('.action.Translation, .plugin_translation').length) {
+                jQuery('.plugin_translation').hide();
             }
         });
     }
 
-    $(function(){
+    jQuery(function(){
         toggleSidebar();
         toggleNavigation();
         toggleSubmenu();
