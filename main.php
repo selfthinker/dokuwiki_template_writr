@@ -213,7 +213,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
                     <?php tpl_flush() ?>
                     <?php tpl_includeFile('pageheader.html') ?>
-                    
+
                     <!-- wikipage start -->
                     <?php tpl_content() ?>
                     <!-- wikipage stop -->
