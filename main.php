@@ -45,6 +45,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     if(tpl_getConf('doLogoChangesByNamespace')){
                         $logoImages[] = getNS($ID).':logo.png';
                     }
+                    $logoImages[] = ':wiki:logo.png';
                     $logoImages[] = ':logo.png';
                     $logoImages[] = 'images/logo.png';
                     $logo = tpl_getMediaFile($logoImages, false, $logoSize);
