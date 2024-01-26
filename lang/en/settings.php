@@ -19,4 +19,3 @@ $lang['_plugins']                           = 'Configure Plugins';
 $lang['defaultAddNewPage']                  = 'Namespace for AddNewPage plugin';
 
 $lang['_customizations']                    = 'Customize the Template';
-$lang['font']                               = 'Font';

@@ -10,3 +10,4 @@ $lang['__theme_color_alt__'] = 'Couleur secondaire du thème';
 $lang['__content_width__'] = 'Largeur de la zone de contenu';
 $lang['AddNewPage'] = 'Ajouter une nouvelle page';
 $lang['Language'] = 'Langue';
+$lang['__font__'] = 'Police';

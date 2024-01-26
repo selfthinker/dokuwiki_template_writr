@@ -28,12 +28,6 @@ header('X-UA-Compatible: IE=edge,chrome=1');
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
-    <style>
-        body {
-            font-family: <?= tpl_getConf('font') ?>;
-        }
-    </style>
 </head>
 
 <body class="<?php echo tpl_classes(); ?> detail-page">

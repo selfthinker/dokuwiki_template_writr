@@ -19,4 +19,3 @@ $lang['_plugins']                           = 'Configure les Extensions';
 $lang['defaultAddNewPage']                  = 'Namespace pour l\'extension AddNewPage';
 
 $lang['_customizations']                    = 'Personalise le Template';
-$lang['font']                               = 'Police';

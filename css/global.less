@@ -1,13 +1,23 @@
 /* =Global
 ----------------------------------------------- */
 
+// Fixing width overflowing
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+// Fixing fieldset display width overflowing
+fieldset {
+    min-width: 0;
+}
+
 body,
 button,
 input,
 select,
 textarea {
     color: @ini_background;
-    font-family: Montserrat, sans-serif;
+    font-family: @ini_font;
     font-size: 16px;
     line-height: 1.5;
     border-width: 3px;

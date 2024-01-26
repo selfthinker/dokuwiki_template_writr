@@ -25,12 +25,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
-    <style>
-        body {
-            font-family: <?= tpl_getConf('font') ?>;
-        }
-    </style>
 </head>
 
 <body id="dokuwiki__top" class="sidebar-closed <?php echo tpl_classes(); ?>">

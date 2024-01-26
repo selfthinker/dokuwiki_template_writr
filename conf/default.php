@@ -21,4 +21,3 @@ $conf['_plugins']                       = '';
 $conf['defaultAddNewPage']              = '';
 
 $conf['_customizations']                = '';
-$conf['font']                           = 'Montserrat, sans-serif';

@@ -21,4 +21,3 @@ $meta['_plugins']                   = array('fieldset');
 $meta['defaultAddNewPage']          = array('string');
 
 $meta['_customizations']            = array('fieldset');
-$meta['font']                       = array('multichoice', '_choices' => array('Montserrat, sans-serif'));
