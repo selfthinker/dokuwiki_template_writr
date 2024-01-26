@@ -51,7 +51,8 @@
         <a href="https://github.com/LouisOuellet/dokuwiki_template_writr/commits?author=araname" title="Code">💻</a>
         <a href="#korean" title="Translation">🌍</a>
     </td>
-    <td align="center">
+    <!-- placeholder -->
+    <!-- <td align="center">
         <a href="https://github.com/[USERNAME]">
             <img src="https://github.com/[USERNAME].png" width="100px;" alt=""/>
             <br />
@@ -61,7 +62,7 @@
         <a href="https://github.com/LouisOuellet/dokuwiki_template_writr/commits?author=[USERNAME]" title="Code">💻</a>
         <a href="#[language]" title="Translation">🌍</a>
         <a href="https://github.com/LouisOuellet/dokuwiki_template_writr/issues?q=author:[USERNAME]" title="Bug reports">🐛</a>
-    </td>
+    </td> -->
   </tr>
 </table>
 
