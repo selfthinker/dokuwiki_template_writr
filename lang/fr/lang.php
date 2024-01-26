@@ -1,6 +1,6 @@
 <?php
 /**
- * Language file for template
+ * Fichier Language pour le template
  *
  */
 
