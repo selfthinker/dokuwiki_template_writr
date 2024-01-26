@@ -92,9 +92,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php if(!tpl_getConf('doSiteToolsRequireLogin') || (tpl_getConf('doSiteToolsRequireLogin') && $conf['useacl'])){ ?>
                         <!-- SITE TOOLS -->
                         <div class="site-tools">
-                            <?php if(tpl_getConf('showSiteToolsTitle')){ ?>
-                                <h3><?php echo $lang['site_tools'] ?></h3>
-                            <?php } ?>
+                            <h3 <?php if(!tpl_getConf('showSiteToolsTitle')){ echo 'class="a11y"'; } ?>><?php echo $lang['site_tools'] ?></h3>
                             <ul>
                                 <?php $items = (new \dokuwiki\Menu\SiteMenu())->getItems();
                                 foreach($items as $item) {
@@ -110,9 +108,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
                     <!-- PAGE TOOLS -->
                     <div class="page-tools">
-                        <?php if(tpl_getConf('showPageToolsTitle')){ ?>
-                            <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
-                        <?php } ?>
+                        <h3 <?php if(!tpl_getConf('showPageToolsTitle')){ echo 'class="a11y"'; } ?>><?php echo $lang['page_tools'] ?></h3>
                         <ul>
                             <?php if (!$conf['useacl'] || ($conf['useacl'] && $INFO['perm'] >= 4)): ?>
                                 <?php
@@ -160,9 +156,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php if ($conf['useacl']): ?>
                         <!-- USER TOOLS -->
                         <div class="user-tools">
-                            <?php if(tpl_getConf('showUserToolsTitle')){ ?>
-                                <h3><?php echo $lang['user_tools'] ?></h3>
-                            <?php } ?>
+                            <h3 <?php if(!tpl_getConf('showUserToolsTitle')){ echo 'class="a11y"'; } ?>><?php echo $lang['user_tools'] ?></h3>
                             <ul>
                                 <?php $items = (new \dokuwiki\Menu\UserMenu())->getItems();
                                 foreach($items as $item) {
