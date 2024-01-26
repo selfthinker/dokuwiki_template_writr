@@ -20,6 +20,20 @@
     .selectiondefault input {
         margin: 0 3px;
     }
+    fieldset td.value div.input {
+        // Fix overflowing width of some input types
+        width: 100%;
+        // Fix a background color would sometimes applied to the div.input
+        background-color: transparent;
+    }
+    fieldset td.value div.selectiondefault {
+        // Fix a background color would sometimes applied to the div.input
+        background-color: transparent;
+    }
+    // Fix Dokuwiki's backlink showing on top of dropdowns
+    td.label span.outkey {
+        z-index: auto;
+    }
 }
 
 div.toolbar button,

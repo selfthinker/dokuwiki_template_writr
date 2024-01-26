@@ -21,7 +21,7 @@ header('X-UA-Compatible: IE=edge,chrome=1');
         <?php echo hsc(tpl_img_getTag('IPTC.Headline',$IMG))?>
         [<?php echo strip_tags($conf['title'])?>]
     </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
     <?php tpl_metaheaders()?>
