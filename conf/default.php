@@ -18,7 +18,7 @@ $conf['_extra']                         = '';
 $conf['doLogoChangesByNamespace']       = 0;
 
 $conf['_plugins']                       = '';
-$conf['defaultAddNewPage']              = 'NEWPAGE>.';
+$conf['defaultAddNewPage']              = '';
 
 $conf['_customizations']                = '';
 $conf['font']                           = 'Montserrat, sans-serif';

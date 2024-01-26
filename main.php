@@ -120,7 +120,13 @@ $showSidebar = page_findnearest($conf['sidebar']);
                         <?php } ?>
                         <ul>
                             <?php if (!$conf['useacl'] || ($conf['useacl'] && $INFO['perm'] >= 4)): ?>
-                                <?php $instructions = p_get_instructions('{{'.tpl_getConf('defaultAddNewPage').'}}');
+                                <?php
+                                $instructions = '{{NEWPAGE';
+                                if(tpl_getConf('defaultAddNewPage') !== ''){
+                                    $instructions .= tpl_getConf('defaultAddNewPage');
+                                }
+                                $instructions .= '}}';
+                                $instructions = p_get_instructions($instructions);
                                 if(count($instructions) <= 3) {
                                     $render = p_render('xhtml',$instructions,$info);
                                     echo '<li>'
@@ -130,7 +136,8 @@ $showSidebar = page_findnearest($conf['sidebar']);
                                         .'</a>'
                                         .$render
                                         .'</li>';
-                                } ?>
+                                }
+                                ?>
                                 <!-- <li class="plugin_move_page" style="display: list-item;"><a href=""><span>Rename Page</span></a></li> -->
                             <?php endif ?>
                             <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
