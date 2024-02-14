@@ -76,9 +76,10 @@ jQuery(document).ready(function() {
     function enableAddNewPage() {
         jQuery('.action.AddNewPage').click(function(event) {
             event.preventDefault();
+            const button = jQuery(this);
             jQuery('.addnewpage').toggle(0,function(){
                 // set aria-expanded attribute based on visibility
-                jQuery(this).attr('aria-expanded', jQuery(this).is(':visible'));
+                button.attr('aria-expanded', jQuery(this).is(':visible'));
             });
         });
 
@@ -95,9 +96,10 @@ jQuery(document).ready(function() {
     function enableTranslation() {
         jQuery('.action.Translation').click(function(event) {
             event.preventDefault();
+            const button = jQuery(this);
             jQuery('.plugin_translation').toggle(0,function(){
                 // set aria-expanded attribute based on visibility
-                jQuery(this).attr('aria-expanded', jQuery(this).is(':visible'));
+                button.attr('aria-expanded', jQuery(this).is(':visible'));
             });
         });
 
