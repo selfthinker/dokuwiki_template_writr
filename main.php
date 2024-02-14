@@ -132,14 +132,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
                                 ?>
                                 <!-- <li class="plugin_move_page" style="display: list-item;"><a href=""><span>Rename Page</span></a></li> -->
                             <?php endif ?>
-                            <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
-                            foreach($items as $item) {
-                                echo '<li>'
-                                    .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" title="'.$item->getTitle().'">'
-                                    .'<span class="icon"></span>'
-                                    .'<span class="a11y">'.$item->getLabel().'</span>'
-                                    .'</a></li>';
-                            } ?>
                             <?php $translation = plugin_load('helper','translation');
                             if ($translation){
                                 $render = $translation->showTranslations(false);
@@ -150,6 +142,14 @@ $showSidebar = page_findnearest($conf['sidebar']);
                                     .'</a>'
                                     .$render
                                     .'</li>';
+                            } ?>
+                            <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
+                            foreach($items as $item) {
+                                echo '<li>'
+                                    .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" title="'.$item->getTitle().'">'
+                                    .'<span class="icon"></span>'
+                                    .'<span class="a11y">'.$item->getLabel().'</span>'
+                                    .'</a></li>';
                             } ?>
                         </ul>
                     </div>
