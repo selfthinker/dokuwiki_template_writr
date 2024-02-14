@@ -114,6 +114,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                                 <?php
                                 $instructions = '{{NEWPAGE';
                                 if(tpl_getConf('defaultAddNewPage') !== ''){
+                                    $instructions .= '>';
                                     $instructions .= tpl_getConf('defaultAddNewPage');
                                 }
                                 $instructions .= '}}';
