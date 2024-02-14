@@ -5,7 +5,16 @@
 .dokuwiki div.tagstop,
 .dokuwiki div.cloud {
     margin-bottom: 15px;
+    font-size: 0px;
 
+    a::before {
+        font-family: 'bootstrap-icons';
+        content: "\F5B0";
+        font-size: 16px;
+        padding-right: 4px;
+        line-height: 16px;
+        vertical-align: middle;
+    }
     a {
         display: inline-block;
         padding: 5px 10px;
@@ -14,6 +23,7 @@
         color: @ini_background;
         font-size: 12px;
         text-decoration: none;
+        border-radius: 5px;
     }
     a:hover,
     a:focus,
