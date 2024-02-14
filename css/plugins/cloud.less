@@ -1,8 +1,32 @@
 /* =Cloud Plugin
 ----------------------------------------------- */
 
-.cloud {
-	a {
-        color: @ini_background !important;
+.dokuwiki div.cloud {
+    margin-bottom: 15px;
+    font-size: 14px;
+
+    a::before {
+        font-family: 'bootstrap-icons';
+        content: "\F5B0";
+        font-size: 16px;
+        padding-right: 4px;
+        line-height: 16px;
+        vertical-align: middle;
+    }
+    a {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0 5px 5px 0;
+        background: @ini_theme_color;
+        color: @ini_background;
+        font-size: 12px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    a:hover,
+    a:focus,
+    a:active {
+        background: @ini_theme_color_alt;
+        color: @ini_background;
     }
 }
