@@ -144,13 +144,12 @@ $showSidebar = page_findnearest($conf['sidebar']);
                             } ?>
                             <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
                             foreach($items as $item) {
-                                $html = '<li>';
-                                if($item->getType() == 'plugin_move') {
-                                    $html .= '<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).' '.strtolower($item->getType()).'_page" title="'.$item->getTitle().'">';
-                                } else {
-                                    $html .= '<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" title="'.$item->getTitle().'">';
+                                $attributes = $item->getLinkAttributes();
+                                $html = '<li><a';
+                                foreach($attributes as $key => $value) {
+                                    $html .= ' '.$key.'="'.$value.'"';
                                 }
-                                $html .= '<span class="icon"></span>'
+                                $html .= '><span class="icon"></span>'
                                     .'<span class="a11y">'.$item->getLabel().'</span>'
                                     .'</a></li>';
                                 echo $html;
