@@ -67,3 +67,8 @@ a:active { /* Improves readability when focused and also mouse hovered in all br
 a img {
     border: 0;
 }
+
+// Fixing width overflowing
+*, ::after, ::before {
+    box-sizing: border-box;
+}
