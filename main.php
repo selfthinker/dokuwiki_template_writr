@@ -39,29 +39,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
             <!-- ********** HEADER ********** -->
             <header id="writr__masthead" class="site-header" role="banner">
-                <?php
-                    $logoSize = array();
-                    $logoImages = array();
-                    if(tpl_getConf('doLogoChangesByNamespace')){
-                        $namespace = "";
-                        $namespaces = array();
-                        foreach(explode(':',getNS($ID)) as $ns){
-                            $namespace .= "$ns:";
-                            $namespaces[] = $namespace;
-                        }
-                        foreach(array_reverse($namespaces)  as $namespace){
-                            $logoImages[] = ":".trim($namespace,":").":logo.png";
-                        }
-                    }
-                    $logoImages[] = ':logo.png';
-                    $logoImages[] = ':wiki:logo.png';
-                    $logoImages[] = 'images/logo.png';
-                    $logo = tpl_getMediaFile($logoImages, false, $logoSize);
-                ?>
-
-                <a class="site-logo"  href="<?php echo wl(); ?>" title="<?php echo $conf['title']; ?>" rel="home" accesskey="h" title="[H]">
-                    <img src="<?php echo $logo; ?>" <?php echo $logoSize[3]; ?> alt="" class="no-grav header-image" />
-                </a>
+                <?php echo tpl_getLogo(); ?>
 
                 <div class="site-branding">
                     <h1 class="site-title"><a href="<?php echo wl(); ?>" rel="home" accesskey="h" title="[H]"><?php echo $conf['title']; ?></a></h1>
