@@ -50,7 +50,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                             $namespaces[] = $namespace;
                         }
                         foreach(array_reverse($namespaces)  as $namespace){
-                            $logoImages[] = trim($namespace,":").":logo.png";
+                            $logoImages[] = ":".trim($namespace,":").":logo.png";
                         }
                     }
                     $logoImages[] = ':logo.png';
