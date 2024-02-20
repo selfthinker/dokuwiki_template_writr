@@ -43,10 +43,18 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     $logoSize = array();
                     $logoImages = array();
                     if(tpl_getConf('doLogoChangesByNamespace')){
-                        $logoImages[] = getNS($ID).':logo.png';
+                        $namespace = "";
+                        $namespaces = array();
+                        foreach(explode(':',getNS($ID)) as $ns){
+                            $namespace .= "$ns:";
+                            $namespaces[] = $namespace;
+                        }
+                        foreach(array_reverse($namespaces)  as $namespace){
+                            $logoImages[] = trim($namespace,":").":logo.png";
+                        }
                     }
-                    $logoImages[] = ':wiki:logo.png';
                     $logoImages[] = ':logo.png';
+                    $logoImages[] = ':wiki:logo.png';
                     $logoImages[] = 'images/logo.png';
                     $logo = tpl_getMediaFile($logoImages, false, $logoSize);
                 ?>
