@@ -57,10 +57,17 @@
     }
 
     h2 {
-        display: none;
+        background-color: @ini_text_alt;
+        color: @ini_background;
+        margin: 0px;
+        padding-top: 56px;
+        font-size: 32px;
+
         a {
-            color: @ini_text_alt;
+            color: @ini_background;
             padding: 0px 40px;
+            display: block;
+            line-height: 24px;
         }
     }
 
@@ -138,6 +145,11 @@
             margin-left: 54px;
             padding-left: 16px;
             padding-right: 16px;
+
+            p {
+                margin-bottom: 0px;
+                padding-bottom: 20px;
+            }
         }
     }
 
