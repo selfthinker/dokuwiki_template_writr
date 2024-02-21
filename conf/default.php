@@ -15,6 +15,7 @@ $conf['showUserToolsTitle']             = 0;
 $conf['doSiteToolsRequireLogin']        = 0;
 
 $conf['_extra']                         = '';
+$conf['useToolbar']                     = 0;
 $conf['doLogoChangesByNamespace']       = 0;
 
 $conf['_plugins']                       = '';

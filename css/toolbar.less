@@ -1,0 +1,102 @@
+/* =Toolbar
+----------------------------------------------- */
+
+.disableToolbar {
+    #writr__toolbar {
+        display: none;
+    }
+    #writr__sidebar__usertools {
+        display: block;
+    }
+}
+.enableToolbar {
+    #writr__page {
+        margin-top: 32px;
+    }
+    #writr__sidebar__usertools {
+        display: none;
+    }
+    #writr__toolbar {
+        display: block;
+        background:@ini_text_alt;
+        height:32px;
+        width:100vw;
+        position:fixed;
+        top:0;
+        box-sizing:border-box;
+        z-index:100000;
+
+        .inline.user-tools {
+            float:right;
+            color:@ini_background;
+
+            a,button {
+                color:@ini_background;
+                display: inline-block;
+                text-decoration: none;
+                padding: 6px;
+                padding-left: 12px;
+                padding-right: 12px;
+                line-height: 16px;
+                font-size: 16px;
+                outline: none;
+
+                i {
+                    line-height: 16px;
+                    font-size: 16px;
+                }
+            }
+            a:hover,button:hover {
+                background-color: @ini_theme_color;
+            }
+        }
+
+        .dropdown.user-tools {
+            float:right;
+            color:@ini_background;
+
+            a[data-toggle="dropdown"],button[data-toggle="dropdown"] {
+                border-radius: 0px;
+            }
+            a,button {
+                color:@ini_background;
+
+                i {
+                    font-size: 16px;
+                    line-height: 16px;
+                    height: 16px;
+                    width: 16px;
+                    vertical-align: baseline;
+                    margin-right: 4px;
+                }
+                i.bi-person:before { content: '\F4E1'; }
+            }
+            .dropdown-menu {
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+
+                li {
+                    a,button {
+
+                        i {
+                            vertical-align: middle;
+                        }
+                    }
+                    .avatar {
+                        padding: 20px;
+                        margin: 0px;
+                        text-align: center;
+                        vertical-align: middle;
+
+                        img {
+                            border-radius: 50%;
+                            height: 96px;
+                            width: 96px;
+                            border: 3px solid @ini_background;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

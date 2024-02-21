@@ -27,7 +27,13 @@ $showSidebar = page_findnearest($conf['sidebar']);
     <?php tpl_includeFile('meta.html') ?>
 </head>
 
-<body id="dokuwiki__top" class="sidebar-closed <?php echo tpl_classes(); ?>">
+<body id="dokuwiki__top" class="sidebar-closed <?php echo tpl_classes(); ?> <?php if(tpl_getConf('useToolbar')){ echo "enableToolbar"; } else { echo "disableToolbar"; } ?>">
+    <div id="writr__toolbar">
+        <?php if ($conf['useacl']): ?>
+            <!-- USER TOOLS -->
+            <?php echo tpl_getMenu('usermenu'); ?>
+        <?php endif ?>
+    </div>
     <div id="writr__page" class="hfeed <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
         <?php tpl_includeFile('header.html') ?>
 
@@ -145,14 +151,14 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
                     <?php if ($conf['useacl']): ?>
                         <!-- USER TOOLS -->
-                        <div class="user-tools">
+                        <div id="writr__sidebar__usertools" class="user-tools">
                             <h3 <?php if(!tpl_getConf('showUserToolsTitle')){ echo 'class="a11y"'; } ?>><?php echo $lang['user_tools'] ?></h3>
                             <ul>
                                 <?php $items = (new \dokuwiki\Menu\UserMenu())->getItems();
                                 foreach($items as $item) {
                                     echo '<li>'
                                         .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" rel="nofollow" title="'.$item->getTitle().'">'
-                                        .'<span></span> '
+                                        .'<i></i> '
                                         .$item->getLabel()
                                         .'</a></li>';
                                 } ?>

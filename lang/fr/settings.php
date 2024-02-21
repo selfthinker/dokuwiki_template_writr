@@ -13,6 +13,7 @@ $lang['showUserToolsTitle']                 = 'Afficher le titre des outils util
 $lang['doSiteToolsRequireLogin']            = 'Les outils du site doivent-ils nécessiter une connexion';
 
 $lang['_extra']                             = 'Configure les Extras';
+$lang['useToolbar']                         = 'Active la barre d\'outils';
 $lang['doLogoChangesByNamespace']           = 'Les changements de logo doivent-ils être par espace de noms';
 
 $lang['_plugins']                           = 'Configure les Extensions';

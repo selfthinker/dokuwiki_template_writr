@@ -13,6 +13,7 @@ $lang['showUserToolsTitle']                 = 'Show the title of the user tools'
 $lang['doSiteToolsRequireLogin']            = 'Should the site tools require login';
 
 $lang['_extra']                             = 'Configure Extras';
+$lang['useToolbar']                         = 'Enable the toolbar';
 $lang['doLogoChangesByNamespace']           = 'Should the logo changes be by namespace';
 
 $lang['_plugins']                           = 'Configure Plugins';
