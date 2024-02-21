@@ -3,13 +3,26 @@
 
 .dropdown {
     position: relative;
-    vertical-align: middle;
+    vertical-align: baseline;
 
     a,button {
+        display: block;
         text-decoration: none;
         padding: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+        line-height: 16px;
+        font-size: 16px;
+        border-radius: 4px;
+        outline: none;
+
+        i {
+            line-height: 16px;
+            font-size: 16px;
+        }
     }
-    a[aria-expanded="true"],button[aria-expanded="true"] {
+    a[aria-expanded="true"],a:hover,
+    button[aria-expanded="true"],button:hover {
         background-color: @ini_theme_color;
     }
     .dropdown-toggle::after {
@@ -25,16 +38,31 @@
         right: 0px;
         background-color: @ini_text_alt;
         color: @ini_background;
-        padding: 8px;
-        padding-left: 16px;
-        padding-right: 16px;
-        border-radius: 0px;
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
-        min-width: 200px;
+        border-radius: 8px;
+        min-width: 250px;
 
         li {
             list-style-type: none;
+            width: 100%;
+            margin-top: 4px;
+
+            a,button {
+                width: 100%;
+                padding: 8px;
+                padding-left: 16px;
+                padding-right: 16px;
+                border-radius: 0px;
+
+                i {
+                    vertical-align: middle;
+                }
+            }
+        }
+        li:last-child {
+            a,button {
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
         }
     }
 }
