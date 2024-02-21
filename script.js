@@ -126,6 +126,25 @@ jQuery(document).ready(function() {
         });
     }
 
+    /*
+     * Enable Tooltips
+     */
+    function enableTooltips() {
+        jQuery('[title]').each(function() {
+            const tooltip = jQuery(this);
+            const content = tooltip.attr('title');
+            tooltip.attr('data-title', content);
+            tooltip.hover(function() {
+                tooltip.removeAttr('title');
+                tooltip.append('<div class="tooltip-text">' + content + '</div>');
+                tooltip.find('.tooltip-text').fadeIn(250);
+            }, function() {
+                tooltip.attr('title', content);
+                tooltip.find('.tooltip-text').remove();
+            });
+        });
+    }
+
     jQuery(function(){
         toggleSidebar();
         toggleNavigation();
@@ -135,5 +154,6 @@ jQuery(document).ready(function() {
         enableAddNewPage();
         enableTranslation();
         enableDropdowns();
+        enableTooltips();
     });
 });
