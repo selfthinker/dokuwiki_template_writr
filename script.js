@@ -116,7 +116,7 @@ jQuery(document).ready(function() {
     function enableDropdowns() {
         jQuery('.dropdown').each(function() {
             const dropdown = jQuery(this);
-            dropdown.find('a').click(function(event) {
+            dropdown.find('[data-toggle="dropdown"]').click(function(event) {
                 event.preventDefault();
                 const button = jQuery(this);
                 dropdown.find('.dropdown-menu').toggle(0,function(){
