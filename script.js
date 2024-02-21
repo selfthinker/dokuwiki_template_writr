@@ -110,6 +110,22 @@ jQuery(document).ready(function() {
         });
     }
 
+    /*
+     * Enable .dropdowns
+     */
+    function enableDropdowns() {
+        jQuery('.dropdown').each(function() {
+            const dropdown = jQuery(this);
+            dropdown.find('a').click(function(event) {
+                event.preventDefault();
+                const button = jQuery(this);
+                dropdown.find('.dropdown-menu').toggle(0,function(){
+                    button.attr('aria-expanded', jQuery(this).is(':visible'));
+                });
+            });
+        });
+    }
+
     jQuery(function(){
         toggleSidebar();
         toggleNavigation();
@@ -118,5 +134,6 @@ jQuery(document).ready(function() {
         changeSearchInput();
         enableAddNewPage();
         enableTranslation();
+        enableDropdowns();
     });
 });
