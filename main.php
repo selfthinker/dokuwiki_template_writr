@@ -27,7 +27,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
     <?php tpl_includeFile('meta.html') ?>
 </head>
 
-<body id="dokuwiki__top" class="sidebar-closed <?php echo tpl_classes(); ?> <?php if(tpl_getConf('useToolbar')){ echo "enableToolbar"; } else { echo "disableToolbar"; } ?>">
+<body id="dokuwiki__top" class="sidebar-closed <?php if(tpl_getConf('useTooltips')){ echo "enableTooltips"; } ?> <?php echo tpl_classes(); ?> <?php if(tpl_getConf('useToolbar')){ echo "enableToolbar"; } else { echo "disableToolbar"; } ?>">
     <div id="writr__toolbar">
         <?php if ($conf['useacl']): ?>
             <!-- USER TOOLS -->

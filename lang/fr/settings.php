@@ -14,6 +14,7 @@ $lang['doSiteToolsRequireLogin']            = 'Les outils du site doivent-ils nÃ
 
 $lang['_extra']                             = 'Configure les Extras';
 $lang['useToolbar']                         = 'Active la barre d\'outils';
+$lang['useTooltips']                        = 'Active les infobulles';
 $lang['doLogoChangesByNamespace']           = 'Les changements de logo doivent-ils Ãªtre par espace de noms';
 
 $lang['_plugins']                           = 'Configure les Extensions';

@@ -14,6 +14,7 @@ $lang['doSiteToolsRequireLogin']            = 'Should the site tools require log
 
 $lang['_extra']                             = 'Configure Extras';
 $lang['useToolbar']                         = 'Enable the toolbar';
+$lang['useTooltips']                        = 'Enable the tooltips';
 $lang['doLogoChangesByNamespace']           = 'Should the logo changes be by namespace';
 
 $lang['_plugins']                           = 'Configure Plugins';

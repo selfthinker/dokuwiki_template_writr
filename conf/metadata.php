@@ -16,6 +16,7 @@ $meta['doSiteToolsRequireLogin']    = array('onoff');
 
 $meta['_extra']                     = array('fieldset');
 $meta['useToolbar']                 = array('onoff');
+$meta['useTooltips']                = array('onoff');
 $meta['doLogoChangesByNamespace']   = array('onoff');
 
 $meta['_plugins']                   = array('fieldset');
