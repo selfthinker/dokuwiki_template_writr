@@ -93,7 +93,7 @@ if (!function_exists('tpl_getUserMenu')) {
 
         if(isset($INFO['userinfo'])){
             $return .= '<div class="dropdown user-tools">';
-                $return .= '<a href="'.wl($ID).'" class="dropdown-toggle" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">';
+                $return .= '<a href="'.wl($ID).'" class="dropdown-toggle" title="'.$lang['user_tools'].'" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">';
                     $return .= '<i class="bi bi-person"></i>'.$INFO['userinfo']['name'];
                 $return .= '</a>';
                 $return .= '<ul class="dropdown-menu" role="menu">';
