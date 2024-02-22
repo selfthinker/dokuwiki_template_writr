@@ -1,24 +1,31 @@
 /* =Tooltips
 ----------------------------------------------- */
 
-[title]:not(.menu-toggle,.wikilink1),[data-title]:not(.menu-toggle,.wikilink1){
-    position: relative;
-    display: inline-block;
-}
-.tooltip-text {
-    display: none;
+.tooltip {
     position: absolute;
-    background-color: @ini_tooltips_color;
-    color: @ini_tooltips_color_alt;
+    display: none; /* Initially hidden, shown on hover */
+    z-index: 1000000; /* Ensure it appears above other content */
+}
+
+.tooltip-text {
+    background-color: @ini_tooltips_color; /* Replace with actual color value */
+    color: @ini_tooltips_color_alt; /* Replace with actual color value */
     text-align: center;
     border-radius: 20px;
-    padding: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-    z-index: 1000;
-    left: 50%;
-    transform: translateX(-50%);
+    padding: 8px 16px;
+    /* Adjustments for the tooltip text itself */
     white-space: nowrap;
     font-size: 12px;
     font-weight: normal;
-  }
+    /* Positioning now mainly handled by JS, so no need for left/transform here */
+}
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Position the caret at the top of the tooltip box */
+    left: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent @ini_tooltips_color transparent; /* The tip points upwards */
+    transform: translateX(-50%);
+}

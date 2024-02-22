@@ -130,17 +130,37 @@ jQuery(document).ready(function() {
      * Enable Tooltips
      */
     function enableTooltips() {
-        jQuery('[title]').each(function() {
-            const tooltip = jQuery(this);
-            const content = tooltip.attr('title');
-            tooltip.attr('data-title', content);
-            tooltip.hover(function() {
-                tooltip.removeAttr('title');
-                tooltip.append('<div class="tooltip-text">' + content + '</div>');
-                tooltip.find('.tooltip-text').fadeIn(250);
+        jQuery('[title]:not(.media), [alt]:not(.media)').each(function() {
+            const element = jQuery(this);
+            const content = element.attr('alt') ? element.attr('alt') : element.attr('title');
+            element.attr('data-tooltip-content', content);
+
+            element.hover(function() {
+                // Prevent default browser tooltip from showing
+                const tooltipType = element.attr('alt') ? 'alt' : 'title';
+                element.removeAttr(tooltipType).attr('data-tooltip-type', tooltipType);
+
+                // Create and append the tooltip
+                const tooltip = jQuery('<div class="tooltip"><div class="tooltip-text">' + content + '</div></div>');
+                jQuery('body').append(tooltip);
+
+                // Calculate and set the position of the tooltip
+                const elementOffset = element.offset();
+                const tooltipWidth = tooltip.outerWidth();
+                const elementWidth = element.outerWidth();
+                const topPosition = elementOffset.top + element.outerHeight() + 10; // Adjust +10 for spacing
+                const leftPosition = elementOffset.left + (elementWidth / 2) - (tooltipWidth / 2);
+
+                tooltip.css({
+                    top: topPosition,
+                    left: leftPosition,
+                    display: 'inline-block'
+                });
+
             }, function() {
-                tooltip.attr('title', content);
-                tooltip.find('.tooltip-text').remove();
+                // Restore the original attribute and remove the tooltip
+                element.attr(element.attr('data-tooltip-type'), content);
+                jQuery('.tooltip').remove();
             });
         });
     }
