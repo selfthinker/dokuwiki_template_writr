@@ -111,7 +111,22 @@ jQuery(document).ready(function() {
     }
 
     /*
-     * Enable .dropdowns
+     * Enable Collapse
+     */
+    function enableCollapse() {
+        jQuery('[data-toggle="collapse"]').click(function(event){
+            event.preventDefault();
+            const trigger = jQuery(this);
+            const target = jQuery(trigger.attr('data-target'));
+            target.slideToggle('fast',function(){
+                // set aria-expanded attribute based on visibility
+                trigger.attr('aria-expanded', target.is(':visible'));
+            });
+        });
+    }
+
+    /*
+     * Enable Dropdowns
      */
     function enableDropdowns() {
         jQuery('.dropdown').each(function() {
@@ -175,5 +190,6 @@ jQuery(document).ready(function() {
         enableTranslation();
         enableDropdowns();
         enableTooltips();
+        enableCollapse();
     });
 });
