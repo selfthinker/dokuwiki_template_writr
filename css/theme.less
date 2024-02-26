@@ -54,66 +54,6 @@ body:before {
     z-index: 0;
 }
 
-/* Sidebar */
-.sidebar-area {
-    position: relative;
-    float: left;
-    width: 300px;
-    padding: 0 40px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing:    border-box;
-    box-sizing:         border-box;
-    z-index: 1;
-}
-#writr__sidebar-toggle {
-    display: none;
-    position: absolute;
-    z-index: 3;
-    top: -40px;
-    left: 0;
-    height: 40px;
-    width: 40px;
-    background: @ini_theme_color_alt;
-    color: @ini_background;
-    line-height: 40px;
-    text-align: center;
-    text-decoration: none;
-}
-#writr__sidebar-toggle:before,
-#writr__sidebar-toggle:after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-top: 40px solid @ini_theme_color_alt;
-    border-right: 40px solid transparent;
-}
-#writr__sidebar-toggle:before {
-    top: 40px;
-}
-#writr__sidebar-toggle:after {
-    top: 0;
-    left: 40px;
-}
-#writr__sidebar-toggle .genericon {
-    margin-top: 5px;
-    height: 40px;
-    width: 40px;
-    font-size: 40px;
-    line-height: 40px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform:    rotate(45deg);
-    -ms-transform:     rotate(45deg);
-    -o-transform:      rotate(45deg);
-    transform:         rotate(45deg);
-}
-#writr__sidebar-toggle.open .genericon {
-    -webkit-transform: rotate(0deg);
-    -moz-transform:    rotate(0deg);
-    -ms-transform:     rotate(0deg);
-    -o-transform:      rotate(0deg);
-    transform:         rotate(0deg);
-}
-
 /* Header */
 .site-header {
     background: @ini_theme_color;
