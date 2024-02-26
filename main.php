@@ -82,7 +82,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 <?php endif ?>
 
                 <div class="tools widget_links widget">
-                    <?php if(!tpl_getConf('doSiteToolsRequireLogin') || (tpl_getConf('doSiteToolsRequireLogin') && $conf['useacl'])){ ?>
+                    <?php if(!tpl_getConf('doSiteToolsRequireLogin') || !$conf['useacl'] || (tpl_getConf('doSiteToolsRequireLogin') && isset($INFO['userinfo']))){ ?>
                         <!-- SITE TOOLS -->
                         <div class="site-tools">
                             <h3 <?php if(!tpl_getConf('showSiteToolsTitle')){ echo 'class="a11y"'; } ?>><?php echo $lang['site_tools'] ?></h3>
