@@ -111,6 +111,19 @@
                         a:has(img),a.urlexter:has(img) {
                             padding: 0px 12px !important;
                         }
+                        a.mail {
+                            background-image: none;
+                        }
+                        a.mail::before {
+                            content: '\F32F';
+                            font-family: 'bootstrap-icons';
+                            font-size: 16px;
+                            line-height: 16px;
+                            height: 16px;
+                            width: 16px;
+                            vertical-align: middle;
+                            margin-right: 8px;
+                        }
                     }
                     div.li:has(a) {
                         padding: 0px;
