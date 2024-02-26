@@ -73,6 +73,9 @@ if (!function_exists('tpl_getMenu')) {
             case 'usermenu':
                 return tpl_getUserMenu();
                 break;
+            case 'sidebarmenu':
+                return tpl_getSidebarMenu();
+                break;
         }
     }
 }
@@ -121,6 +124,58 @@ if (!function_exists('tpl_getUserMenu')) {
             }
             $return .= '</div>';
         }
+
+        return $return;
+    }
+}
+
+/**
+ * Generate the HTML for the sidebar menus
+ *
+ * @return string
+ */
+if (!function_exists('tpl_getSidebarMenu')) {
+    function tpl_getSidebarMenu()
+    {
+        global $lang,$ID,$conf,$INFO;
+
+        $userItems = (new \dokuwiki\Menu\UserMenu())->getItems();
+        $siteItems = (new \dokuwiki\Menu\SiteMenu())->getItems();
+
+        $return = '';
+
+        $return .= '<div id="writr__sidebar__tools">';
+
+        if(isset($INFO['userinfo'])){
+            $return .= '<div class="user-tools">';
+                $return .= '<a href="'.wl($ID).'" class="" title="'.$lang['user_tools'].'" data-target="#user-tools-menu" data-toggle="collapse" role="button" aria-haspopup="true" aria-expanded="false">';
+                    $return .= '<img alt="'.$INFO['userinfo']['name'].'" src="'.tpl_getGravatarURL($INFO['userinfo']['mail'], 32).'" />';
+                    $return .= '<span>'.$INFO['userinfo']['name'].'</span>';
+                $return .= '</a>';
+                $return .= '<div id="user-tools-menu" class="collapsed">';
+                    $return .= '<ul class="menu" role="menu">';
+                        foreach($userItems as $item) {
+                            $return .= '<li>'
+                                .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" rel="nofollow" title="'.$item->getTitle().'">'
+                                .'<i></i> '
+                                .$item->getLabel()
+                                .'</a></li>';
+                        }
+                    $return .= '</ul>';
+                $return .= '</div>';
+            $return .= '</div>';
+        } else {
+            $return .= '<div class="user-tools">';
+            foreach($userItems as $item) {
+                $return .= '<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" rel="nofollow" title="'.$item->getTitle().'">'
+                    .'<i></i> '
+                    .$item->getLabel()
+                    .'</a>';
+            }
+            $return .= '</div>';
+        }
+
+        $return .= '</div>';
 
         return $return;
     }

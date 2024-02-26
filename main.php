@@ -149,30 +149,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
                             } ?>
                         </ul>
                     </div>
-
-                    <?php if ($conf['useacl']): ?>
-                        <!-- USER TOOLS -->
-                        <div id="writr__sidebar__usertools" class="user-tools">
-                            <h3 <?php if(!tpl_getConf('showUserToolsTitle')){ echo 'class="a11y"'; } ?>><?php echo $lang['user_tools'] ?></h3>
-                            <ul>
-                                <?php $items = (new \dokuwiki\Menu\UserMenu())->getItems();
-                                foreach($items as $item) {
-                                    echo '<li>'
-                                        .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" rel="nofollow" title="'.$item->getTitle().'">'
-                                        .'<i></i> '
-                                        .$item->getLabel()
-                                        .'</a></li>';
-                                } ?>
-                            </ul>
-                            <?php
-                                if (!empty($_SERVER['REMOTE_USER'])) {
-                                    echo '<p class="user">';
-                                    tpl_userinfo();
-                                    echo '</p>';
-                                }
-                            ?>
-                        </div>
-                    <?php endif ?>
                 </div>
 
                 <footer id="writr__colophon" class="site-footer" role="contentinfo">
@@ -183,6 +159,8 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 </footer><!-- #writr__colophon -->
 
             </div>
+
+            <?php echo tpl_getMenu('sidebarmenu'); ?>
         </div>
 
         <div id="writr__content" class="site-content">

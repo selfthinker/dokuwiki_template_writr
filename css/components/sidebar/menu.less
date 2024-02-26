@@ -1,0 +1,89 @@
+/* =Menu
+----------------------------------------------- */
+
+#writr__sidebar {
+
+    #writr__sidebar__tools {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 300px;
+        background: @ini_theme_color_alt;
+
+        > * {
+            line-height: 16px;
+            font-size: 16px;
+            margin: 0;
+            color:@ini_background;
+            vertical-align: middle;
+        }
+        .user-tools {
+            flex-grow: 1;
+
+            a:hover {
+                background: @ini_text_alt;
+            }
+            a {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                color: @ini_background;
+                outline: none;
+                padding: 16px;
+                margin: 0px;
+                width: 100%;
+                height: 100%;
+
+                img {
+                    display: inline-block;
+                    height: 32px;
+                    width: 32px;
+                    border-radius: 50%;
+                    margin: 0;
+                    padding: 0;
+                    border: 1px solid @ini_background;
+                }
+                span {
+                    margin-left: 8px;
+                }
+            }
+            ul {
+                margin: 0px;
+
+                li {
+                    list-style-type: none;
+                    width: 100%;
+                    margin-top: 0px;
+
+                    a,button {
+                        width: 100%;
+                        padding: 8px 16px;
+                        border-radius: 0px;
+                        justify-content: left;
+
+                        i {
+                            vertical-align: middle;
+                            margin-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+        .site-tools {
+            a {
+                font-size:32px;
+                color: @ini_background;
+            }
+        }
+    }
+}
+
+.enableToolbar #writr__sidebar__tools {
+    display: none!important;
+}
