@@ -111,6 +111,25 @@ jQuery(document).ready(function() {
     }
 
     /*
+     * Enable Toolbar Dropdowns
+     */
+    function enableToolbarDropdowns() {
+        jQuery('#writr__toolbar .hook .node').each(function() {
+            const dropdown = jQuery(this);
+            dropdown.find('div.li').click(function(event) {
+                event.preventDefault();
+                const trigger = jQuery(this);
+                trigger.find('a').click(function(event) {
+                    event.preventDefault();
+                });
+                dropdown.find('> ul').toggle(0,function(){
+                    trigger.attr('aria-expanded', jQuery(this).is(':visible'));
+                });
+            });
+        });
+    }
+
+    /*
      * Enable Collapse
      */
     function enableCollapse() {
@@ -188,6 +207,7 @@ jQuery(document).ready(function() {
         changeSearchInput();
         enableAddNewPage();
         enableTranslation();
+        enableToolbarDropdowns();
         enableDropdowns();
         enableTooltips();
         enableCollapse();
