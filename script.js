@@ -125,6 +125,15 @@ jQuery(document).ready(function() {
                 dropdown.find('> ul').toggle(0,function(){
                     trigger.attr('aria-expanded', jQuery(this).is(':visible'));
                 });
+
+                // Close dropdown when clicking outside
+                jQuery(document).on('click.dropdown', function(e) {
+                    if (!dropdown.is(e.target) && dropdown.has(e.target).length === 0) {
+                        dropdown.find('> ul').hide();
+                        trigger.attr('aria-expanded', 'false');
+                        jQuery(document).off('click.dropdown');
+                    }
+                });
             });
         });
     }
@@ -155,6 +164,15 @@ jQuery(document).ready(function() {
                 const button = jQuery(this);
                 dropdown.find('.dropdown-menu').toggle(0,function(){
                     button.attr('aria-expanded', jQuery(this).is(':visible'));
+                });
+
+                // Close dropdown when clicking outside
+                jQuery(document).on('click.dropdown', function(e) {
+                    if (!dropdown.is(e.target) && dropdown.has(e.target).length === 0) {
+                        dropdown.find('> ul').hide();
+                        button.attr('aria-expanded', 'false');
+                        jQuery(document).off('click.dropdown');
+                    }
                 });
             });
         });
