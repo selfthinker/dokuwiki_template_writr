@@ -6,8 +6,10 @@
 /* Widgets */
 .widget {
     margin: 0 0 20px;
-    border-bottom: 3px solid @ini_theme_color_alt;
     font-size: 14px;
+}
+.widget:has(*) {
+    border-bottom: 3px solid @ini_theme_color_alt;
 }
 .content-area .widget {
     border-bottom-color: @ini_background_neu;

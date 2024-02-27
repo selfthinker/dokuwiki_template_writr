@@ -24,6 +24,27 @@
 }
 
 .page-tools {
+    ul {
+        list-style: none;
+        text-transform: uppercase;
+    }
+    li {
+        padding: 5px 0;
+    }
+    li:first-child {
+        padding-top: 0;
+    }
+    li:last-child {
+        padding-bottom: 0;
+    }
+    ul a {
+        color: @ini_background;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    ul a:hover {
+        color: @ini_theme_color_alt;
+    }
     a span.icon {
         display: inline-block;
         width: 20px;
