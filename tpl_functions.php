@@ -25,7 +25,7 @@ if (!function_exists('tpl_getSiteBranding')) {
         // Initialize the return value
         $return = '';
 
-        // Initialize the logo size and images
+        // Initialize the site branding configurations
         $logoSize = array();
         $logoImages = array();
         if(tpl_getConf('doLogoChangesByNamespace')){
@@ -47,12 +47,6 @@ if (!function_exists('tpl_getSiteBranding')) {
         if(tpl_getConf('doLogoLinkChangesByNamespace')){
             $link = str_replace(['/_media','logo.png'],['',$conf['start']],$logo);
         }
-
-        $return .= '<a class="site-logo"  href="'.$link.'" title="'.$conf['title'].'" rel="home" accesskey="h" title="[H]">';
-        $return .= '<img src="'.$logo.'" '.$logoSize[3].' alt="" class="no-grav header-image" />';
-        $return .= '</a>';
-
-        // Initialize the site branding
         $title = $conf['title'];
         if(tpl_getConf('doTitleChangesByNamespace')){
             $nstitle = tpl_include_page('nstitle', 0, 1);
@@ -67,6 +61,13 @@ if (!function_exists('tpl_getSiteBranding')) {
                 $tagline = $nstagline;
             }
         }
+
+        // Initialize the logo
+        $return .= '<a class="site-logo" href="'.$link.'" title="'.$title.'" rel="home" accesskey="h" title="[H]">';
+        $return .= '<img src="'.$logo.'" '.$logoSize[3].' alt="" class="no-grav header-image" />';
+        $return .= '</a>';
+
+        // Initialize the site branding
         $return .= '<div class="site-branding">';
         $return .= '<h1 class="site-title"><a href="'.$link.'" rel="home" accesskey="h" title="[H]">'.$title.'</a></h1>';
         if($tagline){
