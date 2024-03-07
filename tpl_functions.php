@@ -51,14 +51,14 @@ if (!function_exists('tpl_getSiteBranding')) {
         if(tpl_getConf('doTitleChangesByNamespace')){
             $nstitle = tpl_include_page('nstitle', 0, 1);
             if ($nstitle) {
-                $title = $nstitle;
+                $title = str_replace(['<p>','</p>',"\n"],'',$nstitle);
             }
         }
         $tagline = $conf['tagline'];
         if(tpl_getConf('doTaglineChangesByNamespace')){
             $nstagline = tpl_include_page('nstagline', 0, 1);
             if ($nstagline) {
-                $tagline = $nstagline;
+                $tagline = str_replace(['<p>','</p>',"\n"],'',$nstagline);
             }
         }
 
