@@ -41,7 +41,7 @@ if (!function_exists('tpl_getLogo')) {
         $logo = tpl_getMediaFile($logoImages, false, $logoSize);
         $link = wl();
         if(tpl_getConf('doLogoLinkChangesByNamespace')){
-            $link = str_replace(['/_media','logo.png'],['','index'],$logo);
+            $link = str_replace(['/_media','logo.png'],['',$conf['start']],$logo);
         }
 
         $return .= '<a class="site-logo"  href="'.$link.'" title="'.$conf['title'].'" rel="home" accesskey="h" title="[H]">';
