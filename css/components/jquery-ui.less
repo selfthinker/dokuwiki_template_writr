@@ -1,0 +1,126 @@
+/* =JQuery-UI
+----------------------------------------------- */
+
+.ui-dialog,.ui-widget.ui-widget-content {
+    padding:0;
+    background: @ini_text_alt;
+    color: @ini_background;
+    border-radius: 20px;
+    border-color: @ini_theme_color;
+    border-width: 3px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+    .ui-dialog-titlebar {
+        border-radius: 20px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        background: transparent;
+        color: @ini_background;
+        padding: 16px 32px;
+        border: none;
+
+        .ui-dialog-titlebar-close{
+            position:relative;
+            float: right;
+            margin: 0px;
+            margin-right: -16px;
+            width: 32px;
+            height: 32px;
+            background-image: none;
+            font-size: 0px;
+            background-color: transparent;
+            border: none;
+            text-align: center;
+            vertical-align: middle;
+            padding: 4px;
+            text-indent: unset;
+            border-radius: 8px;
+
+            .ui-button-icon,.ui-button-icon-space {
+                display: none;
+            }
+        }
+        .ui-dialog-titlebar-close::before{
+            content: "\F62A";
+            font-family: "bootstrap-icons";
+            color: @ini_background;
+            font-size: 24px;
+            line-height: 24px;
+            text-indent: unset;
+        }
+        .ui-dialog-titlebar-close:hover{
+            background-color: @ini_theme_color;
+        }
+    }
+    .ui-dialog-content{
+        background-color: transparent;
+        color: @ini_background;
+        height: auto !important;
+
+        form {
+            label {
+                color: @ini_background;
+
+                input {
+                    margin-top: 8px;
+                    color: @ini_background;
+                }
+                input:focus {
+                    border-color: @ini_theme_color;
+                }
+            }
+        }
+    }
+    .ui-dialog-buttonpane {
+        border-radius: 20px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        background: transparent;
+        color: @ini_background;
+        padding: 16px 32px;
+        border: none;
+
+        .ui-button{
+            word-wrap: break-word;
+            margin-left: 8px;
+            padding: 10px 20px;
+            border: none;
+            background: #35627c;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-sizing: border-box;
+            border-radius: 20px;
+            vertical-align: middle;
+        }
+        .ui-button:hover{
+            background: @ini_theme_color_alt;
+        }
+    }
+}
+.ui-widget-overlay {
+    line-height: 1.5;
+    color: @ini_background;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: @ini_text_alt;
+    opacity: .3;
+    z-index: 100;
+}
