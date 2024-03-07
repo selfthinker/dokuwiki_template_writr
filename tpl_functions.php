@@ -63,13 +63,13 @@ if (!function_exists('tpl_getSiteBranding')) {
         }
 
         // Initialize the logo
-        $return .= '<a class="site-logo" href="'.$link.'" title="'.$title.'" rel="home" accesskey="h" title="[H]">';
-        $return .= '<img src="'.$logo.'" '.$logoSize[3].' alt="" class="no-grav header-image" />';
+        $return .= '<a class="site-logo" href="'.$link.'" title="'.$title.'" rel="home" accesskey="h">';
+        $return .= '<img src="'.$logo.'" '.$logoSize[3].' class="no-grav header-image" />';
         $return .= '</a>';
 
         // Initialize the site branding
         $return .= '<div class="site-branding">';
-        $return .= '<h1 class="site-title"><a href="'.$link.'" rel="home" accesskey="h" title="[H]">'.$title.'</a></h1>';
+        $return .= '<h1 class="site-title"><a href="'.$link.'" rel="home" accesskey="h" title="'.$title.'">'.$title.'</a></h1>';
         if($tagline){
             $return .= '<h2 class="site-description">'.$tagline.'</h2>';
         }
