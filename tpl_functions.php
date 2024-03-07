@@ -12,16 +12,20 @@
 if (!defined('DOKU_INC')) die();
 
 /**
- * Get the logo of the wiki
+ * Generate the HTML for the Site-Branding Area
  *
  * @return string
  */
-if (!function_exists('tpl_getLogo')) {
-    function tpl_getLogo()
+if (!function_exists('tpl_getSiteBranding')) {
+    function tpl_getSiteBranding()
     {
+        // Retrieve the global variables
         global $ID,$conf;
 
+        // Initialize the return value
         $return = '';
+
+        // Initialize the logo size and images
         $logoSize = array();
         $logoImages = array();
         if(tpl_getConf('doLogoChangesByNamespace')){
@@ -47,6 +51,28 @@ if (!function_exists('tpl_getLogo')) {
         $return .= '<a class="site-logo"  href="'.$link.'" title="'.$conf['title'].'" rel="home" accesskey="h" title="[H]">';
         $return .= '<img src="'.$logo.'" '.$logoSize[3].' alt="" class="no-grav header-image" />';
         $return .= '</a>';
+
+        // Initialize the site branding
+        $title = $conf['title'];
+        if(tpl_getConf('doTitleChangesByNamespace')){
+            $nstitle = tpl_include_page('nstitle', 0, 1);
+            if ($nstitle) {
+                $title = $nstitle;
+            }
+        }
+        $tagline = $conf['tagline'];
+        if(tpl_getConf('doTaglineChangesByNamespace')){
+            $nstagline = tpl_include_page('nstagline', 0, 1);
+            if ($nstagline) {
+                $tagline = $nstagline;
+            }
+        }
+        $return .= '<div class="site-branding">';
+        $return .= '<h1 class="site-title"><a href="'.$link.'" rel="home" accesskey="h" title="[H]">'.$title.'</a></h1>';
+        if($tagline){
+            $return .= '<h2 class="site-description">'.$tagline.'</h2>';
+        }
+        $return .= '</div>';
 
         return $return;
     }

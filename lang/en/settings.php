@@ -16,7 +16,9 @@ $lang['_extra']                             = 'Configure Extras';
 $lang['useToolbar']                         = 'Enable the toolbar';
 $lang['useTooltips']                        = 'Enable the tooltips';
 $lang['doLogoChangesByNamespace']           = 'Should the logo changes be by namespace';
-$lang['doLogoLinkChangesByNamespace']           = 'Should the logo link changes be by namespace';
+$lang['doLogoLinkChangesByNamespace']       = 'Should the logo link changes be by namespace';
+$lang['doTitleChangesByNamespace']          = 'Should the site title changes be by namespace';
+$lang['doTaglineChangesByNamespace']        = 'Should the site tagline changes be by namespace';
 
 $lang['_plugins']                           = 'Configure Plugins';
 $lang['defaultAddNewPage']                  = 'Namespace for AddNewPage plugin';

@@ -46,14 +46,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
             <!-- ********** HEADER ********** -->
             <header id="writr__masthead" class="site-header" role="banner">
-                <?php echo tpl_getLogo(); ?>
-
-                <div class="site-branding">
-                    <h1 class="site-title"><a href="<?php echo wl(); ?>" rel="home" accesskey="h" title="[H]"><?php echo $conf['title']; ?></a></h1>
-                    <?php if ($conf['tagline']): ?>
-                        <h2 class="site-description"><?php echo $conf['tagline'] ?></h2>
-                    <?php endif ?>
-                </div>
+                <?php echo tpl_getSiteBranding(); ?>
 
                 <div class="search-form widget">
                     <?php tpl_searchform() ?>

@@ -19,6 +19,8 @@ $meta['useToolbar']                     = array('onoff');
 $meta['useTooltips']                    = array('onoff');
 $meta['doLogoChangesByNamespace']       = array('onoff');
 $meta['doLogoLinkChangesByNamespace']   = array('onoff');
+$meta['doTitleChangesByNamespace']      = array('onoff');
+$meta['doTaglineChangesByNamespace']    = array('onoff');
 
 $meta['_plugins']                       = array('fieldset');
 $meta['defaultAddNewPage']              = array('string');
