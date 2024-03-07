@@ -1,0 +1,263 @@
+/* =Toolbar
+----------------------------------------------- */
+
+.disableToolbar {
+    #writr__toolbar {
+        display: none;
+    }
+}
+.enableToolbar {
+    #writr__page {
+        margin-top: 32px;
+    }
+    #writr__toolbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background:@ini_text_alt;
+        height:32px;
+        width:100vw;
+        position:fixed;
+        top:0;
+        box-sizing:border-box;
+        z-index:100000;
+        padding-right: 16px;
+        padding-left: 16px;
+
+        > * {
+            line-height: 16px;
+            font-size: 16px;
+            height: 32px;
+            color:@ini_background;
+        }
+        .hook {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            vertical-align: middle;
+            color:@ini_background;
+
+            > p,
+            > a,
+            > ol,
+            > span,
+            > img {
+                display: none;
+            }
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: left;
+                align-items: center;
+                vertical-align: middle;
+                height: 100%;
+
+                li {
+                    list-style: none;
+                    vertical-align: middle;
+                    margin: 0;
+                    padding: 0;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: left;
+                    align-items: center;
+                    vertical-align: middle;
+
+                    div.li {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: left;
+                        align-items: center;
+                        vertical-align: middle;
+                        padding: 8px 12px;
+
+                        p {
+                            margin: 0px;
+                        }
+                        img {
+                            max-height: 32px;
+                            max-width: 32px;
+                            height: 32px;
+                            width: 32px;
+                            display: inline-block;
+                            margin: 0px;
+                        }
+                        span.curid a{
+                            font-weight: normal;
+                        }
+                        a,a.urlextern {
+                            display: inline-block;
+                            height: 100%;
+                            font-size: 16px;
+                            line-height: 16px;
+                            text-decoration: none;
+                            color:@ini_background;
+                            padding: 8px 12px !important;
+
+                            img {
+                                margin: 0px;
+                            }
+                        }
+                        a:hover {
+                            background-color: @ini_theme_color;
+                        }
+                        a:has(img),a.urlexter:has(img) {
+                            padding: 0px 12px !important;
+                        }
+                        a.mail {
+                            background-image: none;
+                        }
+                        a.mail::before {
+                            content: '\F32F';
+                            font-family: 'bootstrap-icons';
+                            font-size: 16px;
+                            line-height: 16px;
+                            height: 16px;
+                            width: 16px;
+                            vertical-align: middle;
+                            margin-right: 8px;
+                        }
+                    }
+                    div.li:has(a) {
+                        padding: 0px;
+                    }
+                    > ul {
+                        display: none;
+                        position: absolute;
+                        top: 32px;
+                        background-color: @ini_text_alt;
+                        color: @ini_background;
+                        border-radius: 0px;
+                        border-bottom-left-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        min-width: 250px;
+                        height: auto;
+
+                        li {
+                            list-style-type: none;
+                            width: 100%;
+                            margin-top: 4px;
+
+                            div.li {
+                                width: 100%;
+                                cursor: default;
+
+                                > span {
+                                    width: 100%;
+                                }
+                                a {
+                                    cursor: pointer;
+                                    width: 100%;
+                                    padding: 8px;
+                                    padding-left: 16px;
+                                    padding-right: 16px;
+                                    border-radius: 0px;
+
+                                    i {
+                                        vertical-align: middle;
+                                    }
+                                }
+                                a:hover {
+                                    background-color: @ini_theme_color;
+                                }
+                            }
+                        }
+                        li:last-child {
+                            div.li {
+                                a {
+                                    border-bottom-left-radius: 20px;
+                                    border-bottom-right-radius: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+                > li:has(ul) {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .inline.user-tools {
+            float:right;
+            color:@ini_background;
+
+            a,button {
+                color:@ini_background;
+                display: inline-block;
+                text-decoration: none;
+                padding: 6px;
+                padding-left: 12px;
+                padding-right: 12px;
+                line-height: 16px;
+                font-size: 16px;
+                outline: none;
+
+                i {
+                    line-height: 16px;
+                    font-size: 16px;
+                }
+            }
+            a:hover,button:hover {
+                background-color: @ini_theme_color;
+            }
+        }
+
+        .dropdown.user-tools {
+            float:right;
+            color:@ini_background;
+
+            a[data-toggle="dropdown"],button[data-toggle="dropdown"] {
+                border-radius: 0px;
+            }
+            a,button {
+                color:@ini_background;
+
+                i {
+                    font-size: 16px;
+                    line-height: 16px;
+                    height: 16px;
+                    width: 16px;
+                    vertical-align: baseline;
+                    margin-right: 4px;
+                }
+                i.bi-person:before { content: '\F4E1'; }
+            }
+            .dropdown-menu {
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+
+                li {
+                    a,button {
+
+                        i {
+                            vertical-align: middle;
+                        }
+                    }
+                    .avatar {
+                        padding: 20px;
+                        margin: 0px;
+                        text-align: center;
+                        vertical-align: middle;
+
+                        img {
+                            border-radius: 50%;
+                            height: 96px;
+                            width: 96px;
+                            // max-height: 96px;
+                            // max-width: 96px;
+                            border: 3px solid @ini_background;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

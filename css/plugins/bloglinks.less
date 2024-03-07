@@ -1,0 +1,87 @@
+/* =BlogLinks Plugin
+----------------------------------------------- */
+
+.site-main.hideBlogLinksTitle a.wikilink1{
+    font-size: 0;
+}
+
+#plugin_bloglinks__links{
+    width: @ini_content_width;
+    margin-left: -40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > div {
+        width: 50%;
+        display: flex;
+        align-items: center;
+
+        a.wikilink1 {
+            background: @ini_text_alt;
+            color: @ini_background;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.25s ease-in-out;
+            border-radius: 0px;
+            max-width: 80%;
+            line-height: 16px;
+            padding: 20px;
+            text-decoration: none;
+
+            span.title {
+                display: block;
+                max-width: 90%;
+            }
+
+            span.truncate {
+                display: inline-block !important;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            span.icon {
+                display: inline-block;
+                font-family: 'bootstrap-icons';
+                font-size: 30px;
+                vertical-align: middle;
+            }
+        }
+        a.wikilink1:hover {
+            background: @ini_background;
+            color: @ini_text_alt;
+        }
+    }
+    .plugin_bloglinks__prev {
+
+        a.wikilink1 {
+            padding-left: 10px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+
+            span.icon{
+                margin-right: 8px;
+            }
+            span.icon::before{
+                content: "\f284";
+            }
+        }
+    }
+    .plugin_bloglinks__next {
+
+        a.wikilink1 {
+            padding-right: 10px;
+            margin-left: auto;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+
+            span.icon{
+                margin-left: 8px;
+            }
+            span.icon::before{
+                content: "\f285";
+            }
+        }
+    }
+}

@@ -1,0 +1,128 @@
+/* =Include Plugin
+----------------------------------------------- */
+
+.plugin_include_content {
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    .inclmeta {
+        font-size: 0;
+    }
+    .published{
+        font-size: 16px;
+        font-weight:normal;
+        border: none;
+        border-image-width: 0;
+        opacity: 60%;
+        float: right;
+        transition: all 0.25s ease-in-out;
+    }
+    .published:hover{
+        opacity: 100%;
+    }
+    .published::before{
+        font-family: 'bootstrap-icons';
+        content: "\f214";
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 20px;
+        padding-right: 6px;
+        vertical-align: text-top;
+    }
+    .author{
+        font-size: 16px;
+        float: right;
+        margin-right: 8px;
+    }
+    .author::before{
+        font-family: 'bootstrap-icons';
+        content: "\f4e1";
+        font-size: 20px;
+        margin-right: 4px;
+        line-height: 20px;
+        vertical-align: text-top;
+    }
+    .comment{
+        font-size: 16px;
+        margin-right: 8px;
+    }
+    .comment::before{
+        font-family: 'bootstrap-icons';
+        content: "\f268";
+        font-size: 20px;
+        padding-right: 6px;
+        line-height: 20px;
+        vertical-align: text-top;
+    }
+    .linkback{
+        font-size: 16px;
+        margin-right: 8px;
+    }
+    .linkback::before{
+        font-family: 'bootstrap-icons';
+        content: "\f470";
+        font-size: 20px;
+        padding-right: 4px;
+        line-height: 20px;
+        vertical-align: text-top;
+    }
+    .tags {
+        a::before {
+            font-family: 'bootstrap-icons';
+            content: "\F5B0";
+            font-size: 16px;
+            padding-right: 4px;
+            line-height: 16px;
+            vertical-align: middle;
+        }
+        a {
+            border-radius: 5px;
+        }
+    }
+}
+
+p.include_readmore {
+    margin-bottom: 8px;
+}
+.plugin_include_content a.wikilink1 {
+    text-decoration: none;
+}
+.include_readmore a {
+	-webkit-text-size-adjust: 100%;
+	word-wrap: break-word;
+	font-family: Montserrat,sans-serif;
+	margin: 0;
+	padding: 10px 20px !important;
+	border: none!important;
+	background-color: @ini_theme_color;
+	color: @ini_background !important;
+	font-size: 14px;
+	line-height: 1.5;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	-webkit-appearance: button;
+	box-sizing: border-box;
+	border-radius: 20px !important;
+	vertical-align: middle;
+	text-decoration: none;
+    transition: all 0.25s ease-in-out;
+}
+.include_readmore a:visited {
+	background-color: @ini_theme_color !important;
+}
+.include_readmore a:hover {
+	background-color: @ini_theme_color_alt !important;
+}
+.include_readmore a::after {
+    content: "\f285";
+    font-family: 'bootstrap-icons';
+    font-size: 16px;
+    line-height: 16px;
+    padding-left: 6px;
+    vertical-align: text-top;
+    transition: all 0.25s ease-in-out;
+}
+.include_readmore a:hover::after {
+    padding-left: 12px;
+}

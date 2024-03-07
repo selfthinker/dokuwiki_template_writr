@@ -1,31 +1,135 @@
 /* =Discussion & Avatar Plugin
 ----------------------------------------------- */
 
+.comment_subscribe {
+	display: flex;
+	padding-top: 10px;
+}
+
+.comment_subscribe label {
+	padding-left: 10px;
+}
+
+.dokuwiki div.toolbar {
+    display: block;
+}
+
 .dokuwiki .vcard img.photo {
     border-radius: 50%;
+    border: solid 3px @ini_background;
+}
+
+.dokuwiki div.comment_wrapper::before {
+    content: "top";
+    position: absolute;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    height: 16px;
+    width: @ini_content_width;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-color: @ini_background;
+    color: @ini_background;
+}
+
+.dokuwiki div.comment_wrapper::after {
+    content: "bottom";
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    height: 16px;
+    width: @ini_content_width;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: @ini_background;
+    color: @ini_background;
 }
 
 .dokuwiki div.comment_wrapper {
-    margin: 0 -40px;
-    padding: 20px 40px;
-    border-top: 5px solid @ini_text_alt;
+    position: relative;
+    margin: 0px -40px;
+    padding: 0px;
     background-color: @ini_background;
 
-    h2 a {
-        color: @ini_text_alt;
+    .hfeed{
+        background-color: @ini_text_alt;
+        padding: 40px 40px;
+        padding-bottom: 16px;
+    }
+
+    h2 {
+        background-color: @ini_text_alt;
+        color: @ini_background;
+        margin: 0px;
+        padding-top: 56px;
+        font-size: 32px;
+
+        a {
+            color: @ini_background;
+            padding: 0px 40px;
+            display: block;
+            line-height: 24px;
+        }
     }
 
     div.hentry {
         padding-bottom: 10px;
         margin-bottom: 20px;
-        border-bottom: 15px double @ini_background_alt;
+        margin-right: -40px;
 
         div.comment_head {
             color: @ini_text_alt;
+            background-color: @ini_background;
+            margin-left: 54px;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            padding-top: 16px;
+            padding-left: 16px;
+
+            span.vcard {
+                position: relative;
+
+                img {
+                    position: absolute;
+                    left: -92px;
+                    width: 60px;
+                    height: 60px;
+                    min-width: 60px;
+                    min-height: 60px;
+                    max-width: 60px;
+                    max-height: 60px;
+                }
+            }
         }
 
         div.comment_buttons {
             text-align: right;
+            background-color: @ini_background;
+            margin-left: 54px;
+            padding-bottom: 8px;
+            padding-left: 16px;
+            padding-right: 16px;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+
+            div.no {
+                font-size: 0px;
+            }
+
+            input[type=submit] {
+                border-radius: 0px;
+            }
+            .button:first-child [type=submit] {
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+            .button:last-child [type=submit] {
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
         }
         input.button {
             font-size: 12px;
@@ -41,11 +145,62 @@
         }
         div.comment_body {
             border-bottom-width: 0;
+            background-color: @ini_background;
+            margin-left: 54px !important;
+            padding-left: 16px;
+            padding-right: 16px;
+
+            p {
+                margin-bottom: 0px;
+                padding-bottom: 20px;
+            }
         }
     }
 
-    div.comment_form div.toolbar {
-        padding-top: 10px;
+    div.comment_form {
+        padding: 8px 16px;
+        background-color: @ini_background;
+        margin: 0px -40px;
+        margin-bottom: 32px;
+        border-radius: 16px;
+
+        textarea {
+            border-color: @ini_theme_color;
+            background-color: @ini_background;
+            padding: 16px;
+            margin-top: 8px;
+        }
+
+        .no {
+            font-size: 0px;
+
+            div{
+                font-size: 16px;
+            }
+
+            #discussion__comment_preview {
+                font-size: 16px;
+            }
+
+            [type=submit],[type=button] {
+                border-radius: 0px;
+            }
+
+            .comment_submit {
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+
+            .comment_preview_button {
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+
+            .comment_cancel {
+                font-size: 16px;
+                margin-left: 16px;
+            }
+        }
     }
 
     div.comment_preview {

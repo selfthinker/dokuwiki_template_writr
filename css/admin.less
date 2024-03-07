@@ -20,21 +20,63 @@
     .selectiondefault input {
         margin: 0 3px;
     }
+    tr.default div.input:has(select),
+    tr div.input:has(select),
+    tr div.input:has(textarea),
+    tr div.input:has(input[type="color"]),
+    tr div.input:has(input[type="date"]),
+    tr div.input:has(input[type="datetime-local"]),
+    tr div.input:has(input[type="email"]),
+    tr div.input:has(input[type="file"]),
+    tr div.input:has(input[type="image"]),
+    tr div.input:has(input[type="month"]),
+    tr div.input:has(input[type="number"]),
+    tr div.input:has(input[type="password"]),
+    tr div.input:has(input[type="tel"]),
+    tr div.input:has(input[type="text"]),
+    tr div.input:has(input[type="time"]),
+    tr div.input:has(input[type="url"]),
+    tr div.input:has(input[type="week"]) {
+        // Fix a background color would sometimes applied to the div.input
+        background-color: transparent;
+    }
+    fieldset td.value div.input {
+        // Fix overflowing width of some input types
+        width: 100%;
+    }
+    // Fix Dokuwiki's backlink showing on top of dropdowns
+    td.label span.outkey {
+        z-index: auto;
+    }
 }
 
-div.toolbar button,
-#media__popup_content button {
-    background-color: @ini_background_neu;
-    padding: 5px 10px;
-}
-div.toolbar button:hover,
-div.toolbar button:focus,
-#media__popup_content button:hover,
-#media__popup_content button:focus {
-    background-color: @ini_background_alt;
-}
 #media__popup_content label {
     display: block;
+}
+div.toolbar {
+    margin-top: 8px;
+}
+div.toolbar,div.picker {
+    border-radius: 8px;
+    background-color: @ini_background_neu;
+    padding: 4px;
+    border: 3px solid @ini_theme_color;
+    background-position: center center;
+
+    button,button.toolbutton,button.pickerbutton {
+        padding: 4px 8px;
+        border-radius: 0px;
+        background-color: transparent;
+        transition: all 0.25s ease-in-out;
+        border-radius: 4px;
+        color: @ini_text_neu;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    button:hover,button.toolbutton:hover,button.pickerbutton:hover {
+        background-color: @ini_background_alt;
+    }
 }
 
 /* undo "clever" styling from fileuploader.js */

@@ -18,7 +18,7 @@
     left: 40px;
     bottom: 0;
     width: 220px;
-    border-bottom: 15px double @ini_theme_color_alt;
+    border-bottom: 3px solid @ini_theme_color_alt;
 }
 .main-navigation ul {
     list-style: none;
@@ -56,15 +56,12 @@
     padding-right: 65px;
 }
 .main-navigation .node > div > a:after {
-    content: '';
+    font-family: 'bootstrap-icons';
+    content: '\f285';
     display: block;
     position: absolute;
-    top: 50%;
-    right: 40px;
-    margin-top: -5px;
-    border-left: 5px solid @ini_background;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
+    top: calc(25%);
+    right: 20px;
 }
 .main-navigation ul > li:hover > ul {
     display: block;

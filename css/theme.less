@@ -49,63 +49,9 @@ body:before {
     background: @ini_background;
 }
 
-/* Sidebar */
-.sidebar-area {
-    position: relative;
-    float: left;
-    width: 300px;
-    padding: 0 40px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing:    border-box;
-    box-sizing:         border-box;
-}
-#writr__sidebar-toggle {
-    display: none;
-    position: absolute;
-    z-index: 3;
-    top: -40px;
-    left: 0;
-    height: 40px;
-    width: 40px;
-    background: @ini_theme_color_alt;
-    color: @ini_background;
-    line-height: 40px;
-    text-align: center;
-    text-decoration: none;
-}
-#writr__sidebar-toggle:before,
-#writr__sidebar-toggle:after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-top: 40px solid @ini_theme_color_alt;
-    border-right: 40px solid transparent;
-}
-#writr__sidebar-toggle:before {
-    top: 40px;
-}
-#writr__sidebar-toggle:after {
-    top: 0;
-    left: 40px;
-}
-#writr__sidebar-toggle .genericon {
-    margin-top: 5px;
-    height: 40px;
-    width: 40px;
-    font-size: 40px;
-    line-height: 40px;
-    -webkit-transform: rotate(45deg);
-    -moz-transform:    rotate(45deg);
-    -ms-transform:     rotate(45deg);
-    -o-transform:      rotate(45deg);
-    transform:         rotate(45deg);
-}
-#writr__sidebar-toggle.open .genericon {
-    -webkit-transform: rotate(0deg);
-    -moz-transform:    rotate(0deg);
-    -ms-transform:     rotate(0deg);
-    -o-transform:      rotate(0deg);
-    transform:         rotate(0deg);
+/* Content */
+.site-content{
+    z-index: 0;
 }
 
 /* Header */
@@ -125,8 +71,11 @@ body:before {
     position: relative;
     padding: 0;
     margin: 0 0 20px;
-    border-bottom: 15px double @ini_theme_color_alt;
     text-align: center;
+
+    p {
+        margin: 0;
+    }
 }
 .site-title {
     padding: 0 0 5px;
@@ -152,6 +101,7 @@ body:before {
 
 /* Primary */
 .content-area {
+    text-align: left;
     float: right;
     width: @ini_content_width;
     height: auto;
@@ -181,10 +131,6 @@ body:before {
 .widget-area {
     width: 220px;
 }
-
-/* Footer */
-.site-footer {
-}
 .site-info {
     padding: 0 0 40px;
     color: @ini_background;
@@ -202,8 +148,13 @@ body:before {
     font-size: 14px;
     padding: 20px 40px;
     margin: 40px -40px 0;
-    width: 100%;
+    width: @ini_content_width;
     background-color: @ini_background_alt;
+
+    // Hide page path in the page footer
+    bdi:first-child {
+        display: none;
+    }
 }
 
 /* =DokuWiki-specific
@@ -215,7 +166,7 @@ div.breadcrumbs {
     margin: 0 0 20px -40px;
     padding: 15px 40px;
     position: relative;
-    width: 100%;
+    width: @ini_content_width;
     font-size: 14px;
 
     a {
@@ -266,6 +217,15 @@ body:not(.mode_show) div.breadcrumbs {
     margin: 0 -40px;
     padding: 0 20px;
     border-width: 0 20px;
+}
+.dokuwiki a[rel="tag"] {
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 0 5px 5px 0;
+	background: @ini_theme_color;
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
 }
 
 /* Modal windows */

@@ -1,16 +1,12 @@
 /* =Global
 ----------------------------------------------- */
 
-body,
-button,
-input,
-select,
-textarea {
-    color: @ini_background;
-    font-family: Montserrat, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
+
+// Fixing fieldset display width overflowing
+fieldset {
+    min-width: 0;
 }
+
 body.custom-background-size {
     background-position: 0 0 !important;
     background-repeat: no-repeat !important;
@@ -131,6 +127,7 @@ kbd,
 tt,
 var {
     font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    color: #c7254e;
 }
 abbr,
 acronym {
@@ -209,6 +206,17 @@ video {
 }
 
 /* Forms */
+body,
+button,
+input,
+select,
+textarea {
+    color: @ini_background;
+    font-family: @ini_font;
+    font-size: 16px;
+    line-height: 1.5;
+    border-width: 3px;
+}
 button,
 input,
 select,
@@ -277,6 +285,7 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
     border: 0;
     padding: 0;
 }
+select,
 input[type="text"],
 input[type="url"],
 input[type="email"],
@@ -296,6 +305,7 @@ textarea {
     box-sizing:         border-box;
     -webkit-appearance: none;
 }
+select:focus,
 input[type="text"]:focus,
 input[type="url"]:focus,
 input[type="email"]:focus,
@@ -324,6 +334,7 @@ textarea {
 }
 
 button,
+select,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
@@ -350,15 +361,18 @@ a:active {
 
 /* Transition */
 a:not(#writr__sidebar-toggle),
+select,
 input,
 .site-title a,
 .site-info a,
 .main-navigation a {
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition:    all 0.25s ease-in-out;
-    -ms-transition:     all 0.25s ease-in-out;
-    -o-transition:      all 0.25s ease-in-out;
     transition:         all 0.25s ease-in-out;
+}
+
+/* removing images of external links */
+a.urlextern {
+	background-image: none!important;
+	padding: 0px!important;
 }
 
 /* Alignment */

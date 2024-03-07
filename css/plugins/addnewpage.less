@@ -1,0 +1,53 @@
+/* =addNewPage Plugin
+----------------------------------------------- */
+
+.page-tools {
+    div.addnewpage{
+        display: none;
+        position: absolute;
+        background-color: @ini_text_alt;
+        color: @ini_background;
+        border-radius: 0 20px 20px 0;
+        padding: 10px;
+        padding-right: 30px;
+        left: 80px;
+        top: 0px;
+        width: 300px;
+
+        select.edit{
+            color: @ini_text;
+            background-color: @ini_background;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            border-color: @ini_background_alt;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        input.edit{
+            border-color: @ini_background_alt;
+            color: @ini_text;
+            background-color: @ini_background;
+        }
+
+        input.button{
+            margin-top: 10px;
+            width: 100%;
+            transition:         all 0.25s ease-in-out;
+        }
+
+        input.button:hover{
+            background-color: @ini_theme_color;
+            color: @ini_background;
+        }
+    }
+
+    a.AddNewPage {
+
+        span.icon::before { content: "\F4F8"; }
+    }
+}

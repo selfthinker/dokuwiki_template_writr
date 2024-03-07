@@ -11,21 +11,30 @@ if (!defined('DOKU_INC')) die();
 @require_once(dirname(__FILE__).'/tpl_functions.php');
 header('X-UA-Compatible: IE=edge,chrome=1');
 $showSidebar = page_findnearest($conf['sidebar']);
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang'] ?>"
   lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
 <head>
     <meta charset="UTF-8" />
     <title><?php tpl_pagetitle() ?> [<?php echo strip_tags($conf['title']) ?>]</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
     <?php tpl_metaheaders() ?>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
 </head>
 
-<body id="dokuwiki__top" class="sidebar-closed <?php echo tpl_classes(); ?>">
+<body id="dokuwiki__top" class="sidebar-closed <?php if(tpl_getConf('useTooltips')){ echo "enableTooltips"; } ?> <?php echo tpl_classes(); ?> <?php if(tpl_getConf('useToolbar')){ echo "enableToolbar"; } else { echo "disableToolbar"; } ?>">
+    <div id="writr__toolbar">
+        <div class="hook"><?php tpl_include_page('topbar', 1, 1) ?></div>
+        <?php if ($conf['useacl']): ?>
+            <!-- USER TOOLS -->
+            <?php echo tpl_getMenu('usermenu'); ?>
+        <?php endif ?>
+    </div>
     <div id="writr__page" class="hfeed <?php echo ($showSidebar) ? 'hasSidebar' : ''; ?>">
         <?php tpl_includeFile('header.html') ?>
 
@@ -37,21 +46,7 @@ $showSidebar = page_findnearest($conf['sidebar']);
 
             <!-- ********** HEADER ********** -->
             <header id="writr__masthead" class="site-header" role="banner">
-                <?php
-                    $logoSize = array();
-                    $logo = tpl_getMediaFile(array(':wiki:logo.png', ':logo.png', 'images/logo.png'), false, $logoSize);
-                ?>
-
-                <a class="site-logo"  href="<?php echo wl(); ?>" title="<?php echo $conf['title']; ?>" rel="home" accesskey="h" title="[H]">
-                    <img src="<?php echo $logo; ?>" <?php echo $logoSize[3]; ?> alt="" class="no-grav header-image" />
-                </a>
-
-                <div class="site-branding">
-                    <h1 class="site-title"><a href="<?php echo wl(); ?>" rel="home" accesskey="h" title="[H]"><?php echo $conf['title']; ?></a></h1>
-                    <?php if ($conf['tagline']): ?>
-                        <h2 class="site-description"><?php echo $conf['tagline'] ?></h2>
-                    <?php endif ?>
-                </div>
+                <?php echo tpl_getSiteBranding(); ?>
 
                 <div class="search-form widget">
                     <?php tpl_searchform() ?>
@@ -79,56 +74,74 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     </div>
                 <?php endif ?>
 
+                <!-- PAGE TOOLS -->
+                <div class="page-tools">
+                    <h3 <?php if(!tpl_getConf('showPageToolsTitle')){ echo 'class="a11y"'; } ?>><?php echo $lang['page_tools'] ?></h3>
+                    <ul>
+                        <?php if (!$conf['useacl'] || ($conf['useacl'] && $INFO['perm'] >= 4)): ?>
+                            <?php
+                            $instructions = '{{NEWPAGE';
+                            if(tpl_getConf('defaultAddNewPage') !== ''){
+                                $instructions .= '>';
+                                $instructions .= tpl_getConf('defaultAddNewPage');
+                            }
+                            $instructions .= '}}';
+                            $instructions = p_get_instructions($instructions);
+                            if(count($instructions) <= 3) {
+                                $render = p_render('xhtml',$instructions,$info);
+                                echo '<li>'
+                                    .'<a href="#" class="action AddNewPage" title="'.tpl_getLang('AddNewPage').'">'
+                                    .'<span class="icon"></span>'
+                                    .'<span class="a11y">'.tpl_getLang('AddNewPage').'</span>'
+                                    .'</a>'
+                                    .$render
+                                    .'</li>';
+                            }
+                            ?>
+                        <?php endif ?>
+                        <?php $translation = plugin_load('helper','translation');
+                        if ($translation){
+                            $render = $translation->showTranslations(false);
+                            echo '<li>'
+                                .'<a href="#" class="action Translation" title="'.tpl_getLang('Language').'">'
+                                .'<span class="icon"></span>'
+                                .'<span class="a11y">'.tpl_getLang('Language').'</span>'
+                                .'</a>'
+                                .$render
+                                .'</li>';
+                        } ?>
+                        <?php $items = (new \dokuwiki\Menu\PageMenu())->getItems();
+                        foreach($items as $item) {
+                            $attributes = $item->getLinkAttributes();
+                            $html = '<li><a';
+                            foreach($attributes as $key => $value) {
+                                $html .= ' '.$key.'="'.$value.'"';
+                            }
+                            $html .= '><span class="icon"></span>'
+                                .'<span class="a11y">'.$item->getLabel().'</span>'
+                                .'</a></li>';
+                            echo $html;
+                        } ?>
+                    </ul>
+                </div>
+
                 <div class="tools widget_links widget">
-                    <!-- SITE TOOLS -->
-                    <div class="site-tools">
-                        <h3><?php echo $lang['site_tools'] ?></h3>
-                        <ul>
-                            <?php tpl_toolsevent('sitetools', array(
-                                'recent'    => tpl_action('recent', 1, 'li', 1, '<span></span> '),
-                                'media'     => tpl_action('media', 1, 'li', 1, '<span></span> '),
-                                'index'     => tpl_action('index', 1, 'li', 1, '<span></span> '),
-                            )); ?>
-                        </ul>
-                    </div>
-
-                    <!-- PAGE TOOLS -->
-                    <div class="page-tools">
-                        <h3 class="a11y"><?php echo $lang['page_tools'] ?></h3>
-                        <ul>
-                            <?php tpl_toolsevent('pagetools', array(
-                                'edit'      => tpl_action('edit', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'revisions' => tpl_action('revisions', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'backlink'  => tpl_action('backlink', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'subscribe' => tpl_action('subscribe', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'revert'    => tpl_action('revert', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                                'top'       => tpl_action('top', 1, 'li', 1, '<span class="icon"></span> <span class="a11y">', '</span>'),
-                            )); ?>
-                        </ul>
-                    </div>
-
-                    <?php if ($conf['useacl']): ?>
-                        <!-- USER TOOLS -->
-                        <div class="user-tools">
-                            <h3><?php echo $lang['user_tools'] ?></h3>
+                    <?php if(!tpl_getConf('doSiteToolsRequireLogin') || !$conf['useacl'] || (tpl_getConf('doSiteToolsRequireLogin') && isset($INFO['userinfo']))){ ?>
+                        <!-- SITE TOOLS -->
+                        <div class="site-tools">
+                            <h3 <?php if(!tpl_getConf('showSiteToolsTitle')){ echo 'class="a11y"'; } ?>><?php echo $lang['site_tools'] ?></h3>
                             <ul>
-                                <?php tpl_toolsevent('usertools', array(
-                                    'admin'     => tpl_action('admin', 1, 'li', 1, '<span></span> '),
-                                    'profile'   => tpl_action('profile', 1, 'li', 1, '<span></span> '),
-                                    'register'  => tpl_action('register', 1, 'li', 1, '<span></span> '),
-                                    'login'     => tpl_action('login', 1, 'li', 1, '<span></span> '),
-                                )); ?>
+                                <?php $items = (new \dokuwiki\Menu\SiteMenu())->getItems();
+                                foreach($items as $item) {
+                                    echo '<li>'
+                                        .'<a href="'.$item->getLink().'" class="action '.strtolower($item->getType()).'" rel="nofollow" title="'.$item->getTitle().'">'
+                                        .'<span></span> '
+                                        .$item->getLabel()
+                                        .'</a></li>';
+                                } ?>
                             </ul>
                         </div>
-
-                        <?php
-                            if (!empty($_SERVER['REMOTE_USER'])) {
-                                echo '<p class="user">';
-                                tpl_userinfo();
-                                echo '</p>';
-                            }
-                        ?>
-                    <?php endif ?>
+                    <?php } ?>
                 </div>
 
                 <footer id="writr__colophon" class="site-footer" role="contentinfo">
@@ -139,10 +152,19 @@ $showSidebar = page_findnearest($conf['sidebar']);
                 </footer><!-- #writr__colophon -->
 
             </div>
+
+            <?php echo tpl_getMenu('sidebarmenu'); ?>
         </div>
 
         <div id="writr__content" class="site-content">
             <div id="writr__primary" class="content-area">
+
+                <div class="writr-message-area">
+                    <!-- Translation Notication -->
+                    <?php if($translation) { $translation->checkage(); } ?>
+                    <!-- Message Area -->
+                    <?php html_msgarea() ?>
+                </div>
 
                 <!-- BREADCRUMBS -->
                 <?php if($conf['breadcrumbs']){ ?>
@@ -157,7 +179,6 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php tpl_flush() ?>
                     <?php tpl_includeFile('pageheader.html') ?>
 
-                    <?php html_msgarea() ?>
                     <!-- wikipage start -->
                     <?php tpl_content() ?>
                     <!-- wikipage stop -->
@@ -166,7 +187,9 @@ $showSidebar = page_findnearest($conf['sidebar']);
                     <?php tpl_includeFile('pagefooter.html') ?>
                 </main><!-- #writr__main -->
 
-                <p class="page-footer"><?php tpl_pageinfo() ?></p>
+		<div class="page-footer">
+			<?php tpl_pageinfo(); ?>
+		</div>
             </div><!-- #writr__primary -->
         </div><!-- #writr__content -->
     </div><!-- #writr__page -->

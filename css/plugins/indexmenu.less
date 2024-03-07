@@ -1,0 +1,19 @@
+/* =IndexMenu Plugin
+----------------------------------------------- */
+
+.dokuwiki .main-navigation ul.idx {
+    li,
+    li.open {
+        list-style-image: none;
+    }
+    li:has(> ul) .li > a::after {
+        font-family: 'bootstrap-icons';
+        content: '\F285';
+        position: absolute;
+        top: calc(25%);
+        right: 20px;
+    }
+    li:not(:has(> ul)) .li > a::after {
+        content: none;
+    }
+}
