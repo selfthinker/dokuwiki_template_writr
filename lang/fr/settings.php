@@ -16,6 +16,7 @@ $lang['_extra']                             = 'Configure les Extras';
 $lang['useToolbar']                         = 'Active la barre d\'outils';
 $lang['useTooltips']                        = 'Active les infobulles';
 $lang['doLogoChangesByNamespace']           = 'Les changements de logo doivent-ils être par espace de noms';
+$lang['doLogoLinkChangesByNamespace']       = 'Les changements de liens logo doivent-ils être par espace de noms';
 
 $lang['_plugins']                           = 'Configure les Extensions';
 $lang['defaultAddNewPage']                  = 'Namespace pour l\'extension AddNewPage';

@@ -39,8 +39,12 @@ if (!function_exists('tpl_getLogo')) {
         $logoImages[] = ':wiki:logo.png';
         $logoImages[] = 'images/logo.png';
         $logo = tpl_getMediaFile($logoImages, false, $logoSize);
+        $link = wl();
+        if(tpl_getConf('doLogoLinkChangesByNamespace')){
+            $link = str_replace(['/_media','logo.png'],['','index'],$logo);
+        }
 
-        $return .= '<a class="site-logo"  href="'.wl().'" title="'.$conf['title'].'" rel="home" accesskey="h" title="[H]">';
+        $return .= '<a class="site-logo"  href="'.$link.'" title="'.$conf['title'].'" rel="home" accesskey="h" title="[H]">';
         $return .= '<img src="'.$logo.'" '.$logoSize[3].' alt="" class="no-grav header-image" />';
         $return .= '</a>';
 
